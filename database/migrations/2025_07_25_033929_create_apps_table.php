@@ -18,30 +18,36 @@ return new class extends Migration
             $table->string('university');
             $table->string('app_link')->nullable();
             $table->year('app_version');
-            $table->timestamps();
+            $table->timestamp('updated_at');
         });
 
         Schema::create('homes', function (Blueprint $table) {
             $table->id();
             $table->string('background')->nullable();
-            $table->string('title');
-            $table->string('description');
-            $table->timestamps();
+            $table->text('title');
+            $table->text('description');
+            $table->timestamp('updated_at');
         });
 
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->string('logo')->nullable();
             $table->text('content');
-            $table->timestamps();
+            $table->timestamp('updated_at');
         });
 
-        Schema::create('agendas', function (Blueprint $table) {
+        Schema::create('agenda_texts', function (Blueprint $table) {
             $table->id();
-            $table->string('roundown');
+            $table->text('description');
+            $table->timestamp('updated_at');
+        });
+
+        Schema::create('agenda_tables', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
             $table->string('prefix_date')->nullable();
             $table->string('suffix_date')->nullable();
-            $table->timestamps();
+            $table->timestamp('updated_at');
         });
     }
 
@@ -53,5 +59,6 @@ return new class extends Migration
         Schema::dropIfExists('apps');
         Schema::dropIfExists('homes');
         Schema::dropIfExists('abouts');
+        Schema::dropIfExists('agendas');
     }
 };

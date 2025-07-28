@@ -6,7 +6,7 @@
         </div>
         <div class="flex flex-col items-center mx-6">
             <p class="text-gray-700 leading-6 lg:leading-7 text-md lg:text-xl max-w-5xl mx-auto text-justify lg:text-center">
-                The International Competition on Research Posters and Oral Presentations, open to students, early-career researchers, lecturer, and young professionals to present their research findings, innovative ideas, or ongoing development projects in a visual, data-driven format. More than just a competition, this activity provides a platform for constructive academic dialogue, with evaluations by a panel of interdisciplinary experts.
+                {{ $agendaTs }}
             </p>
             <div class="w-full max-w-3xl mt-8">
                 <div class="overflow-x-auto rounded-lg shadow-lg">
@@ -18,26 +18,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white">
-                                <td class="py-4 px-6 text-md lg:text-lg">Submission & Payment</td>
-                                <td class="py-4 px-6 text-md lg:text-lg">Now - October 10<sup>th</sup> 2025</td>
-                            </tr>
-                            <tr class="bg-red-50">
-                                <td class="py-4 px-6 text-md lg:text-lg">Poster Upload Dateline</td>
-                                <td class="py-4 px-6 text-md lg:text-lg">October 10<sup>th</sup> 2025</td>
-                            </tr>
-                            <tr class="bg-white">
-                                <td class="py-4 px-6 text-md lg:text-lg">Presentation (Online)</td>
-                                <td class="py-4 px-6 text-md lg:text-lg">October 10-15<sup>th</sup> 2025</td>
-                            </tr>
-                            <tr class="bg-red-50">
-                                <td class="py-4 px-6 text-md lg:text-lg">Presentation (Offline)</td>
-                                <td class="py-4 px-6 text-md lg:text-lg">October 21<sup>st</sup> 2025</td>
-                            </tr>
-                            <tr class="bg-white">
-                                <td class="py-4 px-6 text-md lg:text-lg">Announcement & Awards</td>
-                                <td class="py-4 px-6 text-md lg:text-lg">October 22<sup>nd</sup> 2025</td>
-                            </tr>
+                            @forelse ($agendaTb as $agendas)
+                                <tr class="{{ $agendas->id % 2 === 0 ? 'bg-red-50' : 'bg-white' }}">
+                                    <td class="py-4 px-6 text-md lg:text-lg">{{ $agendas->title }}</td>
+                                    <td class="py-4 px-6 text-md lg:text-lg">{{ $agendas->prefix_date }} {{ $agendas->suffix_date ? '-' : '' }} {{ $agendas->suffix_date }}</td>
+                                </tr>
+                            @empty    
+                                <tr class="bg-white">
+                                    <td class="py-4 px-6 text-md lg:text-lg">Submission & Payment</td>
+                                    <td class="py-4 px-6 text-md lg:text-lg">Now - October 10<sup>th</sup> 2025</td>
+                                </tr>
+                                <tr class="bg-red-50">
+                                    <td class="py-4 px-6 text-md lg:text-lg">Poster Upload Dateline</td>
+                                    <td class="py-4 px-6 text-md lg:text-lg">October 10<sup>th</sup> 2025</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="py-4 px-6 text-md lg:text-lg">Presentation (Online)</td>
+                                    <td class="py-4 px-6 text-md lg:text-lg">October 10-15<sup>th</sup> 2025</td>
+                                </tr>
+                                <tr class="bg-red-50">
+                                    <td class="py-4 px-6 text-md lg:text-lg">Presentation (Offline)</td>
+                                    <td class="py-4 px-6 text-md lg:text-lg">October 21<sup>st</sup> 2025</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="py-4 px-6 text-md lg:text-lg">Announcement & Awards</td>
+                                    <td class="py-4 px-6 text-md lg:text-lg">October 22<sup>nd</sup> 2025</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

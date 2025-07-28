@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Agenda extends Model
+class AgendaText extends Model
 {
     use HasFactory, Notifiable;
 
-    protected $table = 'agendas';
-    protected $fillable = ['roundown', 'prefix_date', 'suffix_date'];
+    protected $table = 'agenda_texts';
+    protected $fillable = ['description'];
 }

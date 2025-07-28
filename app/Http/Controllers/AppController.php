@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\AgendaTable;
+use App\Models\AgendaText;
 use App\Models\App;
 use App\Models\Home;
 use Illuminate\Http\Request;
@@ -27,11 +29,17 @@ class AppController extends Controller
         $title = $home ? $home->title : 'International Forum on Innovation, Strategy, and Presentation of Research Activity';
         $desc = $home ? $home->description : 'Bridging engineering, business, and pharmaceutical expertise to advance technological innovation for global impact';
 
-        // Section
+        // Section About
         $about = About::first();
 
         $logo = $about ? $about->logo : 'assets/images/icon.png';
         $content = $about ? $about->content : 'is a premier academic platform organized by Jakarta Global University (JGU) that brings together emerging researchers, scholars, and innovators to showcase their ideas and insights in the fields of science, technology, business, and health. Under the theme “International Forum on Innovation, Strategy, and Presentation of Research Activity," this event aims to foster interdisciplinary collaboration, spark future-oriented thinking, and strengthen the research culture among the academic community. Through a dynamic combination of strategic forums, keynote lectures, and a competitive poster presentation, JGU INSPIRA serves as a catalyst for knowledge exchange, academic excellence, and impactful innovation aligned with global challenges and sustainable development goals (SDGs).';
+
+        // Section Agenda
+        $agendaTb = AgendaTable::all();
+        $agendaTs = AgendaText::first();
+
+        $agenda = $agendaTs ? $agendaTs->description : 'The International Competition on Research Posters and Oral Presentations, open to students, early-career researchers, lecturer, and young professionals to present their research findings, innovative ideas, or ongoing development projects in a visual, data-driven format. More than just a competition, this activity provides a platform for constructive academic dialogue, with evaluations by a panel of interdisciplinary experts.';
 
         return view('layouts.app', with([
             'ac' => $ac,
@@ -45,7 +53,10 @@ class AppController extends Controller
             'deskripsi' => $desc,
 
             'logo' => $logo,
-            'content' => $content   ,
+            'content' => $content,
+
+            'agendaTb' => $agendaTb,
+            'agendaTs' => $agenda,
         ]));
     }
 
