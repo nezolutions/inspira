@@ -7,7 +7,7 @@
         <p class="text-gray-200 text-lg lg:text-2xl">{{ $deskripsi }}</p>
     </div>
     <br><br>
-    @if (auth()->check())
+    {{-- @if (auth()->check())
         <div class="relative bottom-4 w-fit z-10 text-lg">
             <a href="#" class="flex items-center text-white bg-gray-700 rounded-full border hover:bg-gray-800 border-gray-600 px-4 py-2 transition">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 me-2">
@@ -17,5 +17,5 @@
                 Edit
             </a>
         </div>
-    @endif
+    @endif --}}
 </div>
