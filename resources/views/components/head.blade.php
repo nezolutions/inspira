@@ -6,4 +6,5 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+{{-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> --}}
 @vite('resources/css/app.css')

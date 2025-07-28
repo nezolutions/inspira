@@ -11,7 +11,7 @@
             <li class="text-lg text-gray-600 hover:text-black font-semibold transition"><a href="#category">Category</a></li>
             <li class="text-lg text-gray-600 hover:text-black font-semibold transition"><a href="#awards">Awards</a></li>
             <li class="text-lg text-gray-600 hover:text-black font-semibold transition"><a href="#fee">Fee</a></li>
-            <li class="text-lg text-white font-medium bg-red-600 border border-red-500 hover:bg-red-700 rounded-full px-5 py-2 transition"><a href="{{ $register }}">Registeration</a></li>
+            <li class="text-lg text-white font-medium bg-red-600 border border-red-500 hover:bg-red-700 rounded-full px-5 py-2 transition"><a href="{{ $register }}">Registration</a></li>
             @if (auth()->check())
             <li class="text-lg text-white bg-gray-700 rounded-full border hover:bg-gray-800 border-gray-600 flex items-center px-4 py-2 transition">
                 <a href="{{ url('e/app') }}" class="flex items-center">

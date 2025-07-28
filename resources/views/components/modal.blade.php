@@ -18,7 +18,7 @@
                 <a href="#category"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-black font-semibold transition">Category</li></a>
                 <a href="#awards"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-black font-semibold transition">Awards</li></a>
                 <a href="#fee"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-black font-semibold transition">Fee</li></a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScu_P8sgARBq5Apvboqu9yqBMFHLTYgI_jSWtdVrMeVyNSD5w/viewform"><li data-modal-hide="default-modal" class="my-2 text-lg text-white font-semibold bg-red-600 hover:bg-red-700 transition rounded-full px-5 py-2">Registeration</li></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScu_P8sgARBq5Apvboqu9yqBMFHLTYgI_jSWtdVrMeVyNSD5w/viewform"><li data-modal-hide="default-modal" class="my-2 text-lg text-white font-semibold bg-red-600 hover:bg-red-700 transition rounded-full px-5 py-2">Registration</li></a>
             </ul>
         </div>
     </div>
