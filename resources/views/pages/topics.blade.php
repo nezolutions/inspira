@@ -6,8 +6,8 @@
         </div>
         <div class="flex flex-col lg:grid mx-6 grid-cols-3 items-center gap-6 pb-2 text-gray-700">
             <div class="shadow-lg rounded-lg w-full h-96">
-                <h3 class="text-2xl text-white font-bold bg-red-600 rounded-t-lg p-4">Informatic Engineering</h3>
-                <ul class="text-lg p-4">
+                <h3 class="text-xl lg:text-2xl text-white font-bold bg-red-600 rounded-t-lg p-4">Informatic Engineering</h3>
+                <ul class="text-md lg:text-lg p-4">
                     <li class="list-disc list-inside">Mobile Applications</li>
                     <li class="list-disc list-inside">Biomedical Informatics</li>
                     <li class="list-disc list-inside">Systems, Database & Data Mining</li>
@@ -16,8 +16,8 @@
                 </ul>
             </div>
             <div class="shadow-lg rounded-lg w-full h-96">
-                <h3 class="text-2xl text-white font-bold bg-gray-700 rounded-t-lg p-4">Industrial Engineering</h3>
-                <ul class="text-lg p-4">
+                <h3 class="text-xl lg:text-2xl text-white font-bold bg-gray-700 rounded-t-lg p-4">Industrial Engineering</h3>
+                <ul class="text-md lg:text-lg p-4">
                     <li class="list-disc list-inside">Smart & Lean Manufacturing System</li>
                     <li class="list-disc list-inside">Product Design & Development</li>
                     <li class="list-disc list-inside">Systems, Database & Data Mining</li>
@@ -27,8 +27,8 @@
                 </ul>
             </div>
             <div class="shadow-lg rounded-lg w-full h-96">
-                <h3 class="text-2xl text-white font-bold bg-red-600 rounded-t-lg p-4">Civil Engineering</h3>
-                <ul class="text-lg p-4">
+                <h3 class="text-xl lg:text-2xl text-white font-bold bg-red-600 rounded-t-lg p-4">Civil Engineering</h3>
+                <ul class="text-md lg:text-lg p-4">
                     <li class="list-disc list-inside">Structure Engineering</li>
                     <li class="list-disc list-inside">Road & Bridge Engineering</li>
                     <li class="list-disc list-inside">Geotech Engineering</li>
@@ -42,8 +42,8 @@
         </div>
         <div class="flex flex-col lg:grid mx-6 grid-cols-2 items-center gap-6 pb-2 text-gray-700">
             <div class="shadow-lg rounded-lg w-full h-96">
-                <h3 class="text-2xl text-white font-bold bg-gray-700 rounded-t-lg p-4">Electrical Engineering</h3>
-                <ul class="text-lg p-4">
+                <h3 class="text-xl lg:text-2xl text-white font-bold bg-gray-700 rounded-t-lg p-4">Electrical Engineering</h3>
+                <ul class="text-md lg:text-lg p-4">
                     <li class="list-disc list-inside">Power Transmission & Distribution</li>
                     <li class="list-disc list-inside">High Voltage Engineering</li>
                     <li class="list-disc list-inside">Renewable Energy</li>
@@ -57,8 +57,8 @@
                 </ul>
             </div>
             <div class="shadow-lg rounded-lg w-full h-96">
-                <h3 class="text-2xl text-white font-bold bg-red-600 rounded-t-lg p-4">Mechanical engineering</h3>
-                <ul class="text-lg p-4">
+                <h3 class="text-xl lg:text-2xl text-white font-bold bg-red-600 rounded-t-lg p-4">Mechanical engineering</h3>
+                <ul class="text-md lg:text-lg p-4">
                     <li class="list-disc list-inside">Mechatronics & Robotics</li>
                     <li class="list-disc list-inside">Applied Mechanics</li>
                     <li class="list-disc list-inside">Biomedical Engineering</li>
@@ -72,8 +72,8 @@
         </div>
         <div class="flex items-center gap-6 pb-2 text-gray-700">
             <div class="shadow-lg mx-6 rounded-lg w-full h-full lg:h-96">
-                <h3 class="text-2xl text-white font-bold bg-gray-700 rounded-t-lg p-4">Other (Business & Pharmaceutical Science)</h3>
-                <ul class="text-lg p-4">
+                <h3 class="text-xl lg:text-2xl text-white font-bold bg-gray-700 rounded-t-lg p-4">Other (Business & Pharmaceutical Science)</h3>
+                <ul class="text-md lg:text-lg p-4">
                     <li class="list-disc list-inside">Business & Entrepreneurship in the Tech Era</li>
                     <li class="list-disc list-inside">Tech-Driven Business Strategies & Economic Sustainability</li>
                     <li class="list-disc list-inside">Financial Technology (FinTech) & Digital Economy</li>
@@ -88,9 +88,8 @@
             </div>
         </div>
     </div>
-    <br><br>
-    {{-- @if (auth()->check())
-        <div class="relative bottom-4 w-fit z-10 text-lg">
+    @if (auth()->check())
+        <div class="relative top-10 w-fit z-10 text-lg">
             <a href="#" class="flex items-center text-white bg-gray-700 rounded-full border hover:bg-gray-800 border-gray-600 px-4 py-2 transition">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 me-2">
                     <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
@@ -99,5 +98,5 @@
                 Edit
             </a>
         </div>
-    @endif --}}
+    @endif
 </div>

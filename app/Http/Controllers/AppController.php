@@ -33,7 +33,7 @@ class AppController extends Controller
         $logo = $about ? $about->logo : 'assets/images/icon.png';
         $content = $about ? $about->content : 'is a premier academic platform organized by Jakarta Global University (JGU) that brings together emerging researchers, scholars, and innovators to showcase their ideas and insights in the fields of science, technology, business, and health. Under the theme “International Forum on Innovation, Strategy, and Presentation of Research Activity," this event aims to foster interdisciplinary collaboration, spark future-oriented thinking, and strengthen the research culture among the academic community. Through a dynamic combination of strategic forums, keynote lectures, and a competitive poster presentation, JGU INSPIRA serves as a catalyst for knowledge exchange, academic excellence, and impactful innovation aligned with global challenges and sustainable development goals (SDGs).';
 
-        return view('layouts.app', [
+        return view('layouts.app', with([
             'ac' => $ac,
             'register' => $register,
             'app_name' => $app_name,
@@ -46,7 +46,7 @@ class AppController extends Controller
 
             'logo' => $logo,
             'content' => $content   ,
-        ]);
+        ]));
     }
 
     public function edit() {
@@ -77,6 +77,19 @@ class AppController extends Controller
             'app_link' => 'required|string',
             'user_avatar' => 'nullable|file|image|mimes:png,jpg,jpeg|max:2048',
         ]);
+
+        $size = 2097152;
+
+        if ($request->hasFile('user_avatar')) {
+            $file = $request->file('user_avatar');
+            if ($file->getSize() == $size) {
+                return redirect()->back()->withErrors(['app_icon' => 'Maximum image size is 2MB.'])->withInput();
+            }
+        }
+
+        if (!filter_var($request->app_link, FILTER_VALIDATE_URL)) {
+            return redirect()->back()->withErrors(['app_link' => 'The URL field must be a valid link.'])->withInput();
+        }
 
         $app = App::first();
         if (!$app) {
