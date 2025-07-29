@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\AgendaTable;
-use App\Models\AgendaText;
+use App\Models\AgendaHead;
 use App\Models\App;
 use App\Models\Home;
 use Illuminate\Http\Request;
@@ -37,9 +37,9 @@ class AppController extends Controller
 
         // Section Agenda
         $agendaTb = AgendaTable::all();
-        $agendaTs = AgendaText::first();
+        $agendaH = AgendaHead::first();
 
-        $agenda = $agendaTs ? $agendaTs->description : 'The International Competition on Research Posters and Oral Presentations, open to students, early-career researchers, lecturer, and young professionals to present their research findings, innovative ideas, or ongoing development projects in a visual, data-driven format. More than just a competition, this activity provides a platform for constructive academic dialogue, with evaluations by a panel of interdisciplinary experts.';
+        $agenda = $agendaH ? $agendaH->description : 'The International Competition on Research Posters and Oral Presentations, open to students, early-career researchers, lecturer, and young professionals to present their research findings, innovative ideas, or ongoing development projects in a visual, data-driven format. More than just a competition, this activity provides a platform for constructive academic dialogue, with evaluations by a panel of interdisciplinary experts.';
 
         return view('layouts.app', with([
             'ac' => $ac,
@@ -56,7 +56,7 @@ class AppController extends Controller
             'content' => $content,
 
             'agendaTb' => $agendaTb,
-            'agendaTs' => $agenda,
+            'agendas' => $agenda,
         ]));
     }
 
@@ -84,42 +84,50 @@ class AppController extends Controller
         $request->validate([
             'app_name' => 'required|string|max:255',
             'university' => 'required|string|max:255',
-            'app_version' => 'required|integer|max:4',
+            'app_version' => 'required|integer',
             'app_link' => 'required|string|url',
             'app_logo' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
         ]);
 
         $size = 2097152;
 
-        if ($request->hasFile('app_logo')) {
-            $file = $request->file('app_logo');
-            if ($file->getSize() == $size) {
-                return redirect()->back()->withErrors(['error' => 'Maximum image size is 2MB.'])->withInput();
+        try {
+            if ($request->hasFile('app_logo')) {
+                $file = $request->file('app_logo');
+                if ($file->getSize() == $size) {
+                    return redirect()->back()->withErrors(['error' => 'Maximum image size is 2MB.'])->withInput();
+                }
             }
+
+            if (strlen($request->input('app_version')) < 4 || strlen($request->input('app_version')) > 4) {
+                return redirect()->back()->withErrors(['error' => 'Year is invalid.'])->withInput();
+            }
+
+            if (!filter_var($request->app_link, FILTER_VALIDATE_URL)) {
+                return redirect()->back()->withErrors(['error' => 'URL field must be a valid link.'])->withInput();
+            }
+
+            $app = App::first();
+            if (!$app) {
+                return redirect()->back()->with('error', 'An error occured.');
+            }
+
+            $app->app_name = $request->input('app_name');
+            $app->university = $request->input('university');
+            $app->app_version = $request->input('app_version');
+            $app->app_link = $request->input('app_link');
+
+            if ($request->hasFile('app_logo')) {
+                $file = $request->file('app_logo');
+                $filename = 'logo_' . time() . '.' . $file->getClientOriginalExtension();
+                $file->storeAs('logo', $filename, 'public');
+                $app->app_icon = 'storage/logo/' . $filename;
+            }
+            $app->save();
+
+            return redirect()->route('main');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => 'An error occurred.'])->withInput();
         }
-
-        if (!filter_var($request->app_link, FILTER_VALIDATE_URL)) {
-            return redirect()->back()->withErrors(['error' => 'The URL field must be a valid link.'])->withInput();
-        }
-
-        $app = App::first();
-        if (!$app) {
-            return redirect()->back()->with('error', 'An error occured.');
-        }
-
-        $app->app_name = $request->input('app_name');
-        $app->university = $request->input('university');
-        $app->app_version = $request->input('app_version');
-        $app->app_link = $request->input('app_link');
-
-        if ($request->hasFile('app_logo')) {
-            $file = $request->file('app_logo');
-            $filename = 'logo_' . time() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('logo', $filename, 'public');
-            $app->app_icon = 'storage/logo/' . $filename;
-        }
-        $app->save();
-
-        return redirect()->route('main');
     }
 }

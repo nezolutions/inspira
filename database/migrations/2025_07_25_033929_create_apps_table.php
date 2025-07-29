@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('app_name');
             $table->string('university');
             $table->string('app_link')->nullable();
-            $table->year('app_version');
+            $table->integer('app_version');
             $table->timestamp('updated_at');
         });
 
@@ -36,7 +36,7 @@ return new class extends Migration
             $table->timestamp('updated_at');
         });
 
-        Schema::create('agenda_texts', function (Blueprint $table) {
+        Schema::create('agenda_heads', function (Blueprint $table) {
             $table->id();
             $table->text('description');
             $table->timestamp('updated_at');
@@ -59,6 +59,7 @@ return new class extends Migration
         Schema::dropIfExists('apps');
         Schema::dropIfExists('homes');
         Schema::dropIfExists('abouts');
-        Schema::dropIfExists('agendas');
+        Schema::dropIfExists('agenda_heads');
+        Schema::dropIfExists('agenda_tables');
     }
 };

@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\About;
 use App\Models\AgendaTable;
-use App\Models\AgendaText;
+use App\Models\AgendaHead;
 use App\Models\Home;
 use App\Models\App;
 use App\Models\User;
@@ -75,7 +75,7 @@ class DatabaseSeeder extends Seeder
             ]
         ]);
         
-        AgendaText::insert([
+        AgendaHead::insert([
             'description' => 'The International Competition on Research Posters and Oral Presentations, open to students, early-career researchers, lecturer, and young professionals to present their research findings, innovative ideas, or ongoing development projects in a visual, data-driven format. More than just a competition, this title provides a platform for constructive academic dialogue, with evaluations by a panel of interdisciplinary experts.'
         ]);
     }

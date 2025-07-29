@@ -6,7 +6,7 @@
         </div>
         <div class="flex flex-col items-center mx-6">
             <p class="text-gray-700 leading-6 lg:leading-7 text-md lg:text-xl max-w-5xl mx-auto text-justify lg:text-center">
-                {{ $agendaTs }}
+                {{ $agendas }}
             </p>
             <div class="w-full max-w-3xl mt-8">
                 <div class="overflow-x-auto rounded-lg shadow-lg">

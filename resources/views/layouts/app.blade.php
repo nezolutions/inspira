@@ -4,7 +4,7 @@
     <x-head :ac="$ac" :name="$app_name" :version="$app_version"></x-head>
 </head>
 <body class="font-['Outfit']">
-    <x-logout></x-logout>
+    <x-panel></x-panel>
     <x-modal></x-modal>
     <header>
         @include('layouts.header')
