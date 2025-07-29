@@ -72,54 +72,52 @@ class AppController extends Controller
         $app_version = $app->app_version;
         $app_link = $app->app_link;
         
-        return view('admin.edit_app', [
+        return view('admin.edit_app', with([
             'ac' => $ac,
             'app_name' => $app_name,
             'app_version' => $app_version,
             'app_link' => $app_link
-        ]);
+        ]));
     }
 
     public function update(Request $request) {
         $request->validate([
-            'app_name' => 'required|string',
-            'university' => 'required|string',
-            'app_version' => 'required|integer',
-            'app_link' => 'required|string',
-            'user_avatar' => 'nullable|file|image|mimes:png,jpg,jpeg|max:2048',
+            'app_name' => 'required|string|max:255',
+            'university' => 'required|string|max:255',
+            'app_version' => 'required|integer|max:4',
+            'app_link' => 'required|string|url',
+            'app_logo' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
         ]);
 
         $size = 2097152;
 
-        if ($request->hasFile('user_avatar')) {
-            $file = $request->file('user_avatar');
+        if ($request->hasFile('app_logo')) {
+            $file = $request->file('app_logo');
             if ($file->getSize() == $size) {
-                return redirect()->back()->withErrors(['app_icon' => 'Maximum image size is 2MB.'])->withInput();
+                return redirect()->back()->withErrors(['error' => 'Maximum image size is 2MB.'])->withInput();
             }
         }
 
         if (!filter_var($request->app_link, FILTER_VALIDATE_URL)) {
-            return redirect()->back()->withErrors(['app_link' => 'The URL field must be a valid link.'])->withInput();
+            return redirect()->back()->withErrors(['error' => 'The URL field must be a valid link.'])->withInput();
         }
 
         $app = App::first();
         if (!$app) {
-            return redirect()->back()->with('error', 'Data aplikasi tidak ditemukan.');
+            return redirect()->back()->with('error', 'An error occured.');
         }
 
-        $app->app_name = $request->app_name;
-        $app->university = $request->university;
-        $app->app_version = $request->app_version;
-        $app->app_link = $request->app_link;
+        $app->app_name = $request->input('app_name');
+        $app->university = $request->input('university');
+        $app->app_version = $request->input('app_version');
+        $app->app_link = $request->input('app_link');
 
-        // Handle upload logo jika ada
-        if ($request->hasFile('user_avatar')) {
-            $file = $request->file('user_avatar');
+        if ($request->hasFile('app_logo')) {
+            $file = $request->file('app_logo');
             $filename = 'logo_' . time() . '.' . $file->getClientOriginalExtension();
-            $path = $file->move(public_path('assets/images'), $filename);
-            $app->app_icon = 'assets/images/' . $filename;
+            $file->storeAs('logo', $filename, 'public');
+            $app->app_icon = 'storage/logo/' . $filename;
         }
-
         $app->save();
 
         return redirect()->route('main');

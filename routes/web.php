@@ -12,3 +12,6 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/e/app', [AppController::class, 'edit']);
 Route::post('/u/app', [AppController::class, 'update']);
+
+Route::get('/e/user', [UserController::class, 'edit'])->name('edit.user');
+Route::post('/u/user', [UserController::class, 'updateUser'])->name('update.user');
