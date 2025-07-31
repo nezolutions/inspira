@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
-use App\Models\AgendaTable;
-use App\Models\AgendaHead;
+use App\Models\Agenda;
 use App\Models\App;
+use App\Models\Fee;
 use App\Models\Home;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,10 +36,13 @@ class AppController extends Controller
         $content = $about ? $about->content : 'is a premier academic platform organized by Jakarta Global University (JGU) that brings together emerging researchers, scholars, and innovators to showcase their ideas and insights in the fields of science, technology, business, and health. Under the theme “International Forum on Innovation, Strategy, and Presentation of Research Activity," this event aims to foster interdisciplinary collaboration, spark future-oriented thinking, and strengthen the research culture among the academic community. Through a dynamic combination of strategic forums, keynote lectures, and a competitive poster presentation, JGU INSPIRA serves as a catalyst for knowledge exchange, academic excellence, and impactful innovation aligned with global challenges and sustainable development goals (SDGs).';
 
         // Section Agenda
-        $agendaTb = AgendaTable::all();
-        $agendaH = AgendaHead::first();
+        $agendaTable = Agenda::orderBy('order')->get();
+        $agenda = Agenda::first();
 
-        $agenda = $agendaH ? $agendaH->description : 'The International Competition on Research Posters and Oral Presentations, open to students, early-career researchers, lecturer, and young professionals to present their research findings, innovative ideas, or ongoing development projects in a visual, data-driven format. More than just a competition, this activity provides a platform for constructive academic dialogue, with evaluations by a panel of interdisciplinary experts.';
+        $agendaDesc = $agenda ? $agenda->description : 'The International Competition on Research Posters and Oral Presentations, open to students, early-career researchers, lecturer, and young professionals to present their research findings, innovative ideas, or ongoing development projects in a visual, data-driven format. More than just a competition, this activity provides a platform for constructive academic dialogue, with evaluations by a panel of interdisciplinary experts.';
+
+        // Section Fee
+        $fee = Fee::orderBy('order')->get();
 
         return view('layouts.app', with([
             'ac' => $ac,
@@ -55,8 +58,10 @@ class AppController extends Controller
             'logo' => $logo,
             'content' => $content,
 
-            'agendaTb' => $agendaTb,
-            'agendas' => $agenda,
+            'agendaTb' => $agendaTable,
+            'agenda' => $agendaDesc,
+
+            'fee' => $fee,
         ]));
     }
 
@@ -108,9 +113,6 @@ class AppController extends Controller
             }
 
             $app = App::first();
-            if (!$app) {
-                return redirect()->back()->with('error', 'An error occured.');
-            }
 
             $app->app_name = $request->input('app_name');
             $app->university = $request->input('university');
@@ -127,7 +129,7 @@ class AppController extends Controller
 
             return redirect()->route('main');
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors(['error' => 'An error occurred.'])->withInput();
+            return redirect()->back()->withErrors('error', 'An error occured: ' . $e->getMessage())->withInput();
         }
     }
 }

@@ -77,6 +77,7 @@ class UserController extends Controller
 
         $user = User::first();
 
+        $un = $user->name;
         $email = $user->email;
         $password = $user->password;
 
@@ -85,6 +86,7 @@ class UserController extends Controller
             'app_name' => $app_name,
             'app_version' => $app_version,
 
+            'name' => $un,
             'email' => $email,
             'password' => $password
         ]));

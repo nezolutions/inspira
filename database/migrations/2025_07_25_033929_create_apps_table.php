@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('university');
             $table->string('app_link')->nullable();
             $table->integer('app_version');
-            $table->timestamp('updated_at');
+            $table->timestamps();
         });
 
         Schema::create('homes', function (Blueprint $table) {
@@ -26,28 +26,35 @@ return new class extends Migration
             $table->string('background')->nullable();
             $table->text('title');
             $table->text('description');
-            $table->timestamp('updated_at');
+            $table->timestamps();
         });
 
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->string('logo')->nullable();
             $table->text('content');
-            $table->timestamp('updated_at');
+            $table->timestamps();
         });
 
-        Schema::create('agenda_heads', function (Blueprint $table) {
+        Schema::create('agendas', function (Blueprint $table) {
             $table->id();
-            $table->text('description');
-            $table->timestamp('updated_at');
-        });
-
-        Schema::create('agenda_tables', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
+            $table->string('agenda')->default('-');
             $table->string('prefix_date')->nullable();
             $table->string('suffix_date')->nullable();
-            $table->timestamp('updated_at');
+            $table->text('description')->default('-');
+            $table->integer('order')->nullable()->unique();
+            $table->timestamps();
+        });
+
+        Schema::create('fees', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->integer('online_fee');
+            $table->string('on_fee_type');
+            $table->integer('offline_fee');
+            $table->string('off_fee_type');
+            $table->integer('order')->nullable()->unique();
+            $table->timestamps();
         });
     }
 
@@ -56,10 +63,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('apps');
-        Schema::dropIfExists('homes');
-        Schema::dropIfExists('abouts');
-        Schema::dropIfExists('agenda_heads');
-        Schema::dropIfExists('agenda_tables');
+        Schema::dropAllTables();
     }
 };
