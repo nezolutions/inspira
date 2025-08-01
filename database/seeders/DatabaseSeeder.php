@@ -7,7 +7,10 @@ use App\Models\Agenda;
 use App\Models\Home;
 use App\Models\App;
 use App\Models\Awards;
+use App\Models\Competition;
 use App\Models\Fee;
+use App\Models\Participant;
+use App\Models\Topic;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -82,6 +85,128 @@ class DatabaseSeeder extends Seeder
                 'suffix_date' => null,
                 'order' => 5
             ]
+        ]);
+
+        Topic::insert([
+            [
+                'order' => 1,
+                'title' => 'Informatic Engineering',
+                'list' => '
+                    <ul class="text-md lg:text-lg p-4">
+                        <li class="list-disc list-inside">Mobile Applications</li>
+                        <li class="list-disc list-inside">Biomedical Informatics</li>
+                        <li class="list-disc list-inside">Systems, Database & Data Mining</li>
+                        <li class="list-disc list-inside">Artificial Intelligence</li>
+                        <li class="list-disc list-inside">Computer Network</li>
+                    </ul>
+                '
+            ],
+            [
+                'order' => 2,
+                'title' => 'Industrial Engineering',
+                'list' => '
+                    <ul class="text-md lg:text-lg p-4">
+                        <li class="list-disc list-inside">Smart & Lean Manufacturing System</li>
+                        <li class="list-disc list-inside">Product Design & Development</li>
+                        <li class="list-disc list-inside">Systems, Database & Data Mining</li>
+                        <li class="list-disc list-inside">Digitalization Supply Chain</li>
+                        <li class="list-disc list-inside">Green Manufacturing</li>
+                        <li class="list-disc list-inside">Quality Management System</li>
+                    </ul>
+                '
+            ],
+            [
+                'order' => 3,
+                'title' => 'Civil Engineering',
+                'list' => '
+                    <ul class="text-md lg:text-lg p-4">
+                        <li class="list-disc list-inside">Structure Engineering</li>
+                        <li class="list-disc list-inside">Road & Bridge Engineering</li>
+                        <li class="list-disc list-inside">Geotech Engineering</li>
+                        <li class="list-disc list-inside">Water Resources Management</li>
+                        <li class="list-disc list-inside">Transportation Engineering</li>
+                        <li class="list-disc list-inside">Disaster Mitigation</li>
+                        <li class="list-disc list-inside">Construction Management</li>
+                        <li class="list-disc list-inside">Earthquake Engineering</li>
+                    </ul>
+                '
+            ],
+            [
+                'order' => 4,
+                'title' => 'Electrical Engineering',
+                'list' => '
+                    <ul class="text-md lg:text-lg p-4">
+                        <li class="list-disc list-inside">Power Transmission & Distribution</li>
+                        <li class="list-disc list-inside">High Voltage Engineering</li>
+                        <li class="list-disc list-inside">Renewable Energy</li>
+                        <li class="list-disc list-inside">Smart Grid Technology</li>
+                        <li class="list-disc list-inside">Robotics</li>
+                        <li class="list-disc list-inside">Power Electronics</li>
+                        <li class="list-disc list-inside">Signal & Image Processing</li>
+                        <li class="list-disc list-inside">Embedded Systems</li>
+                        <li class="list-disc list-inside">VLSI</li>
+                        <li class="list-disc list-inside">Wireless & Mobile Communication</li>
+                    </ul>
+                '
+            ],
+            [
+                'order' => 5,
+                'title' => 'Mechanical engineering',
+                'list' => '
+                    <ul class="text-md lg:text-lg p-4">
+                        <li class="list-disc list-inside">Mechatronics & Robotics</li>
+                        <li class="list-disc list-inside">Applied Mechanics</li>
+                        <li class="list-disc list-inside">Biomedical Engineering</li>
+                        <li class="list-disc list-inside">Composite & Materials Engineering</li>
+                        <li class="list-disc list-inside">Computational Mechanics</li>
+                        <li class="list-disc list-inside">Design Engineering</li>
+                        <li class="list-disc list-inside">Thermal & Fluid Science</li>
+                        <li class="list-disc list-inside">Automotive Engineering</li>
+                    </ul>
+                '
+            ],
+            [
+                'order' => 6,
+                'title' => 'Other (Business & Pharmaceutical Science)',
+                'list' => '
+                    <ul class="text-md lg:text-lg p-4">
+                        <li class="list-disc list-inside">Business & Entrepreneurship in the Tech Era</li>
+                        <li class="list-disc list-inside">Tech-Driven Business Strategies & Economic Sustainability</li>
+                        <li class="list-disc list-inside">Financial Technology (FinTech) & Digital Economy</li>
+                        <li class="list-disc list-inside">Digital Transformation & Smart Technologies</li>
+                        <li class="list-disc list-inside">Sustainability, ESG & Green Business Practices</li>
+                        <li class="list-disc list-inside">Power Electronics</li>
+                        <li class="list-disc list-inside">Marketing & Consumer Behaviour in the Digital Age</li>
+                        <li class="list-disc list-inside">Leadership, Innovation Management & Corporate Strategy</li>
+                        <li class="list-disc list-inside">Pharmaceutical Formulation, Biotechnology & Drug Design</li>
+                        <li class="list-disc list-inside">Herbal Technology, Pharmacology, and Regulatory Compliance</li>
+                    </ul>
+                '
+            ],
+        ]);
+
+        Participant::insert([
+            [
+
+                'title' => 'Researcher & Lecturer',
+            ],
+            [
+                'title' => 'College/University Student',
+            ],
+            [
+                'title' => 'High School Student',
+            ]
+        ]);
+
+        Competition::insert([
+            [
+                'title' => 'Oral Presentation (Online via Zoom/Gmeet)',
+                'content' => 'Participants will deliver a 10-minute research presentation followed by a 3-minute Q&A session with the judges. This category emphasizes clarity, scientific rigor, and effective communication. Presentations will be conducted online via Zoom/Gmeet.'
+            ],
+            [
+                'title' => 'Poster Presentations (On-site)',
+                'content' => 'Participants will present their research through a scientific poster in a face-to-face session with the judges. Each participant will have the opportunity to explain their work and engage in a brief Q&A session. This category emphasizes visual communication, content clarity, and the ability to discuss research findings concisely and confidently. Presentations will take place onsite at the event venue.'
+            ],
         ]);
 
         Awards::insert([

@@ -20,14 +20,17 @@ class AwardsController extends Controller
         $app_name = $app ? $app->app_name : 'INSPIRA';
         $app_version = $app ? $app->app_version : now();
 
-        $awards = Awards::all();
+        $researchers = Awards::where('category', 'Researchers and Lecturers')->orderBy('order')->get();
+        $collegeStudents = Awards::where('category', 'College/University Student')->orderBy('order')->get();
+        $highSchoolStudents = Awards::where('category', 'High School Student')->orderBy('order')->get();
 
         return view('admin.edit_awards', with([
             'ac' => $ac,
             'app_name' => $app_name,
             'app_version' => $app_version,
-
-            'awards' => $awards
+            'researchers' => $researchers,
+            'collegeStudents' => $collegeStudents,
+            'highSchoolStudents' => $highSchoolStudents
         ]));
     }
 
@@ -37,28 +40,60 @@ class AwardsController extends Controller
         }
 
         $request->validate([
-            'awards' => 'required|array',
-            'awards.*.title' => 'required|string',
-            'awards.*.description' => 'required|string',
-            'awards.*.icon' => 'required|string'
+            'researchers' => 'required|array|min:1',
+            'researchers.*.title' => 'required|string|max:255',
+            'researchers.*.description' => 'required|string',
+            'researchers.*.icon' => 'required|string',
+            'collegeStudents' => 'required|array|min:1',
+            'collegeStudents.*.title' => 'required|string|max:255',
+            'collegeStudents.*.description' => 'required|string',
+            'collegeStudents.*.icon' => 'required|string',
+            'highSchoolStudents' => 'required|array|min:1',
+            'highSchoolStudents.*.title' => 'required|string|max:255',
+            'highSchoolStudents.*.description' => 'required|string',
+            'highSchoolStudents.*.icon' => 'required|string',
         ]);
 
         try {
-            foreach ($request->awards as $index => $awardData) {
-                $award = Awards::find($index + 1);
-                
-                if ($award) {
-                    $award->update([
-                        'title' => $awardData['title'],
-                        'description' => $awardData['description'],
-                        'icon' => $awardData['icon']
-                    ]);
-                }
+            // Clear existing awards
+            Awards::truncate();
+
+            // Insert Researchers and Lecturers
+            foreach ($request->researchers as $index => $award) {
+                Awards::create([
+                    'title' => $award['title'],
+                    'description' => $award['description'],
+                    'icon' => $award['icon'],
+                    'category' => 'Researchers and Lecturers',
+                    'order' => $index
+                ]);
+            }
+
+            // Insert College/University Students
+            foreach ($request->collegeStudents as $index => $award) {
+                Awards::create([
+                    'title' => $award['title'],
+                    'description' => $award['description'],
+                    'icon' => $award['icon'],
+                    'category' => 'College/University Student',
+                    'order' => $index
+                ]);
+            }
+
+            // Insert High School Students
+            foreach ($request->highSchoolStudents as $index => $award) {
+                Awards::create([
+                    'title' => $award['title'],
+                    'description' => $award['description'],
+                    'icon' => $award['icon'],
+                    'category' => 'High School Student',
+                    'order' => $index
+                ]);
             }
 
             return redirect()->route('main');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'An error occured: ' . $e->getMessage());
+            return redirect()->back()->withErrors('error', 'An error occured: ' . $e->getMessage())->withInput();
         }
     }
 }

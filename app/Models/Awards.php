@@ -11,5 +11,5 @@ class Awards extends Model
     use HasFactory, Notifiable;
 
     protected $table = 'awards';
-    protected $fillable = ['icon', 'title', 'description', 'category'];
+    protected $fillable = ['icon', 'title', 'description', 'category', 'order'];
 }

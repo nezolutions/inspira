@@ -6,8 +6,11 @@ use App\Models\About;
 use App\Models\Agenda;
 use App\Models\App;
 use App\Models\Awards;
+use App\Models\Competition;
 use App\Models\Fee;
 use App\Models\Home;
+use App\Models\Participant;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,6 +44,13 @@ class AppController extends Controller
         $agenda = Agenda::first();
 
         $agendaDesc = $agenda ? $agenda->description : 'The International Competition on Research Posters and Oral Presentations, open to students, early-career researchers, lecturer, and young professionals to present their research findings, innovative ideas, or ongoing development projects in a visual, data-driven format. More than just a competition, this activity provides a platform for constructive academic dialogue, with evaluations by a panel of interdisciplinary experts.';
+        
+        // Section Topics
+        $topic = Topic::orderBy('order')->get();
+
+        // Section Category
+        $parti = Participant::orderBy('order')->get();
+        $compe = Competition::orderBy('order')->get();
 
         // Section Awards
         $awards = Awards::all();
@@ -65,7 +75,13 @@ class AppController extends Controller
             'agendaTb' => $agendaTable,
             'agenda' => $agendaDesc,
 
+            'topic' => $topic,
+
+            'participant' => $parti,
+            'competition' => $compe,
+            
             'fee' => $fee,
+
             'awards' => $awards,
         ]));
     }
