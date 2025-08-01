@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Agenda;
 use App\Models\App;
+use App\Models\Awards;
 use App\Models\Fee;
 use App\Models\Home;
 use Illuminate\Http\Request;
@@ -41,6 +42,9 @@ class AppController extends Controller
 
         $agendaDesc = $agenda ? $agenda->description : 'The International Competition on Research Posters and Oral Presentations, open to students, early-career researchers, lecturer, and young professionals to present their research findings, innovative ideas, or ongoing development projects in a visual, data-driven format. More than just a competition, this activity provides a platform for constructive academic dialogue, with evaluations by a panel of interdisciplinary experts.';
 
+        // Section Awards
+        $awards = Awards::all();
+
         // Section Fee
         $fee = Fee::orderBy('order')->get();
 
@@ -62,6 +66,7 @@ class AppController extends Controller
             'agenda' => $agendaDesc,
 
             'fee' => $fee,
+            'awards' => $awards,
         ]));
     }
 
@@ -86,6 +91,10 @@ class AppController extends Controller
     }
 
     public function update(Request $request) {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+        
         $request->validate([
             'app_name' => 'required|string|max:255',
             'university' => 'required|string|max:255',

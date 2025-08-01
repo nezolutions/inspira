@@ -12,6 +12,13 @@
         outline: none;
         user-select: none;
     }
+
+    #awards-1 svg, #awards-2 svg, #awards-3 svg {
+        width: 2.4rem;
+        height: 2.4rem;
+        padding: 1px;
+        color: #fff;
+    }
 </style>
 {{-- @vite('resources/css/app.css') --}}
 

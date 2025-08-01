@@ -38,6 +38,10 @@ class HomeController extends Controller
     }
 
     public function update(Request $request) {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+        
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:255',

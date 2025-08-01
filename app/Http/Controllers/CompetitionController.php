@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fee;
+use App\Models\Competition;
 use App\Models\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class FeeController extends Controller
+class CompetitionController extends Controller
 {
     public function edit() {
         if (!Auth::check()) {
@@ -20,14 +20,13 @@ class FeeController extends Controller
         $app_name = $app ? $app->app_name : 'INSPIRA';
         $app_version = $app ? $app->app_version : now();
 
-        $fee = Fee::orderBy('order')->get();
+        $competitions = Competition::orderBy('order')->get();
 
-        return view('admin.edit_fee', with([
+        return view('admin.edit_competition', with([
             'ac' => $ac,
             'app_name' => $app_name,
             'app_version' => $app_version,
-
-            'fee' => $fee
+            'competitions' => $competitions
         ]));
     }
 
@@ -37,24 +36,18 @@ class FeeController extends Controller
         }
         
         $request->validate([
-            'fee' => 'required|array|min:1',
-            'fee.*.title' => 'required|string|max:255',
-            'fee.*.online_fee' => 'required|integer',
-            'fee.*.on_fee_type' => 'required|string',
-            'fee.*.offline_fee' => 'required|integer',
-            'fee.*.off_fee_type' => 'required|string',
+            'competitions' => 'required|array|min:1',
+            'competitions.*.title' => 'required|string|max:255',
+            'competitions.*.content' => 'required|string',
         ]);
         
         try {
-            Fee::truncate();
+            Competition::truncate();
 
-            foreach ($request->fee as $index => $fees) {
-                Fee::create([
-                    'title' => $fees['title'],
-                    'online_fee' => $fees['online_fee'],
-                    'on_fee_type' => $fees['on_fee_type'],
-                    'offline_fee' => $fees['offline_fee'],
-                    'off_fee_type' => $fees['off_fee_type'],
+            foreach ($request->competitions as $index => $competition) {
+                Competition::create([
+                    'title' => $competition['title'],
+                    'content' => $competition['content'],
                     'order' => $index
                 ]);
             }

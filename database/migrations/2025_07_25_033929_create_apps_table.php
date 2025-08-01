@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use function Laravel\Prompts\table;
+
 return new class extends Migration
 {
     /**
@@ -42,7 +44,43 @@ return new class extends Migration
             $table->string('prefix_date')->nullable();
             $table->string('suffix_date')->nullable();
             $table->text('description')->default('-');
-            $table->integer('order')->nullable()->unique();
+            $table->integer('order')->default(0);
+            $table->timestamps();
+        });
+
+        Schema::create('topics', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('list');
+            $table->integer('order')->default(0);
+            $table->timestamps();
+        });
+
+        Schema::create('participants', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->integer('order')->default(0);
+            $table->timestamps();
+        });
+
+        Schema::create('competitions', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('content');
+            $table->integer('order')->default(0);
+            $table->timestamps();
+        });
+
+        Schema::create('awards', function (Blueprint $table) {
+            $table->id();
+            $table->longText('icon')->nullable();
+            $table->string('title');
+            $table->text('description');
+            $table->enum('category', [
+                'Researchers and Lecturers',
+                'College/University Student',
+                'High School Student'
+            ]);
             $table->timestamps();
         });
 
@@ -50,10 +88,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->integer('online_fee');
-            $table->string('on_fee_type');
+            $table->enum('on_fee_type', ['USD', 'IDR']);
             $table->integer('offline_fee');
-            $table->string('off_fee_type');
-            $table->integer('order')->nullable()->unique();
+            $table->enum('off_fee_type', ['USD', 'IDR']);
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }

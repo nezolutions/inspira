@@ -36,6 +36,10 @@ class AboutController extends Controller
     }
 
     public function update(Request $request) {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+        
         $request->validate([
             'content' => 'required|string',
             'background' => 'nullable|image|mimes:png,jpg,jpeg|max:2048'

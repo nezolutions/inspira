@@ -38,6 +38,10 @@ class AgendaController extends Controller
     }
 
     public function update(Request $request) {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+        
         $request->validate([
             'description' => 'required|string',
             'agenda' => 'required|array|min:1',

@@ -28,11 +28,9 @@
     <main class="flex justify-center w-full my-5">
         <form class="max-w-md w-3/4 mx-auto" method="POST" action="{{ url('u/agenda') }}" enctype="multipart/form-data">
             @csrf
-            <div class="bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-700 mb-5">
-                <div class="relative z-0 w-full mb-5 group">
-                    <textarea name="description" id="description" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer min-h-50 max-h-90" placeholder=" " required>{{ old('description', $description) }}</textarea>
-                    <label for="description" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Description</label>
-                </div>
+            <div class="relative z-0 w-full my-5 group">
+                <textarea type="text" name="description" id="description" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer min-h-50 max-h-90" placeholder=" " required >{{ old('description', $description) }}</textarea>
+                <label for="description" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Content</label>
             </div>
             <div id="agenda-items">
                 @if(isset($agenda) && count($agenda) > 0)

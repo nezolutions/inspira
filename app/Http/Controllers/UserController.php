@@ -117,7 +117,7 @@ class UserController extends Controller
             $user->password = bcrypt($request->input('password'));
             $user->save();
 
-            return redirect()->route('main');
+            return redirect()->route('login');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => 'An error occurred.'])->withInput();
         }
