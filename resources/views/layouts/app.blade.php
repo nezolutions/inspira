@@ -1,40 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <x-head :ac="$ac" :name="$app_name" :version="$app_version"></x-head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ $app->app_name }}</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    {{-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> --}}
+    @vite('resources/css/app.css')
 </head>
-<body class="font-['Outfit']">
-    <x-panel></x-panel>
-    <x-modal></x-modal>
-    <header>
-        @include('layouts.header')
-    </header>
-    <main>
-        <section id="home">
-            @include('pages.home')
-        </section>
-        <x-navbar></x-navbar>
-        <section id="about">
-            @include('pages.about')
-        </section>
-        <section id="agenda">
-            @include('pages.agenda')
-        </section>
-        <section id="topics">
-            @include('pages.topics')
-        </section>
-        <section id="category">
-            @include('pages.category')
-        </section>
-        <section id="awards">
-            @include('pages.awards')
-        </section>
-        <section id="fee">
-            @include('pages.fee')
-        </section>
-    </main>
-    <footer>
-        @include('layouts.footer')
-    </footer>
+<body class="font-['Outfit'] selection:bg-red-600 selection:text-white">
+    @yield('content')
 </body>
+<script src="{{ asset('script.js')}}"></script>
 </html>

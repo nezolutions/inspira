@@ -17,9 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('app_icon')->nullable();
             $table->string('app_name');
-            $table->string('university');
-            $table->string('app_link')->nullable();
-            $table->integer('app_version');
+            $table->string('register')->nullable();
             $table->timestamps();
         });
 
@@ -34,7 +32,8 @@ return new class extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->string('logo')->nullable();
-            $table->text('content');
+            $table->mediumText('content');
+            $table->mediumText('hightlight');
             $table->timestamps();
         });
 

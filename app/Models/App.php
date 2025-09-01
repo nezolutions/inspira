@@ -11,5 +11,5 @@ class App extends Model
     use HasFactory, Notifiable;
     
     protected $table = 'apps';
-    protected $fillable = ['app_icon', 'app_name', 'app_version', 'app_link', 'university'];
+    protected $fillable = ['app_icon', 'app_name', 'register'];
 }

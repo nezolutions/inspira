@@ -1,0 +1,39 @@
+@extends('layouts.app')
+
+@section('content')
+    <x-panel></x-panel>
+    <x-navbar></x-navbar>
+    {{-- <x-modal></x-modal> --}}
+
+    <header>
+        @include('layouts.header')
+    </header>
+
+    <main>
+        {{--<section id="home">
+            @include('pages.home')
+        </section>
+        <section id="about">
+            @include('pages.about')
+        </section>
+        <section id="agenda">
+            @include('pages.agenda')
+        </section>
+        <section id="topics">
+            @include('pages.topics')
+        </section>
+        <section id="category">
+            @include('pages.category')
+        </section>
+        <section id="awards">
+            @include('pages.awards')
+        </section>
+        <section id="fee">
+            @include('pages.fee')
+        </section> --}}
+    </main>
+    
+    <footer>
+        @include('layouts.footer')
+    </footer>
+@endsection

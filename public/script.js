@@ -1,0 +1,34 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Navigation Modal
+    const modal = document.getElementById('default-modal');
+    const toggleBtn = document.querySelector('[data-modal-toggle="default-modal"]');
+    const closeBtns = document.querySelectorAll('[data-modal-hide="default-modal"]');
+
+    function toggleModal() {
+        if (modal.classList.contains('hidden')) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        } else {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    }
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', toggleModal);
+    }
+
+    closeBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+    });
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    });
+});

@@ -1,0 +1,4 @@
+button, input, textarea {
+    outline: none;
+    user-select: none;
+}

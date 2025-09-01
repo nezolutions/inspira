@@ -1,4 +1,4 @@
-<div class="flex flex-row items-center space-x-2 select-none py-2">
-    <img class="w-16" src="{{ $icon }}" draggable="false" />
-    <h1 class="text-3xl text-red-600 font-bold tracking-tight">{{ $name }} {{ $version }}</h1>
+<div class="flex flex-row items-center gap-2 select-none">
+    <img class="w-16" src="{{ $icon ?? 'images/icon.png' }}" draggable="false" />
+    <h1 class="text-3xl text-red-600 font-semibold tracking-tight">{{ $name ?? 'JGU INSPIRA ' . now()->format('Y') }}</h1>
 </div>
