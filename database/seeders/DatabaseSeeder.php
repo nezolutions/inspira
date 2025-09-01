@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
 
         Home::create([
             'background' => 'images/background.png',
-            'title' => 'International Forum on Innovation, Strategy, and Presentation of Research title',
+            'title' => '<b><em>International Forum</em></b> on Innovation, Strategy, and Presentation of Research Activity',
             'description' => 'Bridging engineering, business, and pharmaceutical expertise to advance technological innovation for global impact'
         ]);
 
