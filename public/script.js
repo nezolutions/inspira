@@ -1,3 +1,14 @@
+setTimeout(function() {
+    const notifications = document.querySelectorAll('.errors');
+    notifications.forEach(function(notification) {
+        notification.style.transition = 'opacity 0.5s';
+        notification.style.opacity = '0';
+        setTimeout(function() {
+            notification.style.display = 'none';
+        }, 500);
+    });
+}, 5000);
+
 document.addEventListener('DOMContentLoaded', () => {
     // Navigation Modal
     const modal = document.getElementById('default-modal');

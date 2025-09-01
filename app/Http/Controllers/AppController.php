@@ -71,8 +71,10 @@ class AppController extends Controller
             $file = $request->file('app_icon');
             $size = 2097152;
 
-            if ($file->getSize() == $size) {
-                return redirect()->back()->withErrors(['error' => 'Maximum image size is 2MB.'])->withInput();
+            if ($request->hasFile('app_icon')) {
+                if ($file->getSize() == $size) {
+                    return redirect()->back()->withErrors(['error' => 'Maximum image size is 2MB.'])->withInput();
+                }
             }
 
             if (!filter_var($request->register, FILTER_VALIDATE_URL)) {
@@ -83,10 +85,14 @@ class AppController extends Controller
 
             $app->app_name = $request->input('app_name');
             $app->register = $request->input('register');
+            $app->is_name_showed = !$app->is_name_showed;
+            $app->is_image_fit = !$app->is_image_fit;
 
-            $filename = 'icon_' . time() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('icon', $filename, 'public');
-            $app->app_icon = 'storage/icon/' . $filename;
+            if ($request->hasFile('app_icon')) {
+                $filename = 'icon_' . time() . '.' . $file->getClientOriginalExtension();
+                $file->storeAs('icon', $filename, 'public');
+                $app->app_icon = 'storage/icon/' . $filename;
+            }
 
             $app->save();
 

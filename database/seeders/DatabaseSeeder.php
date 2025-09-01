@@ -31,17 +31,19 @@ class DatabaseSeeder extends Seeder
             'created_at' => now()
         ]);
 
-        // App::create([
-        //     'app_icon' => '/images/icon.png',
-        //     'app_name' => 'JGU INSPIRA ' . now()->format('Y'),
-        //     'register' => 'https://docs.google.com/forms/d/e/1FAIpQLScu_P8sgARBq5Apvboqu9yqBMFHLTYgI_jSWtdVrMeVyNSD5w/viewform',
-        // ]);
+        App::create([
+            'app_icon' => 'images/icon.png',
+            'app_name' => 'JGU-WXUT INSPIRA ' . now()->format('Y'),
+            'is_name_showed' => true,
+            'is_image_fit' => false,
+            'register' => 'https://docs.google.com/forms/d/e/1FAIpQLScu_P8sgARBq5Apvboqu9yqBMFHLTYgI_jSWtdVrMeVyNSD5w/viewform'
+        ]);
 
-        // Home::create([
-        //     'background' => 'images/background.png',
-        //     'title' => 'International Forum on Innovation, Strategy, and Presentation of Research title',
-        //     'description' => 'Bridging engineering, business, and pharmaceutical expertise to advance technological innovation for global impact'
-        // ]);
+        Home::create([
+            'background' => 'images/background.png',
+            'title' => 'International Forum on Innovation, Strategy, and Presentation of Research title',
+            'description' => 'Bridging engineering, business, and pharmaceutical expertise to advance technological innovation for global impact'
+        ]);
 
         // About::insert([
         //     'logo' => 'assets/images/icon.png',

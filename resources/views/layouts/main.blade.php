@@ -1,18 +1,20 @@
 @extends('layouts.app')
 
+@section('title', $app->app_name ?? 'JGU-WXUT INSPIRA ' . now()->format('Y'))
+
 @section('content')
     <x-panel></x-panel>
     <x-navbar></x-navbar>
-    {{-- <x-modal></x-modal> --}}
+    <x-modal></x-modal>
 
     <header>
         @include('layouts.header')
     </header>
 
     <main>
-        {{--<section id="home">
+        <section id="home">
             @include('pages.home')
-        </section>
+        {{--</section>
         <section id="about">
             @include('pages.about')
         </section>

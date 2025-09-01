@@ -1,10 +1,10 @@
-<div class="relative z-0 w-full h-screen bg-red-600 blur-xs" style="background-image: url('{{ $bg }}'); background-size: cover; background-position: center; background-attachment: fixed;"></div>
-<div class="absolute top-0 z-10 w-full h-screen bg-gradient-to-b from-red-600/75 to-red-900/75"></div>
+<div class="relative z-0 w-full h-screen bg-red-600 blur-xs" style="background-image: url('{{ $home->background ?? 'images/background.png' }}'); background-size: cover; background-position: center; background-attachment: fixed;"></div>
+<div class="absolute top-0 z-10 w-full h-screen bg-gradient-to-b from-gray-600/75 to-gray-900/75"></div>
 <div class="absolute z-20 top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-screen flex flex-col items-center justify-center">
     <div class="text-center space-y-4 mx-6">
-        <p class="text-white text-xl lg:text-3xl font-semibold">{{ $ac }} {{ $app_name }} {{ $app_version }}</p>
-        <h1 class="text-white text-3xl lg:text-6xl font-bold">{{ $judul }}</h1>
-        <p class="text-gray-200 text-lg lg:text-2xl">{{ $deskripsi }}</p>
+        <p class="text-white text-xl lg:text-3xl font-semibold">{{ $app->app_name ?? 'JGU-WXUT INSPIRA ' . now()->format('Y') }}</p>
+        <h1 class="text-white text-3xl lg:text-6xl font-bold">{{ $home->title ?? 'Lorem Ipsum' }}</h1>
+        <p class="text-gray-200 text-lg lg:text-2xl">{{ $home->description ?? 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis laudantium tenetur et suscipit minus, aut a quae provident quaerat quo reiciendis nisi impedit eius voluptatem dolores, nam consequatur neque?' }}</p>
     </div>
     @if (auth()->check())
         <div class="relative top-10 w-fit z-10 text-lg">

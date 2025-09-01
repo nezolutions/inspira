@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('app_icon')->nullable();
             $table->string('app_name');
+            $table->boolean('is_name_showed');
+            $table->boolean('is_image_fit');
             $table->string('register')->nullable();
             $table->timestamps();
         });
