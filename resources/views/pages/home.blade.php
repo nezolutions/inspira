@@ -1,4 +1,4 @@
-<div class="relative z-0 w-full min-h-screen bg-red-600 blur-xs bg-cover bg-no-repeat bg-center bg-fixed" style="background-image: url('{{ $home->background ?? 'images/background.png' }}');"></div>
+<div class="relative z-0 w-full min-h-screen bg-gray-600 blur-xs bg-cover bg-no-repeat bg-center bg-fixed" style="background-image: url('{{ $home->background ?? 'images/background.png' }}');"></div>
 <div class="absolute top-0 z-10 w-full min-h-screen bg-gradient-to-b from-gray-200/40 to-gray-600/90"></div>
 <div class="absolute top-0 z-20 w-full min-h-screen flex flex-col items-center justify-center px-4">
     <div class="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 items-center">

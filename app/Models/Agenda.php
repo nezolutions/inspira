@@ -11,5 +11,5 @@ class Agenda extends Model
     use HasFactory, Notifiable;
 
     protected $table = 'agendas';
-    protected $fillable = ['description', 'agenda', 'prefix_date', 'suffix_date', 'venue', 'order'];
+    protected $fillable = ['description', 'agenda', 'prefix_date', 'suffix_date', 'order'];
 }

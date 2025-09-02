@@ -3,7 +3,7 @@
 @section('title', $app->app_name ?? 'JGU-WXUT INSPIRA ' . now()->format('Y'))
 
 @section('content')
-    <x-navbar :register="$app->register"></x-navbar>
+    @include('components.navbar')
     <x-panel></x-panel>
     <x-modal></x-modal>
 

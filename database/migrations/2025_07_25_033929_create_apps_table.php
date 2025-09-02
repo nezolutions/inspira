@@ -43,7 +43,6 @@ return new class extends Migration
             $table->string('agenda')->default('-');
             $table->string('prefix_date')->nullable();
             $table->string('suffix_date')->nullable();
-            $table->string('venue')->default('-');
             $table->text('description')->default('-');
             $table->integer('order')->default(0);
             $table->timestamps();

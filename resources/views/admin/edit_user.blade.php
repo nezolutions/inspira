@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <x-head :ac="$ac" :name="$app_name" :version="$app_version"></x-head>
-</head>
-<body class="font-['Outfit'] bg-gray-900 min-h-screen flex items-center justify-center">
+@extends('layouts.app')
+
+@section('title', 'Account Settings')
+
+@section('content')
+<section class="font-['Outfit'] bg-gray-900 min-h-screen flex items-center justify-center">
     @if($errors->any())
         <div class="fixed top-4 right-4 border-1 bg-gray-800 border-red-500 text-white px-4 py-2 rounded-lg shadow-lg z-50">
             <ul>
@@ -52,5 +52,5 @@
             </a>
         </div>
     </form>
-</body>
-</html>
+</section>
+@endsection
