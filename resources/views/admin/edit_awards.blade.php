@@ -28,7 +28,6 @@
     <main class="flex justify-center w-full my-5">
         <form class="max-w-md w-3/4 mx-auto" method="POST" action="{{ url('u/awards') }}" enctype="multipart/form-data">
             @csrf
-            
             <!-- Researchers and Lecturers Section -->
             <h3 class="font-bold text-xl lg:text-2xl mb-5 text-gray-300">Researchers and Lecturers</h3>
             <div id="researchers-items">

@@ -3,8 +3,9 @@
 @section('title', 'Edit App')
 
 @section('content')
+<section class="font-['Outfit'] bg-gray-900 w-full min-h-screen flex items-center">
     @if($errors->any())
-        <div class="errors fixed top-4 right-4 border-1 bg-gray-800 border-red-500 text-white px-4 py-2 rounded-lg shadow-lg z-50">
+        <div class="fixed top-4 right-4 border-1 bg-gray-800 border-red-500 text-white px-4 py-2 rounded-lg shadow-lg z-50">
             <ul>
                 @foreach($errors->all() as $error)
                     <li class="list-disc list-inside">{{ $error }}</li>
@@ -12,9 +13,20 @@
             </ul>
         </div>
     @endif
-    
-    <section class="flex items-center justify-center w-full min-h-screen bg-gray-800">
-        <form class="max-w-sm w-3/4" method="POST" action="{{ url('u/app') }}" enctype="multipart/form-data">
+    <script>
+        setTimeout(function() {
+            const notifications = document.querySelectorAll('.fixed');
+            notifications.forEach(function(notification) {
+                notification.style.transition = 'opacity 0.5s';
+                notification.style.opacity = '0';
+                setTimeout(function() {
+                    notification.style.display = 'none';
+                }, 500);
+            });
+        }, 5000);
+    </script>    
+    <main class="flex justify-center w-full my-5">
+        <form class="max-w-md w-3/4 mx-auto" method="POST" action="{{ url('u/app') }}" enctype="multipart/form-data">
             @csrf
             <div class="flex-1 items-center gap-2">
                 <div class="relative z-0 w-full mb-5 group">
@@ -24,11 +36,11 @@
                 <div class="flex-1 mb-5 gap-2 text-gray-300 text-sm">
                     <div class="flex items-center gap-2 mb-2">
                         <input type="checkbox" name="is_name_showed" id="is_name_showed" value="{{ $app->is_name_showed === 1 ?? 0}}" {{ $app->is_name_showed ? 'checked' : ''}}>
-                        <span>Show name in navbar</span>
+                        <label>Show name in navbar</label>
                     </div>
                     <div class="flex items-center gap-2 mb-2">
                         <input type="checkbox" name="is_image_fit" id="is_image_fit" value="{{ $app->is_image_fit === 1 ?? 0}}" {{ $app->is_image_fit ? 'checked' : ''}}>
-                        <span>Fit icon size</span>
+                        <label>Fill icon size</label>
                     </div>
                 </div>
             </div>
@@ -58,5 +70,6 @@
                 </a>
             </div>
         </form>
+    </main>
     </section>
 @endsection

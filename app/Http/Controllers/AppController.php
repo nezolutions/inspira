@@ -85,8 +85,8 @@ class AppController extends Controller
 
             $app->app_name = $request->input('app_name');
             $app->register = $request->input('register');
-            $app->is_name_showed = !$app->is_name_showed;
-            $app->is_image_fit = !$app->is_image_fit;
+            $app->is_name_showed = $request->has('is_name_showed') ? 1 : 0;
+            $app->is_image_fit = $request->has('is_image_fit') ? 1 : 0;
 
             if ($request->hasFile('app_icon')) {
                 $filename = 'icon_' . time() . '.' . $file->getClientOriginalExtension();
