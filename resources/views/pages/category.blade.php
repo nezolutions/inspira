@@ -8,7 +8,7 @@
             <div class="w-full mb-8 text-gray-700 text-xl mx-auto">
                 <h3 class="font-bold text-xl lg:text-2xl mb-4">Participant Category</h3>
                 <ul class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
-                    @forelse ($participant as $p)
+                    @forelse ($parti as $p)
                         <li class="group transition-all duration-300 bg-white border-t-3 rounded-2xl shadow-lg flex flex-col items-center py-8 px-6 text-center {{ $p->id % 2 === 0 ? 'border-t-red-600' : 'border-t-gray-700' }}">
                             <div class="flex items-center justify-center w-14 h-14 rounded-full bg-red-50 mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 {{ $p->id % 2 === 0 ? 'text-red-600' : 'text-gray-700' }}">
@@ -48,7 +48,7 @@
             <div class="w-full text-gray-700 text-xl mx-auto">
                 <h3 class="font-bold text-xl lg:text-2xl mb-4">Competition Category</h3>
                 <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-                    @forelse ($competition as $c)
+                    @forelse ($compe as $c)
                         <li class="shadow-lg rounded-lg h-full lg:h-64 border-t-3 {{ $c->id % 2 === 0 ? 'border-t-gray-700' : 'border-t-red-600' }} p-4 bg-white space-y-2">
                             <h4 class="text-black font-semibold text-lg lg:text-xl flex flex-row items-center">
                                 @if ($c->id % 2 === 1)

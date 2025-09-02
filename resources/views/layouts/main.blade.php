@@ -3,8 +3,8 @@
 @section('title', $app->app_name ?? 'JGU-WXUT INSPIRA ' . now()->format('Y'))
 
 @section('content')
+    <x-navbar :register="$app->register"></x-navbar>
     <x-panel></x-panel>
-    <x-navbar></x-navbar>
     <x-modal></x-modal>
 
     <header>
@@ -14,7 +14,7 @@
     <main>
         <section id="home">
             @include('pages.home')
-        {{--</section>
+        </section>
         <section id="about">
             @include('pages.about')
         </section>
@@ -32,7 +32,7 @@
         </section>
         <section id="fee">
             @include('pages.fee')
-        </section> --}}
+        </section>
     </main>
     
     <footer>

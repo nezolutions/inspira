@@ -1,17 +1,21 @@
 <div class="flex flex-col items-center justify-center w-full py-16 lg:py-0 min-h-screen bg-transparent">
-    <div class="flex flex-col items-center gap-3 lg:space-y-0 w-full max-w-7xl">
+    <div class="flex flex-col items-center gap-3 lg:space-y-0 w-full max-w-7xl px-4">
         <div class="flex flex-col items-center justify-center my-6">
-            <h2 class="text-3xl lg:text-4xl font-bold mb-2">What is {{ $ac }} {{ $app_name }}?</h2>
+            <h2 class="text-3xl lg:text-4xl text-center font-bold mb-2">What is {{ $app->app_name }}?</h2>
             <div class="w-24 h-1 bg-red-600 rounded-full"></div>
         </div>
-        <div class="flex flex-col lg:flex-row items-center mx-6">
-            <img class="w-70 lg:w-80 pb-18 select-none" draggable="false" src="{{ $logo }}">
-            <p class="text-gray-700 text-md leading-6 lg:leading-7 lg:text-xl text-justify max-w-3xl ms-0 lg:ms-16">
-                <span class="ms-6 lg:ms-12 font-semibold">{{ $ac }} {{ $app_name }}</span> {{ $content }}
+        <div class="w-full flex flex-col lg:flex-row items-center mx-6">
+            <img class="w-70 lg:w-80 pb-18 select-none" draggable="false" src="{{ $about->logo }}">
+            <p class="text-gray-700 text-sm leading-6 lg:leading-7 lg:text-lg text-justify ms-0 lg:ms-16">
+                <span class="ms-6 lg:ms-12 font-semibold">{{ $app->app_name }}</span> {{ $about->content }}
             </p>
         </div>
+        <div class="w-full">
+            <span class="text-xl uppercase font-semibold">hightlight</span>
+            <p class="text-gray-700 text-sm leading-6 lg:leading-7 lg:text-lg text-justify">{{ $about->hightlight }}</p>
+        </div>
     </div>
-    @if (auth()->check())
+    @auth
         <div class="relative top-10 w-fit z-10 text-lg">
             <a href="{{ url('e/about') }}" class="flex items-center text-white bg-gray-700 rounded-full border hover:bg-gray-800 border-gray-600 px-4 py-2 transition">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 me-2">
@@ -21,5 +25,5 @@
                 Edit
             </a>
         </div>
-    @endif
+    @endauth
 </div>
