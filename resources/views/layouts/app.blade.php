@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     {{-- @vite('resources/css/app.css') --}}
 </head>
-<body class="font-['Outfit']">
+<body class="font-['Outfit'] selection:bg-blue-600 selection:text-white">
     @yield('content')
 </body>
 <script src="{{ asset('script.js')}}"></script>

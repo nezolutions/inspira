@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center justify-center w-full min-h-screen bg-transparent py-16 lg:py-36">
+<div class="flex flex-col items-center justify-center w-full py-16 min-h-screen bg-transparent">
     <div class="space-y-3 w-full max-w-7xl">
         <div class="flex flex-col items-center justify-center mb-6">
             <h2 class="text-3xl lg:text-4xl font-bold mb-2">Topics as Relevant</h2>
@@ -48,7 +48,6 @@
                     </div>
                 @endforelse
             </div>
-        @else
             <div class="flex flex-col lg:grid mx-6 grid-cols-2 items-center gap-6 pb-2 text-gray-700">
                 <div class="shadow-lg rounded-lg w-full h-96">
                     <h3 class="text-xl lg:text-2xl text-white font-bold bg-gray-700 rounded-t-lg p-4">Electrical Engineering</h3>

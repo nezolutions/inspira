@@ -48,143 +48,142 @@ class DatabaseSeeder extends Seeder
         About::insert([
             'logo' => 'images/cover.png',
             'content' => 'is a premier academic platform organized by Jakarta Global University (JGU) that brings together emerging researchers, scholars, and innovators to showcase their ideas and insights in the fields of science, technology, business, and health. Under the theme “International Forum on Innovation, Strategy, and Presentation of Research title," this event aims to foster interdisciplinary collaboration, spark future-oriented thinking, and strengthen the research culture among the academic community. Through a dynamic combination of strategic forums, keynote lectures, and a competitive poster presentation, JGU INSPIRA serves as a catalyst for knowledge exchange, academic excellence, and impactful innovation aligned with global challenges and sustainable development goals (SDGs).',
-            'hightlight' => 'The highlight agenda is the Strategic Forum titled "Strengthening the Triple Helix for Sustainable Growth and Innovation", which brings together thought leaders from academia, industry, and government. This forum aims to reinforce collaboration among key stakeholders in building a sustainable innovation ecosystem. Through panel discussions, interactive sessions, and the exchange of best practices, the forum will explore strategic pathways to drive knowledge- and technology-based economic development. Venue: Jakarta Global University ballroom, Wednesday, October, 20-22 2025'
         ]);
 
-        Agenda::create([
-            'description' => 'The International Competition on Research Posters and Oral Presentations, open to students, early-career researchers, lecturer, and young professionals to present their research findings, innovative ideas, or ongoing development projects in a visual, data-driven format. More than just a competition, this activity provides a platform for constructive academic dialogue, with evaluations by a panel of interdisciplinary experts.'
-        ]);
+        // Agenda::create([
+        //     'description' => 'The highlight agenda is the Strategic Forum titled "Strengthening the Triple Helix for Sustainable Growth and Innovation", which brings together thought leaders from academia, industry, and government. This forum aims to reinforce collaboration among key stakeholders in building a sustainable innovation ecosystem. Through panel discussions, interactive sessions, and the exchange of best practices, the forum will explore strategic pathways to drive knowledge- and technology-based economic development.<br/><b>Venue: Jakarta Global University ballroom, Wednesday, October, 20-22 2025</b>'
+        // ]);
+        
+        // Agenda::insert([
+        //     [
+        //         'agenda' => 'Submission & Payment',
+        //         'prefix_date' => now()->format('F jS Y'),
+        //         'suffix_date' => Carbon::parse('2025-10-10')->format('F jS Y'),
+        //         'order' => 1
+        //     ],
+        //     [
+        //         'agenda' => 'Poster Upload Dateline',
+        //         'prefix_date' => Carbon::parse('2025-10-10')->format('F jS Y'),
+        //         'suffix_date' => null,
+        //         'order' => 2
+        //     ],
+        //     [
+        //         'agenda' => 'Presentation (Online)',
+        //         'prefix_date' => Carbon::parse('2025-10-10')->format('F jS Y'),
+        //         'suffix_date' => Carbon::parse('2025-10-15')->format('F jS Y'),
+        //         'order' => 3
+        //     ],
+        //     [
+        //         'agenda' => 'Presentation (Offline)',
+        //         'prefix_date' => Carbon::parse('2025-10-21')->format('F jS Y'),
+        //         'suffix_date' => null,
+        //         'order' => 4
+        //     ],
+        //     [
+        //         'agenda' => 'Announcement & Awards',
+        //         'prefix_date' => Carbon::parse('2025-10-22')->format('F jS Y'),
+        //         'suffix_date' => null,
+        //         'order' => 5
+        //     ]
+        // ]);
 
-        Agenda::insert([
-            [
-                'agenda' => 'Submission & Payment',
-                'prefix_date' => now()->format('F jS Y'),
-                'suffix_date' => Carbon::parse('2025-10-10')->format('F jS Y'),
-                'order' => 1
-            ],
-            [
-                'agenda' => 'Poster Upload Dateline',
-                'prefix_date' => Carbon::parse('2025-10-10')->format('F jS Y'),
-                'suffix_date' => null,
-                'order' => 2
-            ],
-            [
-                'agenda' => 'Presentation (Online)',
-                'prefix_date' => Carbon::parse('2025-10-10')->format('F jS Y'),
-                'suffix_date' => Carbon::parse('2025-10-15')->format('F jS Y'),
-                'order' => 3
-            ],
-            [
-                'agenda' => 'Presentation (Offline)',
-                'prefix_date' => Carbon::parse('2025-10-21')->format('F jS Y'),
-                'suffix_date' => null,
-                'order' => 4
-            ],
-            [
-                'agenda' => 'Announcement & Awards',
-                'prefix_date' => Carbon::parse('2025-10-22')->format('F jS Y'),
-                'suffix_date' => null,
-                'order' => 5
-            ]
-        ]);
-
-        Topic::insert([
-            [
-                'order' => 1,
-                'title' => 'Informatic Engineering',
-                'list' => '
-                    <ul class="text-md lg:text-lg p-4">
-                        <li class="list-disc list-inside">Mobile Applications</li>
-                        <li class="list-disc list-inside">Biomedical Informatics</li>
-                        <li class="list-disc list-inside">Systems, Database & Data Mining</li>
-                        <li class="list-disc list-inside">Artificial Intelligence</li>
-                        <li class="list-disc list-inside">Computer Network</li>
-                    </ul>
-                '
-            ],
-            [
-                'order' => 2,
-                'title' => 'Industrial Engineering',
-                'list' => '
-                    <ul class="text-md lg:text-lg p-4">
-                        <li class="list-disc list-inside">Smart & Lean Manufacturing System</li>
-                        <li class="list-disc list-inside">Product Design & Development</li>
-                        <li class="list-disc list-inside">Systems, Database & Data Mining</li>
-                        <li class="list-disc list-inside">Digitalization Supply Chain</li>
-                        <li class="list-disc list-inside">Green Manufacturing</li>
-                        <li class="list-disc list-inside">Quality Management System</li>
-                    </ul>
-                '
-            ],
-            [
-                'order' => 3,
-                'title' => 'Civil Engineering',
-                'list' => '
-                    <ul class="text-md lg:text-lg p-4">
-                        <li class="list-disc list-inside">Structure Engineering</li>
-                        <li class="list-disc list-inside">Road & Bridge Engineering</li>
-                        <li class="list-disc list-inside">Geotech Engineering</li>
-                        <li class="list-disc list-inside">Water Resources Management</li>
-                        <li class="list-disc list-inside">Transportation Engineering</li>
-                        <li class="list-disc list-inside">Disaster Mitigation</li>
-                        <li class="list-disc list-inside">Construction Management</li>
-                        <li class="list-disc list-inside">Earthquake Engineering</li>
-                    </ul>
-                '
-            ],
-            [
-                'order' => 4,
-                'title' => 'Electrical Engineering',
-                'list' => '
-                    <ul class="text-md lg:text-lg p-4">
-                        <li class="list-disc list-inside">Power Transmission & Distribution</li>
-                        <li class="list-disc list-inside">High Voltage Engineering</li>
-                        <li class="list-disc list-inside">Renewable Energy</li>
-                        <li class="list-disc list-inside">Smart Grid Technology</li>
-                        <li class="list-disc list-inside">Robotics</li>
-                        <li class="list-disc list-inside">Power Electronics</li>
-                        <li class="list-disc list-inside">Signal & Image Processing</li>
-                        <li class="list-disc list-inside">Embedded Systems</li>
-                        <li class="list-disc list-inside">VLSI</li>
-                        <li class="list-disc list-inside">Wireless & Mobile Communication</li>
-                    </ul>
-                '
-            ],
-            [
-                'order' => 5,
-                'title' => 'Mechanical engineering',
-                'list' => '
-                    <ul class="text-md lg:text-lg p-4">
-                        <li class="list-disc list-inside">Mechatronics & Robotics</li>
-                        <li class="list-disc list-inside">Applied Mechanics</li>
-                        <li class="list-disc list-inside">Biomedical Engineering</li>
-                        <li class="list-disc list-inside">Composite & Materials Engineering</li>
-                        <li class="list-disc list-inside">Computational Mechanics</li>
-                        <li class="list-disc list-inside">Design Engineering</li>
-                        <li class="list-disc list-inside">Thermal & Fluid Science</li>
-                        <li class="list-disc list-inside">Automotive Engineering</li>
-                    </ul>
-                '
-            ],
-            [
-                'order' => 6,
-                'title' => 'Other (Business & Pharmaceutical Science)',
-                'list' => '
-                    <ul class="text-md lg:text-lg p-4">
-                        <li class="list-disc list-inside">Business & Entrepreneurship in the Tech Era</li>
-                        <li class="list-disc list-inside">Tech-Driven Business Strategies & Economic Sustainability</li>
-                        <li class="list-disc list-inside">Financial Technology (FinTech) & Digital Economy</li>
-                        <li class="list-disc list-inside">Digital Transformation & Smart Technologies</li>
-                        <li class="list-disc list-inside">Sustainability, ESG & Green Business Practices</li>
-                        <li class="list-disc list-inside">Power Electronics</li>
-                        <li class="list-disc list-inside">Marketing & Consumer Behaviour in the Digital Age</li>
-                        <li class="list-disc list-inside">Leadership, Innovation Management & Corporate Strategy</li>
-                        <li class="list-disc list-inside">Pharmaceutical Formulation, Biotechnology & Drug Design</li>
-                        <li class="list-disc list-inside">Herbal Technology, Pharmacology, and Regulatory Compliance</li>
-                    </ul>
-                '
-            ],
-        ]);
+        // Topic::insert([
+        //     [
+        //         'order' => 1,
+        //         'title' => 'Informatic Engineering',
+        //         'list' => '
+        //             <ul class="text-md lg:text-lg p-4">
+        //                 <li class="list-disc list-inside">Mobile Applications</li>
+        //                 <li class="list-disc list-inside">Biomedical Informatics</li>
+        //                 <li class="list-disc list-inside">Systems, Database & Data Mining</li>
+        //                 <li class="list-disc list-inside">Artificial Intelligence</li>
+        //                 <li class="list-disc list-inside">Computer Network</li>
+        //             </ul>
+        //         '
+        //     ],
+        //     [
+        //         'order' => 2,
+        //         'title' => 'Industrial Engineering',
+        //         'list' => '
+        //             <ul class="text-md lg:text-lg p-4">
+        //                 <li class="list-disc list-inside">Smart & Lean Manufacturing System</li>
+        //                 <li class="list-disc list-inside">Product Design & Development</li>
+        //                 <li class="list-disc list-inside">Systems, Database & Data Mining</li>
+        //                 <li class="list-disc list-inside">Digitalization Supply Chain</li>
+        //                 <li class="list-disc list-inside">Green Manufacturing</li>
+        //                 <li class="list-disc list-inside">Quality Management System</li>
+        //             </ul>
+        //         '
+        //     ],
+        //     [
+        //         'order' => 3,
+        //         'title' => 'Civil Engineering',
+        //         'list' => '
+        //             <ul class="text-md lg:text-lg p-4">
+        //                 <li class="list-disc list-inside">Structure Engineering</li>
+        //                 <li class="list-disc list-inside">Road & Bridge Engineering</li>
+        //                 <li class="list-disc list-inside">Geotech Engineering</li>
+        //                 <li class="list-disc list-inside">Water Resources Management</li>
+        //                 <li class="list-disc list-inside">Transportation Engineering</li>
+        //                 <li class="list-disc list-inside">Disaster Mitigation</li>
+        //                 <li class="list-disc list-inside">Construction Management</li>
+        //                 <li class="list-disc list-inside">Earthquake Engineering</li>
+        //             </ul>
+        //         '
+        //     ],
+        //     [
+        //         'order' => 4,
+        //         'title' => 'Electrical Engineering',
+        //         'list' => '
+        //             <ul class="text-md lg:text-lg p-4">
+        //                 <li class="list-disc list-inside">Power Transmission & Distribution</li>
+        //                 <li class="list-disc list-inside">High Voltage Engineering</li>
+        //                 <li class="list-disc list-inside">Renewable Energy</li>
+        //                 <li class="list-disc list-inside">Smart Grid Technology</li>
+        //                 <li class="list-disc list-inside">Robotics</li>
+        //                 <li class="list-disc list-inside">Power Electronics</li>
+        //                 <li class="list-disc list-inside">Signal & Image Processing</li>
+        //                 <li class="list-disc list-inside">Embedded Systems</li>
+        //                 <li class="list-disc list-inside">VLSI</li>
+        //                 <li class="list-disc list-inside">Wireless & Mobile Communication</li>
+        //             </ul>
+        //         '
+        //     ],
+        //     [
+        //         'order' => 5,
+        //         'title' => 'Mechanical engineering',
+        //         'list' => '
+        //             <ul class="text-md lg:text-lg p-4">
+        //                 <li class="list-disc list-inside">Mechatronics & Robotics</li>
+        //                 <li class="list-disc list-inside">Applied Mechanics</li>
+        //                 <li class="list-disc list-inside">Biomedical Engineering</li>
+        //                 <li class="list-disc list-inside">Composite & Materials Engineering</li>
+        //                 <li class="list-disc list-inside">Computational Mechanics</li>
+        //                 <li class="list-disc list-inside">Design Engineering</li>
+        //                 <li class="list-disc list-inside">Thermal & Fluid Science</li>
+        //                 <li class="list-disc list-inside">Automotive Engineering</li>
+        //             </ul>
+        //         '
+        //     ],
+        //     [
+        //         'order' => 6,
+        //         'title' => 'Other (Business & Pharmaceutical Science)',
+        //         'list' => '
+        //             <ul class="text-md lg:text-lg p-4">
+        //                 <li class="list-disc list-inside">Business & Entrepreneurship in the Tech Era</li>
+        //                 <li class="list-disc list-inside">Tech-Driven Business Strategies & Economic Sustainability</li>
+        //                 <li class="list-disc list-inside">Financial Technology (FinTech) & Digital Economy</li>
+        //                 <li class="list-disc list-inside">Digital Transformation & Smart Technologies</li>
+        //                 <li class="list-disc list-inside">Sustainability, ESG & Green Business Practices</li>
+        //                 <li class="list-disc list-inside">Power Electronics</li>
+        //                 <li class="list-disc list-inside">Marketing & Consumer Behaviour in the Digital Age</li>
+        //                 <li class="list-disc list-inside">Leadership, Innovation Management & Corporate Strategy</li>
+        //                 <li class="list-disc list-inside">Pharmaceutical Formulation, Biotechnology & Drug Design</li>
+        //                 <li class="list-disc list-inside">Herbal Technology, Pharmacology, and Regulatory Compliance</li>
+        //             </ul>
+        //         '
+        //     ],
+        // ]);
 
         Participant::insert([
             [

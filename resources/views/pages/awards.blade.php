@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center justify-center w-full min-h-screen bg-transparent py-36">
+<div class="flex flex-col items-center justify-center w-full py-16 min-h-screen bg-transparent">
     <div class="space-y-8 w-full max-w-7xl px-6">
         <div class="flex flex-col items-center justify-center mb-8">
             <div class="flex items-center gap-3 mb-4">

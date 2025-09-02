@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center justify-center w-full min-h-screen bg-gray-50 py-16 lg:py-0">
+<div class="flex flex-col items-center justify-center w-full py-16 min-h-screen bg-gray-50">
     <div class="space-y-3 w-full max-w-7xl">
         <div class="flex flex-col items-center justify-center mb-6">
             <h2 class="text-3xl lg:text-4xl font-bold mb-2">Category</h2>

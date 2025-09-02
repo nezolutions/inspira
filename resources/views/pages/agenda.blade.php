@@ -1,12 +1,12 @@
-<div class="flex flex-col items-center justify-center w-full py-16 lg:py-0 min-h-screen bg-gray-50">
+<div class="flex flex-col items-center justify-center w-full py-16 min-h-screen bg-gray-50">
     <div class="space-y-3 w-full max-w-7xl">
         <div class="flex flex-col items-center justify-center mb-6">
-            <h2 class="text-3xl lg:text-4xl font-bold mb-2">Agenda</h2>
+            <h2 class="text-3xl lg:text-4xl text-center font-bold mb-2">Agenda</h2>
             <div class="w-24 h-1 bg-red-600 rounded-full"></div>
         </div>
         <div class="flex flex-col items-center mx-6">
-            <p class="text-gray-700 leading-6 lg:leading-7 text-md lg:text-xl max-w-5xl mx-auto text-justify lg:text-center">
-                {{ $agendaTitle->description }}
+            <p class="text-gray-700 text-sm lg:text-lg max-w-5xl mx-auto text-justify lg:text-center">
+                {!! $agendaTitle->description ?? 'The highlight agenda is the Strategic Forum titled "Strengthening the Triple Helix for Sustainable Growth and Innovation", which brings together thought leaders from academia, industry, and government. This forum aims to reinforce collaboration among key stakeholders in building a sustainable innovation ecosystem. Through panel discussions, interactive sessions, and the exchange of best practices, the forum will explore strategic pathways to drive knowledge- and technology-based economic development.<br/><b>Venue: Jakarta Global University ballroom, Wednesday, October, 20-22 2025</b>' !!}
             </p>
             <div class="w-full max-w-3xl mt-8">
                 <div class="overflow-x-auto rounded-lg shadow-lg">
@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-    @if (auth()->check())
+    @auth
         <div class="relative top-10 w-fit z-10 text-lg">
             <a href="{{ url('e/agenda')}}" class="flex items-center text-white bg-gray-700 rounded-full border hover:bg-gray-800 border-gray-600 px-4 py-2 transition">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 me-2">
@@ -70,5 +70,5 @@
                 Edit
             </a>
         </div>
-    @endif
+    @endauth
 </div>

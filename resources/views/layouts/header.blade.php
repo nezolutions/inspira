@@ -1,5 +1,5 @@
 <nav class="flex w-full fixed top-0 z-40 justify-center shadow-md select-none bg-white">
-    <div class="w-full max-w-7xl flex flex-row justify-between items-center py-2">
+    <div class="w-full max-w-7xl flex flex-row justify-between items-center py-2 px-4">
         <a href="{{ route('main') }}">
             <x-logo :isimage="$app->is_image_fit" :isname="$app->is_name_showed" :name="$app->app_name ?? 'JGU-WXUT INSPIRA ' . now()->format('Y')" :icon="$app->app_icon ?? 'images/icon.png'"></x-logo>
         </a>

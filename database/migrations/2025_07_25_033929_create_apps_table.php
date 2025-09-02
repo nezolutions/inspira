@@ -35,7 +35,6 @@ return new class extends Migration
             $table->id();
             $table->string('logo')->nullable();
             $table->mediumText('content');
-            $table->mediumText('hightlight');
             $table->timestamps();
         });
 
@@ -44,6 +43,7 @@ return new class extends Migration
             $table->string('agenda')->default('-');
             $table->string('prefix_date')->nullable();
             $table->string('suffix_date')->nullable();
+            $table->string('venue')->default('-');
             $table->text('description')->default('-');
             $table->integer('order')->default(0);
             $table->timestamps();
