@@ -11,5 +11,14 @@ class Home extends Model
     use HasFactory, Notifiable;
     
     protected $table = 'homes';
-    protected $fillable = ['background', 'title', 'description'];
+
+    protected $fillable = [
+        'background',
+        'title',
+        'description'
+    ];
+
+    protected $casts = [
+        'background' => 'string',
+    ];
 }

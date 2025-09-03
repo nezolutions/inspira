@@ -22,7 +22,7 @@ class App extends Model
 
     protected $casts = [
         'app_icon' => 'string',
-        'app_name' => 'string',
+        'app_name' => 'array',
         'is_name_showed' => 'boolean',
         'is_image_fit' => 'boolean',
     ];

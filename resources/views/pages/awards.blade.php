@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center justify-center w-full py-20 min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
+<div class="flex flex-col items-center justify-center w-full py-20 min-h-screen bg-gray-50">
     <div class="space-y-12 w-full max-w-7xl px-6">
       
       <!-- Title -->

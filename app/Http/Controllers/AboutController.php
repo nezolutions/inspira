@@ -14,62 +14,51 @@ class AboutController extends Controller
             return redirect()->route('login');
         }
 
-        $app = App::first();
-        
-        $ac = $app ? $app->university : 'JGU';
-        $app_name = $app ? $app->app_name : 'INSPIRA';
-        $app_version = $app ? $app->app_version : now();
-
         $about = About::first();
 
-        $logo = $about->logo;
-        $content = $about->content;
-
-        return view('admin.edit_about', with([
-            'ac' => $ac,
-            'app_name' => $app_name,
-            'app_version' => $app_version,
-
-            'logos' => $logo,
-            'contents' => $content
-        ]));
+        return view('admin.edit_about', compact('about'));
     }
 
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         if (!Auth::check()) {
             return redirect()->route('login');
         }
-        
-        $request->validate([
+    
+        $validated = $request->validate([
             'content' => 'required|string',
-            'background' => 'nullable|image|mimes:png,jpg,jpeg|max:2048'
+            'logo' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
+            'highlights' => 'nullable|array',
+            'highlights.*' => 'nullable|string'
         ]);
-
-        $size = 2097152;
-
+    
         try {
+            $about = About::firstOrFail();
+    
+            $about->content = $validated['content'];
+    
+            $highlights = $validated['highlights'] ?? [];
+            $about->highlights = array_replace($about->highlights ?? [], $highlights);
+    
             if ($request->hasFile('logo')) {
                 $file = $request->file('logo');
-                if ($file->getSize() == $size) {
-                    return redirect()->back()->withErrors(['error' => 'Maximum image size is 2MB.'])->withInput();
+                if ($file->getSize() > 2097152) {
+                    return redirect()->back()
+                        ->withErrors(['error' => 'Maximum image size is 2MB.'])
+                        ->withInput();
                 }
-            }
-
-            $about = About::first();
-
-            $about->content = $request->input('content');
-
-            if ($request->hasFile('logo')) {
-                $file = $request->file('logo');
+    
                 $filename = 'cover_' . time() . '.' . $file->getClientOriginalExtension();
                 $file->storeAs('cover', $filename, 'public');
                 $about->logo = 'storage/cover/' . $filename;
             }
+    
             $about->save();
-
+    
             return redirect()->route('main');
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors('error', 'An error occured: ' . $e->getMessage())->withInput();
+            return redirect()->back()->withErrors(['error' => 'An error occurred: ' . $e->getMessage()])->withInput();
         }
-    }
+    }    
 }
+

@@ -33,17 +33,18 @@ return new class extends Migration
 
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('logo')->nullable();
+            $table->string('cover')->nullable();
             $table->mediumText('content');
+            $table->string('highlights');
+            $table->string('venue');
             $table->timestamps();
         });
 
         Schema::create('agendas', function (Blueprint $table) {
             $table->id();
+            $table->mediumText('description')->default('-');
             $table->string('agenda')->default('-');
-            $table->string('prefix_date')->nullable();
-            $table->string('suffix_date')->nullable();
-            $table->text('description')->default('-');
+            $table->string('timeline')->default('-');
             $table->integer('order')->default(0);
             $table->timestamps();
         });

@@ -1,12 +1,11 @@
 @extends('layouts.app')
 
-@section('title', $app->app_name ?? 'JGU-WXUT INSPIRA ' . now()->format('Y'))
+@section('title', $app->app_name[0] . $app->app_name[1] ?? 'JGU-WXUT INSPIRA ' . now()->format('Y'))
 
 @section('content')
-    @include('components.navbar')
     <x-panel></x-panel>
     <x-modal></x-modal>
-
+    
     <header>
         @include('layouts.header')
     </header>
@@ -38,4 +37,6 @@
     <footer>
         @include('layouts.footer')
     </footer>
+
+    @include('layouts.navbar')
 @endsection

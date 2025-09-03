@@ -15,23 +15,10 @@ class AgendaController extends Controller
             return redirect()->route('login');
         }
 
-        $app = App::first();
-
-        $ac = $app ? $app->university : 'JGU';
-        $app_name = $app ? $app->app_name : 'INSPIRA';
-        $app_version = $app ? $app->app_version : now();
-
-        // Get description from id=1
         $description = Agenda::where('id', 1)->first();
-        
-        // Get agenda items (excluding id=1)
         $agenda = Agenda::where('id', '!=', 1)->orderBy('order')->get();
 
         return view('admin.edit_agenda', with([
-            'ac' => $ac,
-            'app_name' => $app_name,
-            'app_version' => $app_version,
-
             'description' => $description ? $description->description : '',
             'agenda' => $agenda
         ]));
@@ -46,8 +33,7 @@ class AgendaController extends Controller
             'description' => 'required|string',
             'agenda' => 'required|array|min:1',
             'agenda.*.agenda' => 'required|string|max:255',
-            'agenda.*.start_date' => 'required|date',
-            'agenda.*.end_date' => 'date|nullable',
+            'agenda.*.timeline' => 'required|string|max:255',
         ]);
         
         try {
@@ -63,8 +49,7 @@ class AgendaController extends Controller
             foreach ($request->agenda as $index => $agendas) {
                 Agenda::create([
                     'agenda' => $agendas['agenda'],
-                    'prefix_date' => $agendas['start_date'] ? Carbon::parse($agendas['start_date'])->format('F jS Y') : now()->format('F jS Y'),
-                    'suffix_date' => $agendas['end_date'] ? Carbon::parse($agendas['end_date'])->format('F jS Y') : null,
+                    'timeline' => $agendas['timeline'],
                     'order' => $index
                 ]);
             }
