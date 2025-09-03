@@ -2,8 +2,8 @@
     <div class="w-full max-w-7xl space-y-12 px-6">
         
         <!-- Title -->
-        <div class="flex flex-col items-center justify-center">
-            <h2 class="text-4xl lg:text-5xl text-center font-extrabold text-gray-800 mb-4">
+        <div class="flex flex-col items-center justify-center mb-10">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-800 text-center tracking-tight mb-4">
                 Topics as Relevant
             </h2>
             <div class="w-32 h-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>

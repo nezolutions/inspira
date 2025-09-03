@@ -21,6 +21,7 @@ class Agenda extends Model
 
     protected $casts = [
         'agenda' => 'string',
-        'timeline' => 'string'
+        'timeline' => 'string',
+        'order' => 'integer'
     ];
 }

@@ -26,15 +26,15 @@ return new class extends Migration
         Schema::create('homes', function (Blueprint $table) {
             $table->id();
             $table->string('background')->nullable();
-            $table->text('title');
-            $table->text('description');
+            $table->string('title');
+            $table->string('description');
             $table->timestamps();
         });
 
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->string('cover')->nullable();
-            $table->mediumText('content');
+            $table->text('content');
             $table->string('highlights');
             $table->string('venue');
             $table->timestamps();
@@ -42,7 +42,7 @@ return new class extends Migration
 
         Schema::create('agendas', function (Blueprint $table) {
             $table->id();
-            $table->mediumText('description')->default('-');
+            $table->text('description')->default('-');
             $table->string('agenda')->default('-');
             $table->string('timeline')->default('-');
             $table->integer('order')->default(0);

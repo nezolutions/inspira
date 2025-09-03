@@ -20,5 +20,7 @@ class Home extends Model
 
     protected $casts = [
         'background' => 'string',
+        'title' => 'string',
+        'description' => 'string'
     ];
 }
