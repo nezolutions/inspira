@@ -76,13 +76,16 @@ return new class extends Migration
 
         Schema::create('awards', function (Blueprint $table) {
             $table->id();
-            $table->longText('icon')->nullable();
             $table->string('title');
             $table->text('description');
-            $table->integer('online_fee');
-            $table->enum('on_fee_type', ['USD', 'IDR']);
-            $table->integer('offline_fee');
-            $table->enum('off_fee_type', ['USD', 'IDR']);
+            $table->integer('online_prize');
+            $table->integer('offline_prize');
+            $table->integer('on_gold')->nullable();
+            $table->integer('on_silver')->nullable();
+            $table->integer('on_bronze')->nullable();
+            $table->integer('off_gold')->nullable();
+            $table->integer('off_silver')->nullable();
+            $table->integer('off_bronze')->nullable();
             $table->enum('category', [
                 'Researchers and Lecturers',
                 'College Students',

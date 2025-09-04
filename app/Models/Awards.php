@@ -13,20 +13,22 @@ class Awards extends Model
     protected $table = 'awards';
 
     protected $fillable = [
-        'icon',
         'title',
         'description',
+        'online_prize',
+        'offline_prize',
+        'on_gold',
+        'on_silver',
+        'on_bronze',
+        'off_gold',
+        'off_silver',
+        'off_bronze',
         'category',
         'order'
     ];
 
     protected $casts = [
-        'icon' => 'string',
         'title' => 'string',
-        'online_fee' => 'integer',
-        'offline_fee' => 'integer',
-        'on_fee_type' => 'string',
-        'off_fee_type' => 'string',
         'order' => 'integer',
     ];
 }

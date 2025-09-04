@@ -211,53 +211,137 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
-        // Awards::insert([
-        //     // 1
-        //     [
-        //         'title' => 'Penghargaan Makalah Terbaik',
-        //         'description' => 'Diberikan untuk kontribusi luar biasa dalam penelitian di bidang terkait.',
-        //         'icon' => '-',
-        //         'category' => 'Researchers and Lecturers',
-        //         'order' => 1
-        //     ],
-        //     [
-        //         'title' => 'Penghargaan Inovasi',
-        //         'description' => 'Mengakui inovasi terobosan dan aplikasi praktis.',
-        //         'icon' => '-',
-        //         'category' => 'Researchers and Lecturers',
-        //         'order' => 2
-        //     ],
-        //     // 2
-        //     [
-        //         'title' => 'Proyek Mahasiswa Terbaik',
-        //         'description' => 'Untuk proyek akademik luar biasa yang menunjukkan kreativitas dan ketelitian.',
-        //         'icon' => '-',
-        //         'category' => 'College/University Student',
-        //         'order' => 1
-        //     ],
-        //     [
-        //         'title' => 'Penghargaan Peneliti Muda',
-        //         'description' => 'Mendorong talenta muda yang menjanjikan dalam penelitian ilmiah.',
-        //         'icon' => '-',
-        //         'category' => 'College/University Student',
-        //         'order' => 2
-        //     ],
-        //     // 3
-        //     [
-        //         'title' => 'Pemenang Pameran Sains',
-        //         'description' => 'Diberikan kepada proyek terbaik dalam pameran sains tingkat SMA.',
-        //         'icon' => '-',
-        //         'category' => 'High School Student',
-        //         'order' => 1
-        //     ],
-        //     [
-        //         'title' => 'Penghargaan Inovator Masa Depan',
-        //         'description' => 'Mengakui potensi inovasi masa depan dan penyelidikan ilmiah.',
-        //         'icon' => '-',
-        //         'category' => 'Highschool Student',
-        //         'order' => 2
-        //     ],
-        // ]);
+        Awards::insert([
+            // 1
+            [
+                'category' => 'Researchers and Lecturers',
+                'title' => 'Best Research Project',
+                'description' => 'Awarded to the most outstanding research project in terms of scientific contribution, methodological rigor, and novelty of ideas.',
+                'online_prize' => 2000000,
+                'offline_prize' => 4000000,
+                'on_gold' => 0,
+                'off_gold' => 0,
+                'on_silver' => 0,
+                'off_silver' => 0,
+                'on_bronze' => 0,
+                'off_bronze' => 0,
+                'order' => 1
+            ],
+            [
+                'category' => 'Researchers and Lecturers',
+                'title' => 'Innovation for Society Award',
+                'description' => 'Given to the project that demonstrates the greatest impact on society or effectively addresses real-world challenges through innovative solutions.',
+                'online_prize' => 1250000,
+                'offline_prize' => 2500000,
+                'on_gold' => 0,
+                'off_gold' => 0,
+                'on_silver' => 0,
+                'off_silver' => 0,
+                'on_bronze' => 0,
+                'off_bronze' => 0,
+                'order' => 2
+            ],
+            [
+                'category' => 'Researchers and Lecturers',
+                'title' => 'Judges\' Choice Award',
+                'description' => 'A special recognition granted based on the collective evaluation and discretion of the panel of judges, considering originality, relevance, and presentation.',
+                'online_prize' => 1000000,
+                'offline_prize' => 2000000,
+                'on_gold' => 0,
+                'off_gold' => 0,
+                'on_silver' => 0,
+                'off_silver' => 0,
+                'on_bronze' => 0,
+                'off_bronze' => 0,
+                'order' => 3
+            ],
+            // 2
+            [
+                'category' => 'College Students',
+                'title' => 'Best Student Project',
+                'description' => 'Presented to the student-led project that excels in innovation, relevance to current issues, and overall execution.',
+                'online_prize' => 1250000,
+                'offline_prize' => 2500000,
+                'on_gold' => 0,
+                'off_gold' => 0,
+                'on_silver' => 0,
+                'off_silver' => 0,
+                'on_bronze' => 0,
+                'off_bronze' => 0,
+                'order' => 1
+            ],
+            [
+                'category' => 'College Students',
+                'title' => 'Best Poster Design',
+                'description' => 'Awarded for the most visually compelling and well-structured poster that effectively communicates the project\'s objectives, methodology, and results.',
+                'online_prize' => 1000000,
+                'offline_prize' => 2000000,
+                'on_gold' => 0,
+                'off_gold' => 0,
+                'on_silver' => 0,
+                'off_silver' => 0,
+                'on_bronze' => 0,
+                'off_bronze' => 0,
+                'order' => 2
+            ],
+            [
+                'category' => 'College Students',
+                'title' => 'Best Presentation',
+                'description' => 'Recognizes the participant who delivers the most clear, engaging, and professional oral presentation.',
+                'online_prize' => 1000000,
+                'offline_prize' => 2000000,
+                'on_gold' => 0,
+                'off_gold' => 0,
+                'on_silver' => 0,
+                'off_silver' => 0,
+                'on_bronze' => 0,
+                'off_bronze' => 0,
+                'order' => 3
+            ],
+            [
+                'category' => 'College Students',
+                'title' => 'Gold/Silver/Bronze Award',
+                'description' => 'Given to the top three student projects that demonstrate exceptional quality across all assessment criteria.',
+                'online_prize' => 0,
+                'offline_prize' => 0,
+                'on_gold' => 1000000,
+                'off_gold' => 2000000,
+                'on_silver' => 500000,
+                'off_silver' => 1000000,
+                'on_bronze' => 250000,
+                'off_bronze' => 500000,
+                'order' => 4
+            ],
+            // 3
+            [
+                'category' => 'Highschool Students',
+                'title' => 'Best Young Innovator Project',
+                'description' => 'Granted to the high school project that showcases outstanding creativity, problem-solving, and potential for further development.',
+                'online_prize' => 500000,
+                'offline_prize' => 1000000,
+                'on_gold' => 0,
+                'off_gold' => 0,
+                'on_silver' => 0,
+                'off_silver' => 0,
+                'on_bronze' => 0,
+                'off_bronze' => 0,
+                'order' => 1
+            ],
+            [
+                'category' => 'Highschool Students',
+                'title' => 'Best Visual Poster',
+                'description' => 'Awarded for the most visually attractive and easy-to-understand poster among high school participants.',
+                'online_prize' => 250000,
+                'offline_prize' => 500000,
+                'on_gold' => 0,
+                'off_gold' => 0,
+                'on_silver' => 0,
+                'off_silver' => 0,
+                'on_bronze' => 0,
+                'off_bronze' => 0,
+                'order' => 2
+            ],
+        ]);
 
         Fee::insert([
             [
