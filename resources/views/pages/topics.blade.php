@@ -1,9 +1,12 @@
-<div class="flex flex-col items-center justify-center w-full py-20 min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
-    <div class="w-full max-w-7xl space-y-12 px-6">
+<div class="relative w-full min-h-screen bg-gray-800 bg-cover bg-no-repeat bg-center bg-fixed" style="background-image: url('{{ 'images/stock.jpg' }}');">
+<div class="absolute inset-0 bg-red-950/40 backdrop-blur-[3px]"></div>
+<div class="absolute inset-0 bg-red-950/30"></div>
+<div class="relative z-10 flex flex-col items-center justify-center w-full py-20 min-h-screen">
+    <div class="w-full max-w-7xl space-y-8 lg:space-y-12 px-6">
         
         <!-- Title -->
         <div class="flex flex-col items-center justify-center mb-10">
-            <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-800 text-center tracking-tight mb-4">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-white text-center tracking-tight mb-4">
                 Topics as Relevant
             </h2>
             <div class="w-32 h-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>
@@ -12,8 +15,8 @@
         <!-- Topics Grid -->
         @if ($topic)
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                @forelse ($topic as $t)
-                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/80 backdrop-blur-sm border border-gray-100 transition transform hover:-translate-y-1">
+                @forelse ($topic->where('id', '<', 4) as $t)
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-500 transition transform hover:-translate-y-1">
                         <!-- Card Header -->
                         <h3 class="text-xl lg:text-2xl font-bold text-white p-4 
                                    {{ $t->id % 2 === 0 ? 'bg-gradient-to-r from-red-600 to-red-500' : 'bg-gradient-to-r from-gray-800 to-gray-700' }}">
@@ -21,27 +24,139 @@
                         </h3>
                         <!-- Card Body -->
                         <div class="p-6 text-gray-700">
-                            {!! $t->list !!}
+                            <ul class="space-y-2 text-gray-700 text-md lg:text-lg">
+                                @foreach ($t->list as $item)
+                                    <li class="flex items-start gap-2"><span class="text-red-400">✔</span> {!! $item !!}</li>
+                                @endforeach
+                            </ul>
                         </div>
                     </div>
                 @empty
                     <!-- Contoh Default Card -->
-                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/80 backdrop-blur-sm border border-gray-100">
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
                         <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-red-600 to-red-500 p-4">
-                            Informatic Engineering
+                            Lorem Ipsum
                         </h3>
                         <ul class="p-6 space-y-2 text-gray-700 text-md lg:text-lg">
-                            <li class="flex items-start gap-2"><span class="text-green-500">✔</span> Mobile Applications</li>
-                            <li class="flex items-start gap-2"><span class="text-green-500">✔</span> Biomedical Informatics</li>
-                            <li class="flex items-start gap-2"><span class="text-green-500">✔</span> Systems, Database & Data Mining</li>
-                            <li class="flex items-start gap-2"><span class="text-green-500">✔</span> Artificial Intelligence</li>
-                            <li class="flex items-start gap-2"><span class="text-green-500">✔</span> Computer Network</li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
+                        <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-gray-800 to-gray-700 p-4">
+                            Lorem Ipsum
+                        </h3>
+                        <ul class="p-6 space-y-2 text-gray-700 text-md lg:text-lg">
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
+                        <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-red-600 to-red-500 p-4">
+                            Lorem Ipsum
+                        </h3>
+                        <ul class="p-6 space-y-2 text-gray-700 text-md lg:text-lg">
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                        </ul>
+                    </div>
+                @endforelse
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                @forelse ($topic->where('id', '>', 3)->where('id', '<', 6) as $t)
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-500 transition transform hover:-translate-y-1">
+                        <!-- Card Header -->
+                        <h3 class="text-xl lg:text-2xl font-bold text-white p-4 
+                                   {{ $t->id % 2 === 0 ? 'bg-gradient-to-r from-red-600 to-red-500' : 'bg-gradient-to-r from-gray-800 to-gray-700' }}">
+                            {{ $t->title }}
+                        </h3>
+                        <!-- Card Body -->
+                        <div class="p-6 text-gray-700">
+                            <ul class="space-y-2 text-gray-700 text-md lg:text-lg">
+                                @foreach ($t->list as $item)
+                                    <li class="flex items-start gap-2"><span class="text-red-400">✔</span> {!! $item !!}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @empty
+                    <!-- Contoh Default Card -->
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
+                        <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-red-600 to-red-500 p-4">
+                            Lorem Ipsum
+                        </h3>
+                        <ul class="p-6 space-y-2 text-gray-700 text-md lg:text-lg">
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
+                        <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-gray-800 to-gray-700 p-4">
+                            Lorem Ipsum
+                        </h3>
+                        <ul class="p-6 space-y-2 text-gray-700 text-md lg:text-lg">
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                        </ul>
+                    </div>
+                @endforelse
+            </div>
+            <div class="grid grid-cols-1 gap-8">
+                @forelse ($topic->where('id', '>', 5) as $t)
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-500 transition transform hover:-translate-y-1">
+                        <!-- Card Header -->
+                        <h3 class="text-xl lg:text-2xl font-bold text-white p-4 
+                                   {{ $t->id % 2 === 1 ? 'bg-gradient-to-r from-red-600 to-red-500' : 'bg-gradient-to-r from-gray-800 to-gray-700' }}">
+                            {{ $t->title }}
+                        </h3>
+                        <!-- Card Body -->
+                        <div class="p-6 text-gray-700">
+                            <ul class="space-y-2 text-gray-700 text-md lg:text-lg">
+                                @foreach ($t->list as $item)
+                                    <li class="flex items-start gap-2"><span class="text-red-400">✔</span> {!! $item !!}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @empty
+                    <!-- Contoh Default Card -->
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
+                        <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-gray-800 to-gray-700 p-4">
+                            Lorem Ipsum
+                        </h3>
+                        <ul class="p-6 space-y-2 text-gray-700 text-md lg:text-lg">
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
                         </ul>
                     </div>
                 @endforelse
             </div>
         @endif
-
     </div>
 
     @auth

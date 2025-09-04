@@ -1,6 +1,6 @@
-<nav class="flex w-full fixed top-0 z-40 justify-center shadow-md select-none bg-white">
-    <div class="w-full max-w-7xl flex flex-row justify-between items-center py-2 px-4">
-        <a href="{{ route('main') }}">
+<nav class="flex w-full relative lg:fixed top-0 z-40 justify-center shadow-md select-none bg-white/90">
+    <div class="w-full max-w-7xl flex flex-row justify-between items-center py-2 px-6">
+        <a href="{{ route('main') }}" class="w-full flex justify-center lg:justify-start">
             <x-logo :isimage="$app->is_image_fit" :isname="$app->is_name_showed" :name="$app->app_name[0] . $app->app_name[1]" :icon="$app->app_icon"></x-logo>
         </a>
         <ul class="hidden lg:flex flex-row gap-4 items-center">

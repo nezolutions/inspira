@@ -15,17 +15,7 @@ class UserController extends Controller
             return redirect()->route('main');
         }
 
-        $app = App::first();
-
-        $ac = $app ? $app->university : 'JGU';
-        $app_name = $app ? $app->app_name : 'INSPIRA';
-        $app_version = $app ? $app->app_version : now();
-
-        return view('auth.login', with([
-            'ac' => $ac,
-            'app_name' => $app_name,
-            'app_version' => $app_version
-        ]));  
+        return view('auth.login');  
     }
 
     public function auth(Request $request) {
@@ -69,12 +59,6 @@ class UserController extends Controller
             return redirect()->route('login');
         }
 
-        $app = App::first();
-
-        $ac = $app ? $app->university : 'JGU';
-        $app_name = $app ? $app->app_name : 'INSPIRA';
-        $app_version = $app ? $app->app_version : now();
-
         $user = User::first();
 
         $un = $user->name;
@@ -82,10 +66,6 @@ class UserController extends Controller
         $password = $user->password;
 
         return view('admin.edit_user', with([
-            'ac' => $ac,
-            'app_name' => $app_name,
-            'app_version' => $app_version,
-
             'name' => $un,
             'email' => $email,
             'password' => $password

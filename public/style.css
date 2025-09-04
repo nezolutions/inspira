@@ -2,7 +2,3 @@ a, button, input, textarea {
     outline: none;
     user-select: none;
 }
-
-#awards svg {
-    color: white;
-}

@@ -11,5 +11,16 @@ class Topic extends Model
     use HasFactory, Notifiable;
 
     protected $table = 'topics';
-    protected $fillable = ['title', 'list', 'order'];
+
+    protected $fillable = [
+        'title',
+        'list',
+        'order'
+    ];
+
+    protected $casts = [
+        'title' => 'string',
+        'list' => 'array',
+        'order' => 'integer'
+    ];
 }

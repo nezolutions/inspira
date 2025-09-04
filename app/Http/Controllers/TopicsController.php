@@ -14,25 +14,14 @@ class TopicsController extends Controller
             return redirect()->route('login');
         }
 
-        $app = App::first();
-
-        $ac = $app ? $app->university : 'JGU';
-        $app_name = $app ? $app->app_name : 'INSPIRA';
-        $app_version = $app ? $app->app_version : now();
-
         $topics = Topic::orderBy('order')->get();
 
-        return view('admin.edit_topics', with([
-            'ac' => $ac,
-            'app_name' => $app_name,
-            'app_version' => $app_version,
-            'topics' => $topics
-        ]));
+        return view('admin.edit_topics', compact(['topics']));
     }
 
     public function update(Request $request) {
         if (!Auth::check()) {
-            return redirect()->route('login');
+            return redirect()->route('login');  
         }
         
         $request->validate([
@@ -43,14 +32,22 @@ class TopicsController extends Controller
         
         try {
             Topic::truncate();
-
+            $topicsToInsert = [];
+            
             foreach ($request->topics as $index => $topic) {
-                Topic::create([
+                $listArray = collect(preg_split("/\r\n|\n|\r/", $topic['list']))
+                    ->map(fn($item) => ltrim($item, "- "))
+                    ->filter(fn($item) => !empty(trim($item)))
+                    ->values()
+                    ->all();
+
+                $topicsToInsert[] = [
                     'title' => $topic['title'],
-                    'list' => $topic['list'],
+                    'list'  => json_encode($listArray),
                     'order' => $index
-                ]);
+                ];
             }
+            Topic::insert($topicsToInsert);
 
             return redirect()->route('main');
         } catch (\Exception $e) {

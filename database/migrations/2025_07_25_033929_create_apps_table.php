@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('app_icon')->nullable();
             $table->string('app_name');
-            $table->boolean('is_name_showed');
-            $table->boolean('is_image_fit');
+            $table->boolean('is_name_showed')->default(true);
+            $table->boolean('is_image_fit')->default(false);
             $table->string('register')->nullable();
             $table->timestamps();
         });
@@ -60,6 +60,8 @@ return new class extends Migration
         Schema::create('participants', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('icon')->nullable();
+            $table->string('background')->nullable();
             $table->integer('order')->default(0);
             $table->timestamps();
         });
@@ -77,10 +79,14 @@ return new class extends Migration
             $table->longText('icon')->nullable();
             $table->string('title');
             $table->text('description');
+            $table->integer('online_fee');
+            $table->enum('on_fee_type', ['USD', 'IDR']);
+            $table->integer('offline_fee');
+            $table->enum('off_fee_type', ['USD', 'IDR']);
             $table->enum('category', [
                 'Researchers and Lecturers',
-                'College/University Student',
-                'High School Student'
+                'College Students',
+                'Highschool Students'
             ]);
             $table->timestamps();
         });

@@ -51,12 +51,12 @@ class HomeController extends Controller
         $size = 2097152;
 
         try {
-            if ($request->hasFile('background')) {
-                $file = $request->file('background');
-                if ($file->getSize() == $size) {
-                    return redirect()->back()->withErrors(['error' => 'Maximum image size is 2MB.'])->withInput();
+                if ($request->hasFile('background')) {
+                    $file = $request->file('background');
+                    if ($file->getSize() == $size) {
+                        return redirect()->back()->withErrors(['error' => 'Maximum image size is 2MB.'])->withInput();
+                    }
                 }
-            }
 
             $home = Home::first();
 

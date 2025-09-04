@@ -17,6 +17,13 @@
 
             <!-- Agenda Table -->
             <div class="w-full max-w-4xl mt-10">
+                <p class="text-gray-800 font-semibold text-base lg:text-xl flex items-center gap-2 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                        <path d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
+                        <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z" clip-rule="evenodd" />
+                    </svg>                                        
+                    Oral Presentation & Poster Competition
+                </p>
                 <div class="overflow-x-auto rounded-xl shadow-lg">
                     <table class="min-w-full bg-white/80 backdrop-blur-sm text-gray-700 border border-gray-100">
                         <thead>
@@ -29,11 +36,11 @@
                             @forelse ($agendaTable as $agendas)
                             <tr class="{{ $agendas->id % 2 == 1 ? 'bg-red-50' : 'bg-white' }} hover:bg-red-100 transition">
                                 <td class="{{ $agendas->id == 1 ? 'hidden' : 'py-4 px-6' }} text-sm lg:text-lg font-medium">
-                                    {{ $agendas->agenda }}
+                                    {!! $agendas->agenda !!}
                                 </td>
                                 <td class="{{ $agendas->id == 1 ? 'hidden' : 'py-4 px-6' }} text-sm lg:text-lg">
-                                    {{ $agendas->timeline }}
-                                </td>
+                                    {!! $agendas->timeline !!}
+                                </td>   
                             </tr>
                             @empty    
                                 <tr class="bg-red-white hover:bg-red-100 transition">
@@ -41,11 +48,11 @@
                                     <td class="py-4 px-6 text-sm lg:text-lg">Now - October 10<sup>th</sup> 2025</td>
                                 </tr>
                                 <tr class="bg-red-50 hover:bg-red-100 transition">
-                                    <td class="py-4 px-6 text-sm lg:text-lg font-medium">Poster Upload Dateline</td>
+                                    <td class="py-4 px-6 text-sm lg:text-lg font-medium">PowerPoint File and Poster Upload Dateline</td>
                                     <td class="py-4 px-6 text-sm lg:text-lg">October 10<sup>th</sup> 2025</td>
                                 </tr>
                                 <tr class="bg-red-white hover:bg-red-100 transition">
-                                    <td class="py-4 px-6 text-sm lg:text-lg font-medium">Presentation (Online)</td>
+                                    <td class="py-4 px-6 text-sm lg:text-lg font-medium">Oral Presentation Competition (Online)</td>
                                     <td class="py-4 px-6 text-sm lg:text-lg">October 10-15<sup>th</sup> 2025</td>
                                 </tr>   
                                 <tr class="bg-red-50 hover:bg-red-100 transition">

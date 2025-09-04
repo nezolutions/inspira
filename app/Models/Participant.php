@@ -11,5 +11,18 @@ class Participant extends Model
     use HasFactory, Notifiable;
 
     protected $table = 'participants';
-    protected $fillable = ['title', 'order'];
+    
+    protected $fillable = [
+        'title',
+        'icon',
+        'background',
+        'order'
+    ];
+
+    protected $casts = [
+        'title' => 'string',
+        'icon' => 'string',
+        'background' => 'string',
+        'ordeer' => 'integer'
+    ];
 }

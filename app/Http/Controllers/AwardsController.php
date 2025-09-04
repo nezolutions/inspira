@@ -14,23 +14,14 @@ class AwardsController extends Controller
             return redirect()->route('login');
         }
 
-        $app = App::first();
-
-        $ac = $app ? $app->university : 'JGU';
-        $app_name = $app ? $app->app_name : 'INSPIRA';
-        $app_version = $app ? $app->app_version : now();
-
         $researchers = Awards::where('category', 'Researchers and Lecturers')->orderBy('order')->get();
         $collegeStudents = Awards::where('category', 'College/University Student')->orderBy('order')->get();
         $highSchoolStudents = Awards::where('category', 'High School Student')->orderBy('order')->get();
 
-        return view('admin.edit_awards', with([
-            'ac' => $ac,
-            'app_name' => $app_name,
-            'app_version' => $app_version,
-            'researchers' => $researchers,
-            'collegeStudents' => $collegeStudents,
-            'highSchoolStudents' => $highSchoolStudents
+        return view('admin.edit_awards', compact([
+            'researchers',
+            'collegeStudents',
+            'highSchoolStudents'
         ]));
     }
 

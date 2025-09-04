@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AppController::class, 'index'])->name('main');
 
+Route::get('/admin', function() {
+    return redirect()->route('login');
+});
+
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/auth', [UserController::class, 'auth'])->name('auth');
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
