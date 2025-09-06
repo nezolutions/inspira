@@ -1,16 +1,19 @@
-<div class="flex flex-col items-center justify-center w-full min-h-screen py-16 bg-gray-100">
-    <div class="space-y-6 w-full max-w-7xl">
-        
-        <!-- Title -->
-        <div class="flex flex-col items-center justify-center mb-10">
-            <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-800 text-center tracking-tight mb-4">
-                Entry Fee
-            </h2>
-            <div class="w-32 h-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>
-        </div>
+<div class="relative w-full min-h-screen bg-gray-800 bg-cover bg-no-repeat bg-center bg-fixed" style="background-image: url('{{ 'images/wuxi.jpg' }}');">
+    <div class="absolute inset-0 bg-gray-700/50 backdrop-blur-[3px]"></div>
+    <div class="absolute inset-0 bg-gray-700/20"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center w-full py-20 min-h-screen">
+        <div class="w-full max-w-7xl space-y-8 lg:space-y-12 px-6">
+            
+            <!-- Title -->
+            <div class="flex flex-col items-center justify-center mb-10">
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-white text-center tracking-tight mb-4">
+                    Entry Fee
+                </h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>
+            </div>
 
         <!-- Table Container -->
-        <div class="flex flex-col items-center px-6">
+        <div class="flex flex-col items-center">
             <div class="w-full max-w-6xl">
                 <div class="overflow-x-auto rounded-xl shadow-lg">
                     <table class="min-w-full bg-white text-gray-700 border-collapse">

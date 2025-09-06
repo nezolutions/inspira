@@ -3,14 +3,14 @@
         
         <!-- Title -->
         <div class="flex flex-col items-center justify-center mb-10">
-            <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-800 text-center tracking-tight mb-4">
+            <h2 class="text-3xl lg:text-5xl font-extrabold text-gray-800 text-center tracking-tight mb-4">
                 What is <span class="text-red-600">{{ $app->app_name[0] . $app->app_name[1] ?? 'JGU-WXUT INSPIRA ' . now()->format('Y') }}</span>?
             </h2>
             <div class="w-32 h-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>
         </div>
 
         <!-- Content -->
-        <div class="w-full flex flex-col lg:flex-row items-center gap-10 bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+        <div class="w-full flex flex-col lg:flex-row items-center gap-10 bg-white/80 backdrop-blur-sm p-4 lg:p-8 rounded-2xl shadow-lg">
             <img class="w-56 lg:w-80 select-none drop-shadow-lg" draggable="false" src="{{ $about->logo ?? 'images/cover.png' }}">
             <p class="text-gray-600 text-base lg:text-lg text-justify">
                 <span class="ms-6 lg:ms-12 font-semibold text-gray-800">{{ $app->app_name[0] . $app->app_name[1] ?? 'JGU-WXUT INSPIRA ' . now()->format('Y') }}</span>
@@ -28,14 +28,14 @@
                 </div>
                 
                 <ul class="w-full bg-gradient-to-r from-gray-800 to-gray-700 shadow-xl p-6 rounded-xl text-white space-y-4">
-                    <li class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 lg:size-5 text-red-300">
+                    <li class="flex items-center text-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-red-300 hidden lg:inline">
                             <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
                         </svg>
                         {{ $about->highlights[0] ?? 'International Strategic Forum' }}
                     </li>
-                    <li class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-red-300">
+                    <li class="flex items-center text-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-red-300 hidden lg:inline">
                             <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
                         </svg>
                         {{ $about->highlights[1] ?? 'International Oral Presentation & Poster Competition' }}
@@ -52,7 +52,7 @@
                 
                 <ul class="w-full bg-gradient-to-r from-gray-800 to-gray-700 shadow-xl p-6 rounded-xl text-white">
                     <li class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-red-300 me-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-red-300 me-2 hidden lg:inline">
                             <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
                         </svg> 
                         {!! $about->venue ?? 'Jakarta Global University Ballroom | October 20-22 2025' !!}

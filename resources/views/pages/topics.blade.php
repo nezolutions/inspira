@@ -1,12 +1,9 @@
-<div class="relative w-full min-h-screen bg-gray-800 bg-cover bg-no-repeat bg-center bg-fixed" style="background-image: url('{{ 'images/stock.jpg' }}');">
-<div class="absolute inset-0 bg-red-950/40 backdrop-blur-[3px]"></div>
-<div class="absolute inset-0 bg-red-950/30"></div>
-<div class="relative z-10 flex flex-col items-center justify-center w-full py-20 min-h-screen">
-    <div class="w-full max-w-7xl space-y-8 lg:space-y-12 px-6">
+<div class="flex flex-col items-center justify-center w-full min-h-screen py-16 bg-gray-50">
+    <div class="space-y-6 w-full max-w-7xl px-6">
         
         <!-- Title -->
         <div class="flex flex-col items-center justify-center mb-10">
-            <h2 class="text-4xl lg:text-5xl font-extrabold text-white text-center tracking-tight mb-4">
+            <h2 class="text-3xl lg:text-5xl font-extrabold text-gray-800 text-center tracking-tight mb-4">
                 Topics as Relevant
             </h2>
             <div class="w-32 h-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>
@@ -16,7 +13,7 @@
         @if ($topic)
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse ($topic->where('id', '<', 4) as $t)
-                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-500 transition transform hover:-translate-y-1">
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-200 transition transform hover:-translate-y-1">
                         <!-- Card Header -->
                         <h3 class="text-xl lg:text-2xl font-bold text-white p-4 
                                    {{ $t->id % 2 === 0 ? 'bg-gradient-to-r from-red-600 to-red-500' : 'bg-gradient-to-r from-gray-800 to-gray-700' }}">
@@ -77,7 +74,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 @forelse ($topic->where('id', '>', 3)->where('id', '<', 6) as $t)
-                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-500 transition transform hover:-translate-y-1">
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-200 transition transform hover:-translate-y-1">
                         <!-- Card Header -->
                         <h3 class="text-xl lg:text-2xl font-bold text-white p-4 
                                    {{ $t->id % 2 === 0 ? 'bg-gradient-to-r from-red-600 to-red-500' : 'bg-gradient-to-r from-gray-800 to-gray-700' }}">
@@ -124,7 +121,7 @@
             </div>
             <div class="grid grid-cols-1 gap-8">
                 @forelse ($topic->where('id', '>', 5) as $t)
-                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-500 transition transform hover:-translate-y-1">
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-200 transition transform hover:-translate-y-1">
                         <!-- Card Header -->
                         <h3 class="text-xl lg:text-2xl font-bold text-white p-4 
                                    {{ $t->id % 2 === 1 ? 'bg-gradient-to-r from-red-600 to-red-500' : 'bg-gradient-to-r from-gray-800 to-gray-700' }}">

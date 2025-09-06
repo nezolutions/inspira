@@ -14,20 +14,9 @@ class CompetitionController extends Controller
             return redirect()->route('login');
         }
 
-        $app = App::first();
-
-        $ac = $app ? $app->university : 'JGU';
-        $app_name = $app ? $app->app_name : 'INSPIRA';
-        $app_version = $app ? $app->app_version : now();
-
         $competitions = Competition::orderBy('order')->get();
 
-        return view('admin.edit_competition', with([
-            'ac' => $ac,
-            'app_name' => $app_name,
-            'app_version' => $app_version,
-            'competitions' => $competitions
-        ]));
+        return view('admin.edit_competition', compact(['competitions']));
     }
 
     public function update(Request $request) {

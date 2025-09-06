@@ -1,4 +1,4 @@
-a, button, input, textarea {
+a, button, input, textarea, img {
     outline: none;
     user-select: none;
 }

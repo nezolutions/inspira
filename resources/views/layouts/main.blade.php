@@ -32,6 +32,9 @@
         <section id="fee">
             @include('pages.fee')
         </section>
+        <section>
+            @include('pages.addon')  
+        </section>
     </main>
     
     <footer>

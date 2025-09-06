@@ -15,8 +15,8 @@ class AwardsController extends Controller
         }
 
         $researchers = Awards::where('category', 'Researchers and Lecturers')->orderBy('order')->get();
-        $collegeStudents = Awards::where('category', 'College/University Student')->orderBy('order')->get();
-        $highSchoolStudents = Awards::where('category', 'High School Student')->orderBy('order')->get();
+        $collegeStudents = Awards::where('category', 'College Students')->orderBy('order')->get();
+        $highSchoolStudents = Awards::where('category', 'Highschool Students')->orderBy('order')->get();
 
         return view('admin.edit_awards', compact([
             'researchers',
@@ -31,53 +31,83 @@ class AwardsController extends Controller
         }
 
         $request->validate([
-            'researchers' => 'required|array|min:1',
-            'researchers.*.title' => 'required|string|max:255',
-            'researchers.*.description' => 'required|string',
-            'researchers.*.icon' => 'required|string',
-            'collegeStudents' => 'required|array|min:1',
-            'collegeStudents.*.title' => 'required|string|max:255',
-            'collegeStudents.*.description' => 'required|string',
-            'collegeStudents.*.icon' => 'required|string',
-            'highSchoolStudents' => 'required|array|min:1',
-            'highSchoolStudents.*.title' => 'required|string|max:255',
-            'highSchoolStudents.*.description' => 'required|string',
-            'highSchoolStudents.*.icon' => 'required|string',
+            'researchers' => 'array|min:1',
+            'researchers.*.title' => 'string|max:255',
+            'researchers.*.description' => 'string',
+            'researchers.*.online_prize' => 'string',
+            'researchers.*.offline_prize' => 'string',
+            'collegeStudents' => 'array|min:1',
+            'collegeStudents.*.title' => 'string|max:255',
+            'collegeStudents.*.description' => 'string',
+            'collegeStudents.*.online_prize' => 'string',
+            'collegeStudents.*.offline_prize' => 'string',
+            'collegeStudents.*.on_gold' => 'string',
+            'collegeStudents.*.off_gold' => 'string',
+            'collegeStudents.*.on_silver' => 'string',
+            'collegeStudents.*.off_silver' => 'string',
+            'collegeStudents.*.on_bronze' => 'string',
+            'collegeStudents.*.off_bronze' => 'string',
+            'highSchoolStudents' => 'array|min:1',
+            'highSchoolStudents.*.title' => 'string|max:255',
+            'highSchoolStudents.*.description' => 'string',
+            'highSchoolStudents.*.online_prize' => 'string',
+            'highSchoolStudents.*.offline_prize' => 'string',
         ]);
 
         try {
-            // Clear existing awards
+            // Hapus semua penghargaan yang ada
             Awards::truncate();
 
-            // Insert Researchers and Lecturers
+            // Masukkan Penghargaan untuk Peneliti dan Dosen
             foreach ($request->researchers as $index => $award) {
                 Awards::create([
                     'title' => $award['title'],
                     'description' => $award['description'],
-                    'icon' => $award['icon'],
+                    'online_prize' => $award['online_prize'],
+                    'offline_prize' => $award['offline_prize'],
+                    'on_gold' => $award['on_gold'] ?? 0,
+                    'off_gold' => $award['off_gold'] ?? 0,
+                    'on_silver' => $award['on_silver'] ?? 0,
+                    'off_silver' => $award['off_silver'] ?? 0,
+                    'on_bronze' => $award['on_bronze'] ?? 0,
+                    'off_bronze' => $award['off_bronze'] ?? 0,
                     'category' => 'Researchers and Lecturers',
                     'order' => $index
                 ]);
             }
 
-            // Insert College/University Students
+            // Masukkan Penghargaan untuk Mahasiswa/i Perguruan Tinggi
             foreach ($request->collegeStudents as $index => $award) {
                 Awards::create([
                     'title' => $award['title'],
                     'description' => $award['description'],
-                    'icon' => $award['icon'],
-                    'category' => 'College/University Student',
+                    'online_prize' => $award['online_prize'] ?? 0,
+                    'offline_prize' => $award['offline_prize'] ?? 0,
+                    'on_gold' => $award['on_gold'] ?? 0,
+                    'off_gold' => $award['off_gold'] ?? 0,
+                    'on_silver' => $award['on_silver'] ?? 0,
+                    'off_silver' => $award['off_silver'] ?? 0,
+                    'on_bronze' => $award['on_bronze'] ?? 0,
+                    'off_bronze' => $award['off_bronze'] ?? 0,
+                    'category' => 'College Students',
                     'order' => $index
                 ]);
             }
 
-            // Insert High School Students
+            // Masukkan Penghargaan untuk Siswa/i SMA
             foreach ($request->highSchoolStudents as $index => $award) {
                 Awards::create([
                     'title' => $award['title'],
                     'description' => $award['description'],
-                    'icon' => $award['icon'],
-                    'category' => 'High School Student',
+                    'online_prize' => $award['online_prize'],
+                    'offline_prize' => $award['offline_prize'],
+                    'on_gold' => $award['on_gold'] ?? 0,
+                    'off_gold' => $award['off_gold'] ?? 0,
+                    'on_silver' => $award['on_silver'] ?? 0,
+                    'off_silver' => $award['off_silver'] ?? 0,
+                    'on_bronze' => $award['on_bronze'] ?? 0,
+                    'off_bronze' => $award['off_bronze'] ?? 0,
+                    'category' => 'Highschool Students',
                     'order' => $index
                 ]);
             }

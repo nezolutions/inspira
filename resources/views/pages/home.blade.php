@@ -9,9 +9,11 @@
                 <h1 class="text-5xl lg:text-8xl font-black bg-gradient-to-r from-red-700 via-red-600 to-red-500 bg-clip-text text-transparent tracking-tight drop-shadow-lg">
                     {{ $app->app_name[0] ?? 'JGU-WXUT ' }}
                 </h1>
-                <h2 class="text-4xl lg:text-7xl font-extrabold text-white drop-shadow-md tracking-wide">
-                    {{ $app->app_name[1] ?? 'INSPIRA ' . now()->format('Y') }}
-                </h2>
+                <div class="flex items-center justify-center lg:justify-start">
+                    <h2 class="text-4xl lg:text-7xl font-extrabold w-fit text-white drop-shadow-md tracking-wide bg-gradient-to-r from-red-700 via-red-600 to-red-500">
+                        {{ $app->app_name[1] ?? 'INSPIRA ' . now()->format('Y') }}
+                    </h2>
+                </div>
                 <p class="text-lg lg:text-2xl text-gray-200 font-medium leading-relaxed">
                     {!! $home->title ?? 'International Forum on Innovation, Strategy, and Presentation of Research Activity' !!}
                 </p>

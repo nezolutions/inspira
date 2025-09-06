@@ -16,7 +16,7 @@
 			</svg>				  
 			Researchers and Lecturers
 		</h3>
-		<div class="grid grid-cols-3 gap-6">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 			@forelse ($awards->where('category', 'Researchers and Lecturers') as $a1)
 				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">{{ $a1->title }}</h3>

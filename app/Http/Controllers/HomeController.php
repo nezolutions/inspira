@@ -14,12 +14,6 @@ class HomeController extends Controller
             return redirect()->route('login');
         }
 
-        $app = App::first();
-
-        $ac = $app ? $app->university : 'JGU';
-        $app_name = $app ? $app->app_name : 'INSPIRA';
-        $app_version = $app ? $app->app_version : now();
-
         $home = Home::first();
 
         $title = $home->title;
@@ -27,10 +21,6 @@ class HomeController extends Controller
         $bg = $home->background;
 
         return view('admin.edit_home', with([
-            'ac' => $ac,
-            'app_name' => $app_name,
-            'app_version' => $app_version,
-
             'title' => $title,
             'desc' => $desc,
             'bg' => $bg
@@ -51,12 +41,12 @@ class HomeController extends Controller
         $size = 2097152;
 
         try {
-                if ($request->hasFile('background')) {
-                    $file = $request->file('background');
-                    if ($file->getSize() == $size) {
-                        return redirect()->back()->withErrors(['error' => 'Maximum image size is 2MB.'])->withInput();
-                    }
+            if ($request->hasFile('background')) {
+                $file = $request->file('background');
+                if ($file->getSize() == $size) {
+                    return redirect()->back()->withErrors(['error' => 'Maximum image size is 2MB.'])->withInput();
                 }
+            }
 
             $home = Home::first();
 
