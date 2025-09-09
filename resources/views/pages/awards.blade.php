@@ -87,7 +87,7 @@
 			College Students
 		</h3>
 		<div class="grid md:grid-cols-3 gap-6">
-			@forelse ($awards->where('category', 'College Students')->where('order', '<', 4) as $a2)
+			@forelse ($awards->where('category', 'College Students 1') as $a2)
 				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">{{ $a2->title }}</h3>
 					<p class="text-sm text-gray-600 flex-grow">
@@ -149,7 +149,7 @@
 		</div>
 
 		<div class="grid grid-cols-1 justify-center gap-6">
-			@forelse ($awards->where('category', 'College Students')->where('order', '==', 4) as $a2)
+			@forelse ($awards->where('category', 'College Students 2') as $a2)
 			<!-- Gold/Silver/Bronze Award -->
 				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">{{ $a2->title }}</h3>
@@ -161,30 +161,42 @@
 						<div class="flex flex-col lg:flex-row items-start lg:items-center gap-2">
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-amber-400 px-1 rounded-sm">Gold</span>
+								<span class="before:content-['IDR']">	
 								{{ number_format($a2->on_gold, 0, ',', '.') }}
+								</span>
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-neutral-300 px-1 rounded-sm">Silver</span>
+								<span class="before:content-['IDR']">	
 								{{ number_format($a2->on_silver, 0, ',', '.') }}
+								</span>
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-yellow-800 px-1 rounded-sm">Bronze</span>
+								<span class="before:content-['IDR']">	
 								{{ number_format($a2->on_bronze, 0, ',', '.') }}
+								</span>
 							</p>
 						</div>
 						<p class="text-xs text-gray-500 mt-2">Poster Presentation (Offline)</p>
 						<div class="flex flex-col lg:flex-row items-start lg:items-center gap-2">
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-amber-400 px-1 rounded-sm">Gold</span>
+								<span class="before:content-['IDR']">	
 								{{ number_format($a2->off_gold, 0, ',', '.') }}
+								</span>
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-neutral-300 px-1 rounded-sm">Silver</span>
+								<span class="before:content-['IDR']">	
 								{{ number_format($a2->off_silver, 0, ',', '.') }}
+								</span>
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-yellow-800 px-1 rounded-sm">Bronze</span>
+								<span class="before:content-['IDR']">	
 								{{ number_format($a2->off_bronze, 0, ',', '.') }}
+								</span>
 							</p>
 						</div>
 					</div>
@@ -202,26 +214,26 @@
 						<div class="flex flex-col lg:flex-row items-start lg:items-center gap-2">
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-amber-400 px-1 rounded-sm">Gold</span>
-								1.000.000 IDR
+								1.000.000
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-neutral-300 px-1 rounded-sm">Silver</span>
-								500.000 IDR
+								500.000
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-yellow-800 px-1 rounded-sm">Bronze</span>
-								250.000 IDR
+								250.000
 							</p>
 						</div>
 						<p class="text-xs text-gray-500 mt-2">Poster Presentation (Offline)</p>
 						<div class="flex flex-col lg:flex-row items-start lg:items-center gap-2">
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-amber-400 px-1 rounded-sm">Gold</span>
-								2.000.000 IDR
+								2.000.000
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-neutral-300 px-1 rounded-sm">Silver</span>
-								1.000.000 IDR
+								1.000.000
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-yellow-800 px-1 rounded-sm">Bronze</span>

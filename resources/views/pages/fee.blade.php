@@ -1,6 +1,9 @@
-<div class="relative w-full min-h-screen bg-gray-800 bg-cover bg-no-repeat bg-center bg-fixed" style="background-image: url('{{ 'images/wuxi.jpg' }}');">
-    <div class="absolute inset-0 bg-gray-700/50 backdrop-blur-[3px]"></div>
-    <div class="absolute inset-0 bg-gray-700/20"></div>
+<div class="relative w-full min-h-screen bg-gray-800 bg-cover bg-no-repeat bg-center bg-fixed"
+    style="background-image: url('{{ asset('images/wuxi.jpg') }}');">
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-[3px]"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-gray-700/60 to-gray-900/90"></div>
+
+
     <div class="relative z-10 flex flex-col items-center justify-center w-full py-20 min-h-screen">
         <div class="w-full max-w-7xl space-y-8 lg:space-y-12 px-6">
             

@@ -88,7 +88,8 @@ return new class extends Migration
             $table->integer('off_bronze')->nullable();
             $table->enum('category', [
                 'Researchers and Lecturers',
-                'College Students',
+                'College Students 1',
+                'College Students 2',
                 'Highschool Students'
             ]);
             $table->timestamps();

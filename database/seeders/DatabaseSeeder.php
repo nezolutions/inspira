@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin Jakarta Global University',
             'email' => 'inspira@jgu.ac.id',
             'email_verified_at' => now(),
-            'password' => Hash::make('1234'),
+            'password' => Hash::make('inspira@itic'),
             'created_at' => now()
         ]);
 
@@ -190,7 +190,7 @@ class DatabaseSeeder extends Seeder
                 'icon' => 'images/icons8-research-64.png',
                 'background' => 'images/back1.jpg'
             ], [
-                'title' => 'College Student',
+                'title' => 'College Student & Fresh Graduate (Max. Bachelor)',
                 'icon' => 'images/icons8-college-64.png',
                 'background' => 'images/back2.jpg'
             ], [
@@ -257,7 +257,7 @@ class DatabaseSeeder extends Seeder
             ],
             // 2
             [
-                'category' => 'College Students',
+                'category' => 'College Students 1',
                 'title' => 'Best Student Project',
                 'description' => 'Presented to the student-led project that excels in innovation, relevance to current issues, and overall execution.',
                 'online_prize' => 1250000,
@@ -271,9 +271,9 @@ class DatabaseSeeder extends Seeder
                 'order' => 1
             ],
             [
-                'category' => 'College Students',
-                'title' => 'Best Poster Design',
-                'description' => 'Awarded for the most visually compelling and well-structured poster that effectively communicates the project\'s objectives, methodology, and results.',
+                'category' => 'College Students 1',
+                'title' => 'Best Design',
+                'description' => 'Awarded for the most visually compelling and well-structured presentation file / poster that effectively communicates the project\'s objectives, methodology, and results.',
                 'online_prize' => 1000000,
                 'offline_prize' => 2000000,
                 'on_gold' => 0,
@@ -285,9 +285,9 @@ class DatabaseSeeder extends Seeder
                 'order' => 2
             ],
             [
-                'category' => 'College Students',
+                'category' => 'College Students 1',
                 'title' => 'Best Presentation',
-                'description' => 'Recognizes the participant who delivers the most clear, engaging, and professional oral presentation.',
+                'description' => 'Recognizes the participant who delivers the most clear, engaging, and professional presentation.',
                 'online_prize' => 1000000,
                 'offline_prize' => 2000000,
                 'on_gold' => 0,
@@ -299,7 +299,7 @@ class DatabaseSeeder extends Seeder
                 'order' => 3
             ],
             [
-                'category' => 'College Students',
+                'category' => 'College Students 2',
                 'title' => 'Gold/Silver/Bronze Award',
                 'description' => 'Given to the top three student projects that demonstrate exceptional quality across all assessment criteria.',
                 'online_prize' => 0,

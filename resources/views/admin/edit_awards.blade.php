@@ -91,57 +91,153 @@
                 </button>
             </div> --}}
 
-            <!-- College/University Students Section -->
-            <h3 class="font-bold text-xl lg:text-2xl mb-5 text-gray-300">College/University Student</h3>
+            <!-- College/University Students Section 1 -->
+            <h3 class="font-bold text-xl lg:text-2xl mb-5 text-gray-300">College/University Student CAT1</h3>
             <div id="college-students-items">
-                @if(isset($collegeStudents) && count($collegeStudents) > 0)
-                    @foreach ($collegeStudents as $index => $award)   
+                @if(isset($collegeStudents1) && count($collegeStudents1) > 0)
+                    @foreach ($collegeStudents1 as $index => $award)   
                         <div class="bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-700 mb-5 college-student-item">
                             <div class="relative z-0 w-full mb-5 group">
-                                <input type="text" value="{{ $award->title }}" name="collegeStudents[{{ $index }}][title]" id="college-title-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                <input type="text" value="{{ $award->title }}" name="collegeStudents1[{{ $index }}][title]" id="college-title-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                 <label for="college-title-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Title</label>
                             </div>
                             <div class="relative z-0 w-full mb-5 group">
-                                <textarea name="collegeStudents[{{ $index }}][description]" id="college-description-{{ $index }}" rows="3" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required>{{ $award->description }}</textarea>
+                                <textarea name="collegeStudents1[{{ $index }}][description]" id="college-description-{{ $index }}" rows="3" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required>{{ $award->description }}</textarea>
                                 <label for="college-description-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Description</label>
                             </div>
                             @if ($award->online_prize != 0 && $award->offline_prize != 0)
                                 <div class="relative z-0 w-full mb-5 group">
-                                    <input type="text" value="{{ $award->online_prize }}" name="collegeStudents[{{ $index }}][online_prize]" id="collegeStudents-online_prize-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                    <input type="text" value="{{ $award->online_prize }}" name="collegeStudents1[{{ $index }}][online_prize]" id="collegeStudents-online_prize-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                     <label for="collegeStudents-online_prize-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Online Prize</label>
                                 </div>
                                 <div class="relative z-0 w-full mb-5 group">
-                                    <input type="text" value="{{ $award->offline_prize }}" name="collegeStudents[{{ $index }}][offline_prize]" id="collegeStudents-offline_prize-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                    <input type="text" value="{{ $award->offline_prize }}" name="collegeStudents1[{{ $index }}][offline_prize]" id="collegeStudents-offline_prize-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                     <label for="collegeStudents-offline_prize-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Offline Prize</label>
                                 </div>
                             @else
                                 <div class="flex items-center gap-4">
                                     <div class="relative z-0 w-full mb-5 group">
-                                        <input type="text" value="{{ $award->on_gold }}" name="collegeStudents[{{ $index }}][on_gold]" id="collegeStudents-on_gold-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <input type="text" value="{{ $award->on_gold }}" name="collegeStudents1[{{ $index }}][on_gold]" id="collegeStudents-on_gold-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                         <label for="collegeStudents-on_gold-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Online Gold Prize</label>
                                     </div>
                                     <div class="relative z-0 w-full mb-5 group">
-                                        <input type="text" value="{{ $award->off_gold }}" name="collegeStudents[{{ $index }}][off_gold]" id="collegeStudents-off_gold-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <input type="text" value="{{ $award->off_gold }}" name="collegeStudents1[{{ $index }}][off_gold]" id="collegeStudents-off_gold-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                         <label for="collegeStudents-off_gold-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Offline Gold Prize</label>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-4">
                                     <div class="relative z-0 w-full mb-5 group">
-                                        <input type="text" value="{{ $award->on_silver }}" name="collegeStudents[{{ $index }}][on_silver]" id="collegeStudents-on_silver-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <input type="text" value="{{ $award->on_silver }}" name="collegeStudents1[{{ $index }}][on_silver]" id="collegeStudents-on_silver-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                         <label for="collegeStudents-on_silver-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Online Gold Prize</label>
                                     </div>
                                     <div class="relative z-0 w-full mb-5 group">
-                                        <input type="text" value="{{ $award->off_silver }}" name="collegeStudents[{{ $index }}][off_silver]" id="collegeStudents-off_silver-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <input type="text" value="{{ $award->off_silver }}" name="collegeStudents1[{{ $index }}][off_silver]" id="collegeStudents-off_silver-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                         <label for="collegeStudents-off_silver-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Offline Gold Prize</label>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-4">
                                     <div class="relative z-0 w-full mb-5 group">
-                                        <input type="text" value="{{ $award->on_bronze }}" name="collegeStudents[{{ $index }}][on_bronze]" id="collegeStudents-on_bronze-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <input type="text" value="{{ $award->on_bronze }}" name="collegeStudents1[{{ $index }}][on_bronze]" id="collegeStudents-on_bronze-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                         <label for="collegeStudents-on_bronze-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Online Gold Prize</label>
                                     </div>
                                     <div class="relative z-0 w-full mb-5 group">
-                                        <input type="text" value="{{ $award->off_bronze }}" name="collegeStudents[{{ $index }}][off_bronze]" id="collegeStudents-off_bronze-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <input type="text" value="{{ $award->off_bronze }}" name="collegeStudents1[{{ $index }}][off_bronze]" id="collegeStudents-off_bronze-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <label for="collegeStudents-off_bronze-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Offline Gold Prize</label>
+                                    </div>
+                                </div>
+                            @endif
+                            {{-- @if($index > 0)
+                                <button type="button" class="remove-college-student flex items-center text-red-500 cursor-pointer hover:text-red-600" onclick="removeCollegeStudentItem(this)">
+                                    <svg class="size-6 p-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Remove
+                                </button>
+                            @endif --}}
+                        </div>
+                    @endforeach
+                @else
+                    <div class="bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-700 mb-5 researcher-item">
+                        <div class="relative z-0 w-full mb-5 text-center group">
+                            <p class="text-red-600 text-base font-medium italic">Please set the seeder first.</p>
+                        </div>
+                    </div>
+                    {{-- <div class="bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-700 mb-5 college-student-item">
+                        <div class="relative z-0 w-full mb-5 group">
+                            <input type="text" name="collegeStudents[0][title]" id="college-title-0" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                            <label for="college-title-0" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Title</label>
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                            <textarea name="collegeStudents[0][description]" id="college-description-0" rows="3" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required></textarea>
+                            <label for="college-description-0" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Description</label>
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                            <textarea name="collegeStudents[0][icon]" id="college-icon-0" rows="4" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required></textarea>
+                            <label for="college-icon-0" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Icon (SVG)</label>
+                        </div>
+                    </div> --}}
+                @endif
+            </div>
+            {{-- <div class="text-center mb-8">
+                <button type="button" onclick="addCollegeStudentItem()" class="text-sm cursor-pointer inline-flex items-center px-4 py-2 mb-5 border border-gray-700 hover:bg-gray-700 text-white rounded-md bg-gray-800 focus:outline-none">
+                    <svg class="size-6 p-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    Add New College Student Award
+                </button>
+            </div> --}}
+
+            <!-- College/University Students Section 2 -->
+            <h3 class="font-bold text-xl lg:text-2xl mb-5 text-gray-300">College/University Student CAT2</h3>
+            <div id="college-students-items">
+                @if(isset($collegeStudents2) && count($collegeStudents2) > 0)
+                    @foreach ($collegeStudents2 as $index => $award)   
+                        <div class="bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-700 mb-5 college-student-item">
+                            <div class="relative z-0 w-full mb-5 group">
+                                <input type="text" value="{{ $award->title }}" name="collegeStudents2[{{ $index }}][title]" id="college-title-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                <label for="college-title-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Title</label>
+                            </div>
+                            <div class="relative z-0 w-full mb-5 group">
+                                <textarea name="collegeStudents2[{{ $index }}][description]" id="college-description-{{ $index }}" rows="3" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required>{{ $award->description }}</textarea>
+                                <label for="college-description-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Description</label>
+                            </div>
+                            @if ($award->online_prize != 0 && $award->offline_prize != 0)
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <input type="text" value="{{ $award->online_prize }}" name="collegeStudents2[{{ $index }}][online_prize]" id="collegeStudents-online_prize-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                    <label for="collegeStudents-online_prize-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Online Prize</label>
+                                </div>
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <input type="text" value="{{ $award->offline_prize }}" name="collegeStudents2[{{ $index }}][offline_prize]" id="collegeStudents-offline_prize-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                    <label for="collegeStudents-offline_prize-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Offline Prize</label>
+                                </div>
+                            @else
+                                <div class="flex items-center gap-4">
+                                    <div class="relative z-0 w-full mb-5 group">
+                                        <input type="text" value="{{ $award->on_gold }}" name="collegeStudents2[{{ $index }}][on_gold]" id="collegeStudents-on_gold-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <label for="collegeStudents-on_gold-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Online Gold Prize</label>
+                                    </div>
+                                    <div class="relative z-0 w-full mb-5 group">
+                                        <input type="text" value="{{ $award->off_gold }}" name="collegeStudents2[{{ $index }}][off_gold]" id="collegeStudents-off_gold-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <label for="collegeStudents-off_gold-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Offline Gold Prize</label>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="relative z-0 w-full mb-5 group">
+                                        <input type="text" value="{{ $award->on_silver }}" name="collegeStudents2[{{ $index }}][on_silver]" id="collegeStudents-on_silver-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <label for="collegeStudents-on_silver-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Online Gold Prize</label>
+                                    </div>
+                                    <div class="relative z-0 w-full mb-5 group">
+                                        <input type="text" value="{{ $award->off_silver }}" name="collegeStudents2[{{ $index }}][off_silver]" id="collegeStudents-off_silver-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <label for="collegeStudents-off_silver-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Offline Gold Prize</label>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="relative z-0 w-full mb-5 group">
+                                        <input type="text" value="{{ $award->on_bronze }}" name="collegeStudents2[{{ $index }}][on_bronze]" id="collegeStudents-on_bronze-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                                        <label for="collegeStudents-on_bronze-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Online Gold Prize</label>
+                                    </div>
+                                    <div class="relative z-0 w-full mb-5 group">
+                                        <input type="text" value="{{ $award->off_bronze }}" name="collegeStudents2[{{ $index }}][off_bronze]" id="collegeStudents-off_bronze-{{ $index }}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
                                         <label for="collegeStudents-off_bronze-{{ $index }}" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start:0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Offline Gold Prize</label>
                                     </div>
                                 </div>

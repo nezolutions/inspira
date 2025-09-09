@@ -24,12 +24,12 @@
                             <!-- Overlay gelap -->
                             <div class="absolute inset-0 bg-gray-900/70"></div>
                             
-                            <div class="relative flex flex-col items-center justify-center h-full">
+                            <div class="relative flex flex-col items-center justify-center px-4 h-full">
                                 <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg ring-2 ring-white/70">
                                     <!-- Tempat ikon -->
                                     <img src="{{ $p->icon }}" alt="icon" class="w-10">
                                 </div>
-                                <h2 class="mt-3 text-2xl font-bold text-white drop-shadow">{{ $p->title }}</h2>
+                                <h2 class="mt-3 text-xl lg:text-2xl font-bold text-white drop-shadow">{{ $p->title }}</h2>
                             </div>
                         </div>
                     </li>

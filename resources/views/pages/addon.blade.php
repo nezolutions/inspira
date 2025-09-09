@@ -1,4 +1,4 @@
-<div class="flex items-center justify-center w-full h-72 lg:h-32 bg-gradient-to-b from-gray-800 to-gray-900">
+<div class="flex items-center justify-center w-full h-72 lg:h-32 bg-gray-700">
     <div class="w-full max-w-7xl px-6 flex flex-col lg:flex-row items-center justify-between">
         <div class="flex flex-col lg:flex-row items-center gap-4">
             <p class="text-4xl lg:text-5xl text-white font-bold">Interested?</p>
