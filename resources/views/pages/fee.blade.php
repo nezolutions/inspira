@@ -30,7 +30,7 @@
                         <tbody class="divide-y divide-gray-100">
                             @forelse ($fee as $fees)
                                 <tr class="{{ $fees->id % 2 === 0 ? 'bg-red-50' : 'bg-white' }} hover:bg-red-100 transition">
-                                    <td class="py-4 px-6 text-md lg:text-lg font-semibold">{{ $fees->title }}</td>
+                                    <td class="py-4 px-6 text-md lg:text-lg font-semibold">{!! $fees->title !!}</td>
                                     <td class="py-4 px-6 text-md lg:text-lg">{{ number_format($fees->online_fee, 0, ',', '.') }} {{ $fees->on_fee_type }}</td>
                                     <td class="py-4 px-6 text-md lg:text-lg">{{ number_format($fees->offline_fee, 0, ',', '.') }} {{ $fees->on_fee_type }}</td>
                                 </tr>
@@ -46,7 +46,7 @@
                                     <td class="py-4 px-6 text-md lg:text-lg">300,000 IDR</td>
                                 </tr>
                                 <tr class="bg-white hover:bg-red-100 transition">
-                                    <td class="py-4 px-6 text-md lg:text-lg font-semibold">College/University Student</td>
+                                    <td class="py-4 px-6 text-md lg:text-lg font-semibold">College Student & Fresh Graduate <br><span class="text-sm text-red-600">(Max. Bachelor)</span></td>
                                     <td class="py-4 px-6 text-md lg:text-lg">300,000 IDR</td>
                                     <td class="py-4 px-6 text-md lg:text-lg">200,000 IDR</td>
                                 </tr>

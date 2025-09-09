@@ -273,7 +273,7 @@ class DatabaseSeeder extends Seeder
             [
                 'category' => 'College Students 1',
                 'title' => 'Best Design',
-                'description' => 'Awarded for the most visually compelling and well-structured presentation file / poster that effectively communicates the project\'s objectives, methodology, and results.',
+                'description' => 'Awarded for the most visually compelling and well-structured presentation file/poster that effectively communicates the project\'s objectives, methodology, and results.',
                 'online_prize' => 1000000,
                 'offline_prize' => 2000000,
                 'on_gold' => 0,
@@ -329,8 +329,8 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'category' => 'Highschool Students',
-                'title' => 'Best Visual Poster',
-                'description' => 'Awarded for the most visually attractive and easy-to-understand poster among high school participants.',
+                'title' => 'Best Presentation File/Poster',
+                'description' => 'Awarded for the most visually attractive and easy-to-understand presentation file/poster among high school participants.',
                 'online_prize' => 250000,
                 'offline_prize' => 500000,
                 'on_gold' => 0,
@@ -361,7 +361,7 @@ class DatabaseSeeder extends Seeder
                 'order' => 2
             ],
             [
-                'title' => 'College/University Student',
+                'title' => 'College Student & Fresh Graduate <br><span class="text-sm text-red-600">(Max. Bachelor)</span>',
                 'online_fee' => 300000,
                 'on_fee_type' => 'IDR',
                 'offline_fee' => 200000,
