@@ -27,7 +27,7 @@ class AboutController extends Controller
     
         $validated = $request->validate([
             'content' => 'required|string',
-            'logo' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
+            'cover' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
             'highlights' => 'nullable|array',
             'highlights.*' => 'nullable|string'
         ]);
@@ -40,8 +40,8 @@ class AboutController extends Controller
             $highlights = $validated['highlights'] ?? [];
             $about->highlights = array_replace($about->highlights ?? [], $highlights);
     
-            if ($request->hasFile('logo')) {
-                $file = $request->file('logo');
+            if ($request->hasFile('cover')) {
+                $file = $request->file('cover');
                 if ($file->getSize() > 2097152) {
                     return redirect()->back()
                         ->withErrors(['error' => 'Maximum image size is 2MB.'])
@@ -50,7 +50,7 @@ class AboutController extends Controller
     
                 $filename = 'cover_' . time() . '.' . $file->getClientOriginalExtension();
                 $file->storeAs('cover', $filename, 'public');
-                $about->logo = 'storage/cover/' . $filename;
+                $about->cover = 'storage/cover/' . $filename;
             }
     
             $about->save();

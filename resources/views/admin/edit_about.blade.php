@@ -53,8 +53,8 @@
                 </div>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-                <label for="logo" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Upload Cover</label>
-                <input class="block w-full h-20 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="logo" type="file" name="logo">
+                <label for="cover" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Upload Cover</label>
+                <input class="block w-full h-20 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="cover" type="file" name="cover">
             </div>
             <div class="relative z-0 w-full flex items-center gap-2 group">
                 <button type="submit" class="select-none w-full cursor-pointer text-white bg-red-700 hover:bg-red-800 focus:outline-none font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700">Update</button>

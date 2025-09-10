@@ -83,7 +83,10 @@ class AppController extends Controller
 
             $app = App::first();
 
-            $app->app_name = $request->input('app_name');
+            $app_name_string = $request->input('app_name');
+            $app_name_array = array_map('trim', explode(',', $app_name_string));
+            $app->app_name = $app_name_array;
+
             $app->register = $request->input('register');
             $app->is_name_showed = $request->has('is_name_showed') ? 1 : 0;
             $app->is_image_fit = $request->has('is_image_fit') ? 1 : 0;

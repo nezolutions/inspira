@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $app->app_name[0] . $app->app_name[1] ?? 'JGU-WXUT INSPIRA ' . now()->format('Y'))
+@section('title', $app->app_name[0] .' '. $app->app_name[1] ?? 'JGU-WXUT INSPIRA ' . now()->format('Y'))
 
 @section('content')
     <x-panel></x-panel>

@@ -29,14 +29,14 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin Jakarta Global University',
             'email' => 'inspira@jgu.ac.id',
             'email_verified_at' => now(),
-            'password' => Hash::make('inspira@itic'),
+            'password' => Hash::make('itic@inspira'),
             'created_at' => now()
         ]);
 
         App::insert([
             'app_icon' => 'images/icon.png',
             'app_name' => json_encode([
-                'JGU-WXUT ',
+                'JGU-WXUT',
                 'INSPIRA ' . now()->format('Y'),
             ]),
             'is_name_showed' => true,
@@ -45,13 +45,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Home::create([
-            'background' => 'images/background.png',
+            'background' => 'images/noverlay.png',
             'title' => '<b><em>International Forum</em></b> on Innovation, Strategy, and Presentation of Research Activity',
             'description' => 'Bridging engineering, business, and pharmaceutical expertise to advance technological innovation for global impact'
         ]);
 
         About::insert([
-            'cover' => 'images/cover.png',
+            'cover' => 'images/inspira1.png',
             'content' => 'is a premier academic platform organized by Jakarta Global University (JGU) that brings together emerging researchers, scholars, and innovators to showcase their ideas and insights in the fields of science, technology, business, and health. Under the theme “International Forum on Innovation, Strategy, and Presentation of Research title," this event aims to foster interdisciplinary collaboration, spark future-oriented thinking, and strengthen the research culture among the academic community. Through a dynamic combination of strategic forums, keynote lectures, and a competitive poster presentation, JGU INSPIRA serves as a catalyst for knowledge exchange, academic excellence, and impactful innovation aligned with global challenges and sustainable development goals (SDGs).',
             'highlights' => json_encode([
                 'International Strategic Forum',
