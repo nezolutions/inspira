@@ -9,6 +9,21 @@ setTimeout(function() {
     });
 }, 5000);
 
+// Inisialisasi tombol scroll-top
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollTopBtn = document.getElementById('scroll-top');
+    scrollTopBtn.classList.add('show');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 70) {
+            scrollTopBtn.classList.add('show');
+        } else {
+            scrollTopBtn.classList.remove('show');
+        }
+    });
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Navigation Modal
     const modal = document.getElementById('default-modal');

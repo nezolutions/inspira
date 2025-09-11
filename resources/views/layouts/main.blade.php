@@ -13,6 +13,7 @@
 @section('content')
     <x-panel></x-panel>
     <x-modal></x-modal>
+    <x-top></x-top>
     
     <header>
         @include('layouts.header')
