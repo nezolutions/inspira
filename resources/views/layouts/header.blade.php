@@ -7,9 +7,11 @@
         $isName2 = $app->is_lname_showed;
         $isImage = $app->is_image_fit;
     } else {    
-        $title = 'JGU-WXUT INSPIRA ' . now()->format('Y');
+        $title1 = 'JGU-WXUT' . ' ';
+        $title2 = 'INSPIRA '. now()->format('Y');
         $icon = 'images/icon.png';
-        $isName = true;
+        $isName1 = false;
+        $isName2 = true;
         $isImage = false;
     }
 @endphp
