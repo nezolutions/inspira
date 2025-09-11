@@ -19,7 +19,7 @@
         @include('layouts.header')
     </header>
 
-    <main>
+    <main class="main">
         <section id="home">
             @include('pages.home')
         </section>
