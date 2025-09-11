@@ -9,8 +9,29 @@ setTimeout(function() {
     });
 }, 5000);
 
-// Inisialisasi tombol scroll-top
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+    // Animation
+    setInterval(function() {
+        var el = document.querySelector('.jello-h');
+        if (el) {
+            el.classList.remove('jello-h');
+            // Paksa reflow agar animasi bisa diulang
+            void el.offsetWidth;
+            el.classList.add('jello-h');
+        }
+    }, 3000);
+    
+    setInterval(function() {
+        var el = document.querySelector('.jello-hh');
+        if (el) {
+            el.classList.remove('jello-hh');
+            // Paksa reflow agar animasi bisa diulang
+            void el.offsetWidth;
+            el.classList.add('jello-hh');
+        }
+    }, 3000);
+
+    // Back to Top Button
     const scrollTopBtn = document.getElementById('scroll-top');
     scrollTopBtn.classList.add('show');
 
@@ -21,10 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollTopBtn.classList.remove('show');
         }
     });
-});
 
-
-document.addEventListener('DOMContentLoaded', () => {
     // Navigation Modal
     const modal = document.getElementById('default-modal');
     const toggleBtn = document.querySelector('[data-modal-toggle="default-modal"]');

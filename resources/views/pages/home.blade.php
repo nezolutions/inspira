@@ -1,10 +1,10 @@
 <div class="relative w-full min-h-screen bg-gray-800 bg-cover bg-no-repeat bg-center bg-fixed"
-    style="background-image: url('{{ $home->background ?? 'images/background.png' }}');">
+    style="background-image: url('{{ $home->background ?? 'images/home.png' }}');">
     {{-- <div class="absolute inset-0 bg-black/40 backdrop-blur-[3px]"></div> --}}
     {{-- <div class="absolute inset-0 bg-gradient-to-b from-gray-700/60 to-gray-900/90"></div> --}}
 
-    <div class="relative z-20 w-full min-h-screen flex flex-col items-center justify-center px-6">
-        <div class="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
+    <div class="relative z-20 w-full min-h-screen flex flex-col items-center justify-center">
+        <div class="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 items-center gap-8 px-6">
             <div class="flex flex-col gap-4 text-center lg:text-start">
                 <h1 class="text-5xl lg:text-8xl font-black bg-gradient-to-r from-red-700 via-red-600 to-red-500 bg-clip-text text-transparent tracking-tight drop-shadow-lg">
                     {{ $app->app_name[0] ?? 'JGU-WXUT ' }}
@@ -22,8 +22,8 @@
                 </blockquote>
 
                 <div class="flex items-center justify-center lg:justify-start">
-                    <a href="{{ $app->register ?? '#' }}" class="group mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-full text-lg font-bold uppercase tracking-wide text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 shadow-lg shadow-red-800/40 transition-transform duration-300 hover:scale-105">
-                        Register Now
+                    <a href="{{ $app->register ?? '#' }}" class="group mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-full text-lg font-bold uppercase tracking-wide text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 shadow-lg shadow-red-800/40 transition-transform duration-300 hover:scale-105 pulsate-bck">
+                        Registration
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0-7.5 7.5M21 12H3" />
                         </svg>

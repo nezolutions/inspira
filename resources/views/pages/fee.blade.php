@@ -1,7 +1,5 @@
-<div class="relative w-full min-h-screen bg-gray-800 bg-cover bg-no-repeat bg-center bg-fixed"
-    style="background-image: url('{{ asset('images/wxut.jpg') }}');">
+<div class="relative w-full min-h-screen bg-gray-800 bg-cover bg-no-repeat bg-center bg-fixed" style="background-image: url('{{ asset('images/wxut.jpg') }}');">
     <div class="absolute inset-0 bg-neutral-900/70"></div>
-
 
     <div class="relative z-10 flex flex-col items-center justify-center w-full py-20 min-h-screen">
         <div class="w-full max-w-7xl space-y-8 lg:space-y-12 px-6">
@@ -14,53 +12,59 @@
                 <div class="w-32 h-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>
             </div>
 
-        <!-- Table Container -->
-        <div class="flex flex-col items-center">
-            <div class="w-full max-w-6xl">
-                <div class="overflow-x-auto rounded-xl shadow-lg">
-                    <table class="min-w-full bg-white text-gray-700 border-collapse">
-                        <thead>
-                            <tr class="bg-gradient-to-r from-red-600 to-red-500 text-white">
-                                <th class="py-4 px-6 text-left text-lg lg:text-xl font-semibold">Participant</th>
-                                <th class="py-4 px-6 text-left text-lg lg:text-xl font-semibold">Oral Presentation (Online)</th>
-                                <th class="py-4 px-6 text-left text-lg lg:text-xl font-semibold">Poster Presentation (Offline)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            @forelse ($fee as $fees)
-                                <tr class="{{ $fees->id % 2 === 0 ? 'bg-red-50' : 'bg-white' }} hover:bg-red-100 transition">
-                                    <td class="py-4 px-6 text-md lg:text-lg font-semibold">{!! $fees->title !!}</td>
-                                    <td class="py-4 px-6 text-md lg:text-lg">{{ number_format($fees->online_fee, 0, ',', '.') }} {{ $fees->on_fee_type }}</td>
-                                    <td class="py-4 px-6 text-md lg:text-lg">{{ number_format($fees->offline_fee, 0, ',', '.') }} {{ $fees->on_fee_type }}</td>
+            <!-- Table Container -->
+            <div class="flex flex-col items-center">
+                <div class="w-full max-w-7xl">
+                    <div class="overflow-x-auto rounded-xl shadow-lg">
+                        <table class="min-w-full bg-white text-gray-700 border-collapse">
+                            <thead>
+                                <tr class="bg-gradient-to-r from-red-600 to-red-500 text-white">
+                                    <th class="py-4 px-6 text-left text-lg lg:text-xl font-semibold">Participant</th>
+                                    <th class="py-4 px-6 text-left text-lg lg:text-xl font-semibold">Oral Presentation (Online)</th>
+                                    <th class="py-4 px-6 text-left text-lg lg:text-xl font-semibold">Poster Presentation (Offline)</th>
                                 </tr>
-                            @empty    
-                                <tr class="bg-white hover:bg-red-100 transition">
-                                    <td class="py-4 px-6 text-md lg:text-lg font-semibold">International Participant</td>
-                                    <td class="py-4 px-6 text-md lg:text-lg">50 USD</td>
-                                    <td class="py-4 px-6 text-md lg:text-lg">50 USD</td>
-                                </tr>
-                                <tr class="bg-red-50 hover:bg-red-100 transition">
-                                    <td class="py-4 px-6 text-md lg:text-lg font-semibold">Researcher & Lecturer</td>
-                                    <td class="py-4 px-6 text-md lg:text-lg">400,000 IDR</td>
-                                    <td class="py-4 px-6 text-md lg:text-lg">300,000 IDR</td>
-                                </tr>
-                                <tr class="bg-white hover:bg-red-100 transition">
-                                    <td class="py-4 px-6 text-md lg:text-lg font-semibold">College Student & Fresh Graduate <br><span class="text-sm text-red-600">(Max. Bachelor)</span></td>
-                                    <td class="py-4 px-6 text-md lg:text-lg">300,000 IDR</td>
-                                    <td class="py-4 px-6 text-md lg:text-lg">200,000 IDR</td>
-                                </tr>
-                                <tr class="bg-red-50 hover:bg-red-100 transition">
-                                    <td class="py-4 px-6 text-md lg:text-lg font-semibold">High School Student</td>
-                                    <td class="py-4 px-6 text-md lg:text-lg">150,000 IDR</td>
-                                    <td class="py-4 px-6 text-md lg:text-lg">100,000 IDR</td>
-                                </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                @forelse ($fee as $fees)
+                                    <tr class="{{ $fees->id % 2 === 0 ? 'bg-red-50' : 'bg-white' }} hover:bg-red-100 transition">
+                                        <td class="py-4 px-6 text-md lg:text-lg font-semibold">{!! $fees->title !!}</td>
+                                        <td class="py-4 px-6 text-md lg:text-lg">{{ number_format($fees->online_fee, 0, ',', '.') }} {{ $fees->on_fee_type }}</td>
+                                        <td class="py-4 px-6 text-md lg:text-lg">{{ number_format($fees->offline_fee, 0, ',', '.') }} {{ $fees->on_fee_type }}</td>
+                                    </tr>
+                                @empty    
+                                    <tr class="bg-white hover:bg-red-100 transition">
+                                        <td class="py-4 px-6 text-md lg:text-lg font-semibold">International Participant</td>
+                                        <td class="py-4 px-6 text-md lg:text-lg">50 USD</td>
+                                        <td class="py-4 px-6 text-md lg:text-lg">50 USD</td>
+                                    </tr>
+                                    <tr class="bg-red-50 hover:bg-red-100 transition">
+                                        <td class="py-4 px-6 text-md lg:text-lg font-semibold">Researcher & Lecturer</td>
+                                        <td class="py-4 px-6 text-md lg:text-lg">400,000 IDR</td>
+                                        <td class="py-4 px-6 text-md lg:text-lg">300,000 IDR</td>
+                                    </tr>
+                                    <tr class="bg-white hover:bg-red-100 transition">
+                                        <td class="py-4 px-6 text-md lg:text-lg font-semibold">College Student & Fresh Graduate <br><span class="text-sm text-red-600">(Max. Bachelor)</span></td>
+                                        <td class="py-4 px-6 text-md lg:text-lg">300,000 IDR</td>
+                                        <td class="py-4 px-6 text-md lg:text-lg">200,000 IDR</td>
+                                    </tr>
+                                    <tr class="bg-red-50 hover:bg-red-100 transition">
+                                        <td class="py-4 px-6 text-md lg:text-lg font-semibold">High School Student</td>
+                                        <td class="py-4 px-6 text-md lg:text-lg">150,000 IDR</td>
+                                        <td class="py-4 px-6 text-md lg:text-lg">100,000 IDR</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
 
+            <div class="flex items-center justify-center">
+                <a href="{{ $app->register ?? '#' }}" class="group mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg text-lg font-bold uppercase tracking-wide text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 shadow-lg shadow-red-800/40 transition-transform duration-300 hover:scale-105 jello-h pulsate-bck">
+                    Register Now!
+                </a>
+            </div>
+        </div>
         @auth
             <div class="mt-10 flex justify-center">
                 <a href="{{ url('e/fee')}}" class="flex items-center gap-2 text-white bg-gray-700 hover:bg-gray-800 transition px-5 py-3 rounded-xl shadow-md text-base lg:text-lg">
