@@ -6,6 +6,7 @@ use App\Models\App;
 use App\Models\Home;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -65,6 +66,7 @@ class HomeController extends Controller
 
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'An error occured: ' . $e->getMessage())->withInput();
+            Log::warning('An error occured: ' . $e->getMessage());
         }
     }
 }

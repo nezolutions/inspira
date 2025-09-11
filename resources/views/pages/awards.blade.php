@@ -18,7 +18,7 @@
 		</h3>
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 			@forelse ($awards->where('category', 'Researchers and Lecturers') as $a1)
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="border rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">{{ $a1->title }}</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						{{ $a1->description }}
@@ -88,7 +88,7 @@
 		</h3>
 		<div class="grid md:grid-cols-3 gap-6">
 			@forelse ($awards->where('category', 'College Students 1') as $a2)
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="border rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">{{ $a2->title }}</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						{{ $a2->description }}
@@ -151,7 +151,7 @@
 		<div class="grid grid-cols-1 justify-center gap-6">
 			@forelse ($awards->where('category', 'College Students 2') as $a2)
 			<!-- Gold/Silver/Bronze Award -->
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="border rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">{{ $a2->title }}</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						{{ $a2->description }}
@@ -214,26 +214,26 @@
 						<div class="flex flex-col lg:flex-row items-start lg:items-center gap-2">
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-amber-400 px-1 rounded-sm">Gold</span>
-								1.000.000
+								1.000.000 IDR
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-neutral-300 px-1 rounded-sm">Silver</span>
-								500.000
+								500.000 IDR
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-yellow-800 px-1 rounded-sm">Bronze</span>
-								250.000
+								250.000 IDR
 							</p>
 						</div>
 						<p class="text-xs text-gray-500 mt-2">Poster Presentation (Offline)</p>
 						<div class="flex flex-col lg:flex-row items-start lg:items-center gap-2">
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-amber-400 px-1 rounded-sm">Gold</span>
-								2.000.000
+								2.000.000 IDR
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-neutral-300 px-1 rounded-sm">Silver</span>
-								1.000.000
+								1.000.000 IDR
 							</p>
 							<p class="text-lg font-semibold text-gray-800">
 								<span class="bg-yellow-800 px-1 rounded-sm">Bronze</span>
@@ -255,7 +255,7 @@
 		</h3>
 		<div class="grid md:grid-cols-2 gap-6">
 			@forelse ($awards->where('category', 'Highschool Students') as $a3)
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="border rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">{{ $a3->title }}</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						{{ $a3->description }}

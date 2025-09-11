@@ -4,7 +4,7 @@
         <!-- Title -->
         <div class="flex flex-col items-center justify-center mb-10">
             <h2 class="text-3xl lg:text-5xl font-extrabold text-gray-800 text-center tracking-tight mb-4">
-                What is <span class="text-red-600">{{ $app->app_name[0] . ' ' . $app->app_name[1] ?? 'JGU-WXUT INSPIRA ' . now()->format('Y') }}</span>?
+                What is <span class="text-red-600">{{ $app ? $app->app_name[0] . ' ' . $app->app_name[1] : 'JGU-WXUT INSPIRA ' . now()->format('Y') }}</span>?
             </h2>
             <div class="w-32 h-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>
         </div>
@@ -13,7 +13,7 @@
         <div class="w-full flex flex-col lg:flex-row items-center gap-10 bg-white/80 backdrop-blur-sm p-4 lg:p-8 rounded-2xl shadow-lg">
             <img class="w-56 lg:w-80 select-none drop-shadow-lg rounded-lg" draggable="false" src="{{ $about->cover ?? 'images/cover.png' }}">
             <p class="text-gray-600 text-base lg:text-lg text-justify">
-                <span class="ms-6 lg:ms-12 font-semibold text-gray-800">{{ $app->app_name[0] . ' ' . $app->app_name[1] ?? 'JGU-WXUT INSPIRA ' . now()->format('Y') }}</span>
+                <span class="ms-6 lg:ms-12 font-semibold text-gray-800">{{ $app ? $app->app_name[0] . ' ' . $app->app_name[1] : 'JGU-WXUT INSPIRA ' . now()->format('Y') }}</span>
                 {!! $about->content ?? 'is a premier academic platform organized by Jakarta Global University (JGU) that brings together emerging researchers, scholars, and innovators to showcase their ideas and insights in the fields of science, technology, business, and health. Under the theme “International Forum on Innovation, Strategy, and Presentation of Research title," this event aims to foster interdisciplinary collaboration, spark future-oriented thinking, and strengthen the research culture among the academic community. Through a dynamic combination of strategic forums, keynote lectures, and a competitive poster presentation, JGU INSPIRA serves as a catalyst for knowledge exchange, academic excellence, and impactful innovation aligned with global challenges and sustainable development goals (SDGs).' !!}
             </p>
         </div>

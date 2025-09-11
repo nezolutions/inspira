@@ -35,7 +35,7 @@
                     </li>
                 @empty
                     <li class="group bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-lg flex flex-col items-center text-center overflow-hidden h-52 transition-transform duration-300 hover:scale-105">
-                        <div class="relative w-full h-full bg-gray-600 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('images/background.png')}}')">
+                        <div class="relative w-full h-full bg-gray-600 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('images/jgu.png')}}')">
                             <!-- Overlay gelap -->
                             <div class="absolute inset-0 bg-gray-900/70"></div>
                                     
@@ -49,7 +49,7 @@
                         </div>
                     </li>
                     <li class="group bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-lg flex flex-col items-center text-center overflow-hidden h-52 transition-transform duration-300 hover:scale-105">
-                        <div class="relative w-full h-full bg-gray-600 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('images/background.png')}}')">
+                        <div class="relative w-full h-full bg-gray-600 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('images/jgu.png')}}')">
                             <!-- Overlay gelap -->
                             <div class="absolute inset-0 bg-gray-900/70"></div>
 
@@ -63,7 +63,7 @@
                         </div>
                     </li>
                     <li class="group bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-lg flex flex-col items-center text-center overflow-hidden h-52 transition-transform duration-300 hover:scale-105">
-                        <div class="relative w-full h-full bg-gray-600 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('images/background.png')}}')">
+                        <div class="relative w-full h-full bg-gray-600 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('images/jgu.png')}}')">
                             <!-- Overlay gelap -->
                             <div class="absolute inset-0 bg-gray-900/70"></div>
 

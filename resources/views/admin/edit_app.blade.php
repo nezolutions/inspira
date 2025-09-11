@@ -29,18 +29,30 @@
         <form class="max-w-md w-3/4 mx-auto" method="POST" action="{{ url('u/app') }}" enctype="multipart/form-data">
             @csrf
             <div class="flex-1 items-center gap-2">
-                <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="app_name" id="app_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " value="{{ old('app_name', is_array($app->app_name) ? implode(', ', $app->app_name) : $app->app_name) }}" required />
-                    <label for="app_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">App Name</label>
-                </div>
+                @if (isset($app))
+                    <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" value="{{ old('app_name.0', $app->app_name[0]) }}" name="app_name[0]" id="app_name[0]" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                        <label for="app_name[0]" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First Name</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" value="{{ old('app_name.1', $app->app_name[1]) }}" name="app_name[1]" id="app_name[1]" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " required />
+                        <label for="app_name[1]" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last Name</label>
+                    </div>
+                @endif
+
+
                 <div class="flex-1 mb-5 gap-2 text-gray-300 text-sm">
                     <div class="flex items-center gap-2 mb-2">
-                        <input type="checkbox" name="is_name_showed" id="is_name_showed" value="{{ $app->is_name_showed === 1 ?? 0}}" {{ $app->is_name_showed ? 'checked' : ''}}>
-                        <label>Show name in navbar</label>
+                        <input type="checkbox" name="is_fname_showed" id="is_fname_showed" value="{{ $app->is_fname_showed === 1 ?? 0}}" {{ $app->is_fname_showed ? 'checked' : ''}}>
+                        <label>Show first name in navbar</label>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <input type="checkbox" name="is_lname_showed" id="is_lname_showed" value="{{ $app->is_lname_showed === 1 ?? 0}}" {{ $app->is_lname_showed ? 'checked' : ''}}>
+                        <label>Show last name in navbar</label>
                     </div>
                     <div class="flex items-center gap-2 mb-2">
                         <input type="checkbox" name="is_image_fit" id="is_image_fit" value="{{ $app->is_image_fit === 1 ?? 0}}" {{ $app->is_image_fit ? 'checked' : ''}}>
-                        <label>Fill icon size</label>
+                        <label>Aspect ratio to 1:1</label>
                     </div>
                 </div>
             </div>

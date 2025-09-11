@@ -7,6 +7,7 @@ use App\Models\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 class AgendaController extends Controller
 {
@@ -56,6 +57,7 @@ class AgendaController extends Controller
 
             return redirect()->route('main');
         } catch (\Exception $e) {
+            Log::warning('An error occured: ' . $e->getMessage());
             return redirect()->back()->withErrors('error', 'An error occured: ' . $e->getMessage())->withInput();
         }
     }

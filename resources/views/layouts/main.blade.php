@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
-@section('title', $app->app_name[0] .' '. $app->app_name[1] ?? 'JGU-WXUT INSPIRA ' . now()->format('Y'))
+@php
+    if (isset($app)) {
+        $title = $app->app_name[0] .' '. $app->app_name[1];
+    } else {    
+        $title = 'JGU-WXUT INSPIRA ' . now()->format('Y');     
+    }
+@endphp
+
+@section('title', $title)
 
 @section('content')
     <x-panel></x-panel>
@@ -32,12 +40,9 @@
         <section id="fee">
             @include('pages.fee')
         </section>
-        <section>
-            @include('pages.addon')  
-        </section>
     </main>
     
-    <footer>
+    <footer class="border-t border-gray-700">
         @include('layouts.footer')
     </footer>
 

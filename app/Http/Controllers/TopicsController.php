@@ -6,6 +6,7 @@ use App\Models\Topic;
 use App\Models\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class TopicsController extends Controller
 {
@@ -51,6 +52,7 @@ class TopicsController extends Controller
 
             return redirect()->route('main');
         } catch (\Exception $e) {
+            Log::warning('An error occured: ' . $e->getMessage());
             return redirect()->back()->withErrors('error', 'An error occured: ' . $e->getMessage())->withInput();
         }
     }

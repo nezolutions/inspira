@@ -7,6 +7,7 @@ use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -40,7 +41,8 @@ class UserController extends Controller
                 return redirect()->back()->withErrors(['error' => 'Wrong email or password.'])->withInput($request->only('email'));
             }
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors(['error' => 'An error occurred.'])->withInput($request->only('email'));
+            Log::warning('An error occured: ' . $e->getMessage());
+            return redirect()->back()->withErrors('error', 'An error occured: ' . $e->getMessage())->withInput($request->only('email'));
         }
 
     }
@@ -99,7 +101,8 @@ class UserController extends Controller
 
             return redirect()->route('login');
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors(['error' => 'An error occurred.'])->withInput();
+            Log::warning('An error occured: ' . $e->getMessage());
+            return redirect()->back()->withErrors('error', 'An error occured: ' . $e->getMessage())->withInput();
         }
     }
 }

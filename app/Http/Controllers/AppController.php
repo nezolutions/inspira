@@ -13,6 +13,7 @@ use App\Models\Participant;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class AppController extends Controller
 {
@@ -56,6 +57,7 @@ class AppController extends Controller
         }
 
         $app = App::first();
+        $app->name = json_decode($app->name, true);
         
         return view('admin.edit_app', compact(['app']));
     }
@@ -63,7 +65,9 @@ class AppController extends Controller
     public function update(Request $request) {
         $request->validate([
             'app_icon' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
-            'app_name' => 'required|string|max:255',
+            'app_name' => 'required|array|size:2',
+            'app_name.0' => 'required|string|max:255',
+            'app_name.1' => 'required|string|max:255',
             'register' => 'required|string|url',
         ]);
 
@@ -83,24 +87,26 @@ class AppController extends Controller
 
             $app = App::first();
 
-            $app_name_string = $request->input('app_name');
-            $app_name_array = array_map('trim', explode(',', $app_name_string));
-            $app->app_name = $app_name_array;
-
+            $fname = $request->input('app_name.0');
+            $lname = $request->input('app_name.1');
+            $app->app_name = [$fname, $lname];
+            
             $app->register = $request->input('register');
-            $app->is_name_showed = $request->has('is_name_showed') ? 1 : 0;
+            $app->is_fname_showed = $request->has('is_fname_showed') ? 1 : 0;
+            $app->is_lname_showed = $request->has('is_lname_showed') ? 1 : 0;
             $app->is_image_fit = $request->has('is_image_fit') ? 1 : 0;
 
             if ($request->hasFile('app_icon')) {
-                $filename = 'icon_' . time() . '.' . $file->getClientOriginalExtension();
-                $file->storeAs('icon', $filename, 'public');
-                $app->app_icon = 'storage/icon/' . $filename;
+                $filename = 'logo_' . time() . '.' . $file->getClientOriginalExtension();
+                $file->storeAs('logo', $filename, 'public');
+                $app->app_icon = 'storage/logo/' . $filename;
             }
 
             $app->save();
 
             return redirect()->route('main');
         } catch (\Exception $e) {
+            Log::warning('An error occured: ' . $e->getMessage());
             return redirect()->back()->withErrors('error', 'An error occured: ' . $e->getMessage())->withInput();
         }
     }

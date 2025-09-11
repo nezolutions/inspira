@@ -30,7 +30,7 @@
                     </div>
                 @empty
                     <!-- Contoh Default Card -->
-                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-200">
                         <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-red-600 to-red-500 p-4">
                             Lorem Ipsum
                         </h3>
@@ -43,7 +43,7 @@
                             <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
                         </ul>
                     </div>
-                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-200">
                         <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-gray-800 to-gray-700 p-4">
                             Lorem Ipsum
                         </h3>
@@ -56,7 +56,7 @@
                             <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
                         </ul>
                     </div>
-                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-200">
                         <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-red-600 to-red-500 p-4">
                             Lorem Ipsum
                         </h3>
@@ -91,7 +91,7 @@
                     </div>
                 @empty
                     <!-- Contoh Default Card -->
-                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-200">
                         <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-red-600 to-red-500 p-4">
                             Lorem Ipsum
                         </h3>
@@ -104,7 +104,7 @@
                             <li class="flex items-start gap-2"><span class="text-red-400">✔</span>Lorem Ipsum dolor sit amet </li>
                         </ul>
                     </div>
-                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-200">
                         <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-gray-800 to-gray-700 p-4">
                             Lorem Ipsum
                         </h3>
@@ -138,7 +138,7 @@
                     </div>
                 @empty
                     <!-- Contoh Default Card -->
-                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-500">
+                    <div class="rounded-2xl overflow-hidden shadow-lg bg-white/90 backdrop-blur-sm border border-gray-200">
                         <h3 class="text-xl lg:text-2xl font-bold text-white bg-gradient-to-r from-gray-800 to-gray-700 p-4">
                             Lorem Ipsum
                         </h3>

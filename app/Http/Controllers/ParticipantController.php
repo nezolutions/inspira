@@ -6,6 +6,7 @@ use App\Models\Participant;
 use App\Models\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ParticipantController extends Controller
 {
@@ -68,6 +69,7 @@ class ParticipantController extends Controller
 
             return redirect()->route('main')->with('success', 'Participants updated successfully.');
         } catch (\Exception $e) {
+            Log::warning('An error occured: ' . $e->getMessage());
             return redirect()->back()->withErrors(['error' => 'An error occurred: ' . $e->getMessage()])->withInput();
         }
     }

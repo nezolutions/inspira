@@ -15,7 +15,8 @@ class App extends Model
     protected $fillable = [
         'app_icon',
         'app_name',
-        'is_name_showed',
+        'is_fname_showed',
+        'is_lname_showed',
         'is_image_fit',
         'register'
     ];
@@ -23,7 +24,8 @@ class App extends Model
     protected $casts = [
         'app_icon' => 'string',
         'app_name' => 'array',
-        'is_name_showed' => 'boolean',
+        'is_fname_showed' => 'boolean',
+        'is_lname_showed' => 'boolean',
         'is_image_fit' => 'boolean',
     ];
 }

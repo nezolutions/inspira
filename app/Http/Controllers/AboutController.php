@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class AboutController extends Controller
 {
@@ -57,6 +58,7 @@ class AboutController extends Controller
     
             return redirect()->route('main');
         } catch (\Exception $e) {
+            Log::warning('An error occured: ' . $e->getMessage());
             return redirect()->back()->withErrors(['error' => 'An error occurred: ' . $e->getMessage()])->withInput();
         }
     }    
