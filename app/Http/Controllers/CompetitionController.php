@@ -20,6 +20,12 @@ class CompetitionController extends Controller
         return view('admin.edit_competition', compact(['competitions']));
     }
 
+    public function oral() {
+        $app = App::first();
+
+        return view('pages.oral', compact('app'));
+    }
+
     public function update(Request $request) {
         if (!Auth::check()) {
             return redirect()->route('login');

@@ -105,6 +105,9 @@
                             {{ $c->title }}
                         </h4>
                         <p class="text-gray-700">{{ $c->content }}</p>
+                        @if ($c->id == 1)
+                        <a class="text-red-800 transition underline hover:text-black" href="{{ route('oral') }}">View presentation format</a>
+                        @endif  
                     </li>
                 @empty
                     <!-- contoh default -->

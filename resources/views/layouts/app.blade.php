@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -14,172 +13,162 @@
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 </head>
 <style>
-a, button, input, textarea, img {
-    outline: none;
-    user-select: none;
-}
-
-/* Scrollbar styling for mobile */
-.overflow-y-auto::-webkit-scrollbar {
-    width: 4px;
-}
-
-.overflow-y-auto::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.overflow-y-auto::-webkit-scrollbar-thumb {
-    background: rgba(156, 163, 175, 0.5);
-    border-radius: 12px;
-}
-
-.overflow-y-auto::-webkit-scrollbar-thumb:hover {
-    background: rgba(156, 163, 175, 0.7);
-}
-
-/* Back to Top */
-main.main #scroll-top {
-    display: none !important;
-    opacity: 0 !important;
-}
-
-main.main #scroll-top.show {
-    display: inline !important;
-    opacity: 1 !important;
-}
-
-main.main .jello-h {
-    animation: jello-horizontal;
-    animation-iteration-count: 1;
-    animation-duration: 0.9s;    
-}
-
-main.main .jello-h:hover {
-    animation-play-state: paused;
-}
-
-main.main .pulsate-bck:hover {
-    animation: pulsate-bck 0.9s infinite;
-}
-
-@keyframes jello-horizontal {
-    0% {
-        transform: scale3d(1, 1, 1);
+    a, button, input, textarea, img {
+        outline: none;
+        user-select: none;
     }
-    30% {
-        transform: scale3d(1.25, 0.75, 1);
-    }
-    40% {
-        transform: scale3d(0.75, 1.25, 1);
-    }
-    50% {
-        transform: scale3d(1.15, 0.85, 1);
-    }
-    65% {
-        transform: scale3d(0.95, 1.05, 1);
-    }
-    75% {
-        transform: scale3d(1.05, 0.95, 1);
-    }
-    100% {
-        transform: scale3d(1, 1, 1);
-    }
-}
 
-@keyframes pulsate-bck {
-    0% {
-        transform: scale(1);
+    /* Scrollbar styling for mobile */
+    .overflow-y-auto::-webkit-scrollbar {
+        width: 4px;
     }
-    50% {
-        transform: scale(0.9);
+
+    .overflow-y-auto::-webkit-scrollbar-track {
+        background: transparent;
     }
-    100% {
-        transform: scale(1);
+
+    .overflow-y-auto::-webkit-scrollbar-thumb {
+        background: rgba(156, 163, 175, 0.5);
+        border-radius: 12px;
     }
-}
+
+    .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+        background: rgba(156, 163, 175, 0.7);
+    }
+
+    /* Back to Top */
+    main.main #scroll-top {
+        display: none !important;
+        opacity: 0 !important;
+    }
+
+    main.main #scroll-top.show {
+        display: inline !important;
+        opacity: 1 !important;
+    }
+
+    main.main .jello-h {
+        animation: jello-horizontal;
+        animation-iteration-count: 1;
+        animation-duration: 0.9s;    
+    }
+
+    main.main .jello-h:hover {
+        animation-play-state: paused;
+    }
+
+    main.main .pulsate-bck:hover {
+        animation: pulsate-bck 0.9s infinite;
+    }
+
+    @keyframes jello-horizontal {
+        0% {
+            transform: scale3d(1, 1, 1);
+        }
+        30% {
+            transform: scale3d(1.25, 0.75, 1);
+        }
+        40% {
+            transform: scale3d(0.75, 1.25, 1);
+        }
+        50% {
+            transform: scale3d(1.15, 0.85, 1);
+        }
+        65% {
+            transform: scale3d(0.95, 1.05, 1);
+        }
+        75% {
+            transform: scale3d(1.05, 0.95, 1);
+        }
+        100% {
+            transform: scale3d(1, 1, 1);
+        }
+    }
+
+    @keyframes pulsate-bck {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0.9);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
 </style>
 <body class="font-['Outfit'] selection:bg-blue-600 selection:text-white overflow-y-auto bg-gray-800">
     @yield('content')
 </body>
-<script src="{{ asset('script.js')}}"></script>
 <script>
-    setTimeout(function() {
-    const notifications = document.querySelectorAll('.errors');
-    notifications.forEach(function(notification) {
-        notification.style.transition = 'opacity 0.5s';
-        notification.style.opacity = '0';
+    document.addEventListener('DOMContentLoaded', () => {
+        // Notification
         setTimeout(function() {
-            notification.style.display = 'none';
-        }, 500);
-    });
-}, 5000);
+            const notifications = document.querySelectorAll('.errors');
+            notifications.forEach(function(notification) {
+                notification.style.transition = 'opacity 0.5s';
+                notification.style.opacity = '0';
+                setTimeout(function() {
+                    notification.style.display = 'none';
+                }, 500);
+            });
+        }, 5000);
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Animation
-    setInterval(function() {
-        var el = document.querySelector('.jello-h');
-        if (el) {
-            el.classList.remove('jello-h');
-            // Paksa reflow agar animasi bisa diulang
-            void el.offsetWidth;
-            el.classList.add('jello-h');
+        // Animation
+        setInterval(function() {
+            var el = document.querySelector('.jello-h');
+            if (el) {
+                el.classList.remove('jello-h');
+                // Paksa reflow agar animasi bisa diulang
+                void el.offsetWidth;
+                el.classList.add('jello-h');
+            }
+        }, 3000);
+        
+        // Back to Top Button
+        const scrollTopBtn = document.getElementById('scroll-top');
+        scrollTopBtn.classList.remove('show');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 70) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        // Navigation Modal
+        const modal = document.getElementById('default-modal');
+        const toggleBtn = document.querySelector('[data-modal-toggle="default-modal"]');
+        const closeBtns = document.querySelectorAll('[data-modal-hide="default-modal"]');
+
+        function toggleModal() {
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
         }
-    }, 3000);
-    
-    setInterval(function() {
-        var el = document.querySelector('.jello-hh');
-        if (el) {
-            el.classList.remove('jello-hh');
-            // Paksa reflow agar animasi bisa diulang
-            void el.offsetWidth;
-            el.classList.add('jello-hh');
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', toggleModal);
         }
-    }, 3000);
 
-    // Back to Top Button
-    const scrollTopBtn = document.getElementById('scroll-top');
-    scrollTopBtn.classList.add('show');
+        closeBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            });
+        });
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 70) {
-            scrollTopBtn.classList.add('show');
-        } else {
-            scrollTopBtn.classList.remove('show');
-        }
-    });
-
-    // Navigation Modal
-    const modal = document.getElementById('default-modal');
-    const toggleBtn = document.querySelector('[data-modal-toggle="default-modal"]');
-    const closeBtns = document.querySelectorAll('[data-modal-hide="default-modal"]');
-
-    function toggleModal() {
-        if (modal.classList.contains('hidden')) {
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        } else {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-    }
-
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', toggleModal);
-    }
-
-    closeBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
         });
     });
-
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-    });
-});
 </script>
 </html>
