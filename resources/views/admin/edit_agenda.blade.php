@@ -3,7 +3,7 @@
 @section('title', 'Edit Agenda')
 
 @section('content')
-<section class="font-['Outfit'] bg-gray-900 w-full min-h-screen flex items-center">
+<section class="font-['Poppins'] bg-gray-900 w-full min-h-screen flex items-center">
     @if($errors->any())
         <div class="fixed top-4 right-4 border-1 bg-gray-800 border-red-500 text-white px-4 py-2 rounded-lg shadow-lg z-50">
             <ul>

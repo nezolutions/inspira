@@ -5,19 +5,3 @@
         </svg>          
     </a>
 </div>
-<script>
-            // Back to Top Button
-            const scrollTopBtn = document.getElementById('scroll-top');
-        scrollTopBtn.classList.remove('show');
-
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 70) {
-                scrollTopBtn.classList.add('show');
-            } else if (window.scrollY < 70) {
-                scrollTopBtn.classList.remove('show');
-            } else {
-                scrollTopBtn.classList.remove('show');
-            }
-        });
-
-</script>

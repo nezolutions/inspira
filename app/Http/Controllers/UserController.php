@@ -77,26 +77,32 @@ class UserController extends Controller
     public function updateUser(Request $request) {
         $request->validate([
             'email' => 'required|string|email|max:255',
-            'password' => 'required|string|min:4|max:255',
-            'confirm_password' => 'required|string|same:password'
+            'name' => 'required|string|max:255',
+            'password' => 'nullable|string|min:4|max:255',
+            'confirm_password' => 'nullable|string|same:password'
         ], [
             'email.required' => 'Email is required.',
             'email.email' => 'Invalid email format.',
-            'password.required' => 'Password is required.',
+            'name.required' => 'Name is required.',
             'password.min' => 'Password must be at least 4 characters.',
-            'confirm_password.required' => 'Password confirmation is required.',
             'confirm_password.same' => 'Password confirmation does not match the password.'
         ]);
 
         try {
             $user = User::first();
-            
-            if (!$user) {
-                return redirect()->back()->withErrors(['error' => 'User not found.'])->withInput();
+
+            if ($request->input('email') != $user->email) {
+                $user->email = $request->input('email');
             }
 
-            $user->email = $request->input('email');
-            $user->password = bcrypt($request->input('password'));
+            if ($request->input('name') != $user->name) {
+                $user->name = $request->input('name');
+            }
+
+            if ($request->filled('password')) {
+                $user->password = bcrypt($request->input('password'));
+            }
+
             $user->save();
 
             return redirect()->route('login');

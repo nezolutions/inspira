@@ -6,11 +6,11 @@
     <div class="relative z-20 w-full min-h-screen flex flex-col items-center justify-center">
         <div class="w-full max-w-7xl grid grid-cols-1 xl:grid-cols-2 items-center gap-8 px-6">
             <div class="flex flex-col gap-4 text-center xl:text-start">
-                <h1 class="text-6xl xl:text-8xl font-black bg-gradient-to-r from-red-700 via-red-600 to-red-500 bg-clip-text text-transparent tracking-tight drop-shadow-lg">
+                <h1 class="font-['Outfit'] text-6xl xl:text-8xl font-black bg-gradient-to-r from-red-700 via-red-600 to-red-500 bg-clip-text text-transparent tracking-tight drop-shadow-lg">
                     {{ $app->app_name[0] ?? 'JGU-WXUT ' }}
                 </h1>
                 <div class="flex items-center justify-center xl:justify-start">
-                    <h2 class="-mt-3 text-5xl xl:text-7xl font-extrabold w-fit text-white drop-shadow-md tracking-wide bg-gradient-to-r from-red-700 via-red-600 to-red-500">
+                    <h2 class="font-['Outfit'] -mt-3 text-5xl xl:text-7xl font-extrabold w-fit text-white drop-shadow-md tracking-wide bg-gradient-to-r from-red-700 via-red-600 to-red-500">
                         {{ $app->app_name[1] ?? 'INSPIRA ' . now()->format('Y') }}
                     </h2>
                 </div>
@@ -22,7 +22,7 @@
                 </blockquote>
 
                 <div class="flex items-center justify-center xl:justify-start">
-                    <a href="{{ $app->register ?? '#' }}" class="mt-2 group inline-flex items-center gap-2 text-base xl:text-lg px-5 xl:px-6 py-2.5 xl:py-3 rounded-full font-bold uppercase tracking-wide text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 shadow-lg shadow-red-800/40 transition-transform duration-300 hover:scale-105 pulsate-bck">
+                    <a href="{{ $app->register ?? '#' }}" class="mt-2 group inline-flex items-center gap-2 text-base xl:text-lg px-5 xl:px-6 py-2.5 xl:py-3 rounded-full font-bold uppercase tracking-wide text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 shadow-lg shadow-red-800/40 transition duration-300 hover:scale-105 pulsate-bck">
                         Registration
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0-7.5 7.5M21 12H3" />

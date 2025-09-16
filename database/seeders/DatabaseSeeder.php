@@ -8,8 +8,11 @@ use App\Models\Home;
 use App\Models\App;
 use App\Models\Awards;
 use App\Models\Competition;
+use App\Models\Detail;
 use App\Models\Fee;
+use App\Models\Format;
 use App\Models\Participant;
+use App\Models\Points;
 use App\Models\Topic;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -375,6 +378,115 @@ class DatabaseSeeder extends Seeder
                 'on_fee_type' => 'IDR',
                 'offline_fee' => 100000,
                 'off_fee_type' => 'IDR',
+                'order' => 4
+            ]
+        ]);
+
+        Points::insert([
+            [
+                'order' => 1,
+                'content' => 'Background and Objectives'
+            ],
+            [
+                'order' => 2,
+                'content' => 'Research Methodology'
+            ],
+            [
+                'order' => 3,
+                'content' => 'Results and Discussion'
+            ],
+            [
+                'order' => 4,
+                'content' => 'Conclusions and Recommendations'
+            ],
+            [
+                'order' => 5,
+                'content' => 'Research Outcomes'
+            ],
+        ]);
+
+        Detail::insert([
+            [
+                'order' => 1,
+                'section' =>  'Header',
+                'content' => 'Header JGU & WXUT logos, Event Title, Poster Title'
+            ],
+            [
+                'order' => 2,
+                'section' =>  'Authors',
+                'content' => 'Participant\'s name, institution, email'
+            ],
+            [
+                'order' => 3,
+                'section' =>  'Background/Introduction',
+                'content' => 'Problem background'
+            ],
+            [
+                'order' => 4,
+                'section' =>  'Objectives/Aims',
+                'content' => 'Research or project objectives'
+            ],
+            [
+                'order' => 5,
+                'section' =>  'Methodology',
+                'content' => 'Methods (if research), or program steps if not research'
+            ],
+            [
+                'order' => 6,
+                'section' =>  'Results/Insights',
+                'content' => 'Findings, solutions, or key ideas'
+            ],
+            [
+                'order' => 7,
+                'section' =>  'Conclusion/Impact',
+                'content' => 'Conclusions, impacts, recommendations'
+            ],
+            [
+                'order' => 8,
+                'section' =>  'References',
+                'content' => 'Concise, only 2-3 references (if any)'
+            ],
+            [
+                'order' => 9,
+                'section' =>  'Acknowledgement',
+                'content' => '(Optional) If part of a university program or supervised by a lecturer'
+            ],
+            [
+                'order' => 10,
+                'section' =>  'Visual',
+                'content' => 'Images, graphs, icons, or photos supporting the content'
+            ],
+            [
+                'order' => 11,
+                'section' =>  'Footer',
+                'content' => 'QR code/link if including a video presentation or full publication (optional)'
+            ],
+        ]);
+
+        Format::insert([
+            [
+                'content' => '-',
+                'document' => 'docs/Format Poster 01.docx',
+                'order' => 0,
+            ],
+            [
+                'content' => '<b>Size: </b>A1 (594 x 841mm) - Portrait',
+                'document' => '-',
+                'order' => 1
+            ],
+            [
+                'content' => '<b>File Format: </b>PDF and PNG',
+                'document' => '-',
+                'order' => 2
+            ],
+            [
+                'content' => '<b>Font: </b>Use universal fonts (Arial, Calibri, Roboto)',
+                'document' => '-',
+                'order' => 3
+            ],
+            [
+                'content' => '<b>Color: </b>Creative use is allowed',
+                'document' => '-',
                 'order' => 4
             ]
         ]);

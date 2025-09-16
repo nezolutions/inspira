@@ -4,18 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Detail extends Model
+class Points extends Model
 {
-    protected $table = 'details';
+    protected $table = 'points';
 
     protected $fillable = [
-        'section',
         'content',
         'order'
     ];
 
     protected $casts = [
-        'section' => 'string',
         'content' => 'string',
         'order' => 'integer'
     ];

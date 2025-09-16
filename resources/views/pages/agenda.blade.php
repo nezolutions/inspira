@@ -35,10 +35,10 @@
                         <tbody class="divide-y divide-gray-100">
                             @forelse ($agendaTable as $agendas)
                             <tr class="{{ $agendas->id % 2 == 1 ? 'bg-red-50' : 'bg-white' }} hover:bg-red-100 transition">
-                                <td class="{{ $agendas->id == 1 ? 'hidden' : 'py-4 px-6' }} text-sm xl:text-lg font-medium">
+                                <td class="py-4 px-6 text-sm xl:text-lg font-medium">
                                     {!! $agendas->agenda !!}
                                 </td>
-                                <td class="{{ $agendas->id == 1 ? 'hidden' : 'py-4 px-6' }} text-sm xl:text-lg">
+                                <td class="py-4 px-6 text-sm xl:text-lg">
                                     {!! $agendas->timeline !!}
                                 </td>   
                             </tr>

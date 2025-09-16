@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('presentations', function (Blueprint $table) {
+        Schema::create('points', function (Blueprint $table) {
             $table->id();
-            $table->string('content')->nullable();
+            $table->string('content');
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
 
@@ -27,7 +28,9 @@ return new class extends Migration
 
         Schema::create('formats', function (Blueprint $table) {
             $table->id();
-            $table->string('content')->nullable();
+            $table->string('document')->default('-');
+            $table->string('content')->default('-');
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }

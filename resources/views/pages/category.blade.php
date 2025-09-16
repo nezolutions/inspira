@@ -119,6 +119,7 @@
                             Oral Presentation (Online)
                         </h4>
                         <p class="text-gray-700">Participants will deliver a 10-minute research presentation followed by a 3-minute Q&A session with the judges. This category emphasizes clarity, scientific rigor, and effective communication. Presentations will be conducted online via Zoom/Gmeet.</p>
+                        <a class="text-red-800 transition underline hover:text-black" href="{{ route('oral') }}">View presentation format</a>
                     </li>
                     <li class="rounded-2xl shadow-lg bg-white/80 backdrop-blur-sm border-t-8 border-gray-600 p-6 space-y-4">
                         <h4 class="font-semibold text-lg lg:text-xl flex items-center gap-2">

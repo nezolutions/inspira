@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Competition;
 use App\Models\App;
+use App\Models\Detail;
+use App\Models\Format;
+use App\Models\Points;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -22,8 +25,21 @@ class CompetitionController extends Controller
 
     public function oral() {
         $app = App::first();
+        // Section Point
+        $point = Points::orderBy('order')->get();
+        // Section Details
+        $detail = Detail::orderBy('order')->get();
+        // Section Format
+        $docs = Format::first();
+        $format = Format::orderBy('order')->where('order', '>', 0)->get();
 
-        return view('pages.oral', compact('app'));
+        return view('pages.oral', compact([
+            'app',
+            'point',
+            'detail',
+            'format',
+            'docs'
+        ]));
     }
 
     public function update(Request $request) {

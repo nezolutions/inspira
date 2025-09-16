@@ -29,17 +29,15 @@
                 
                 <ul class="w-full bg-gradient-to-r from-gray-800 to-gray-700 shadow-xl p-6 rounded-xl text-white space-y-4">
                     <li class="flex items-center text-start gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-red-300 hidden xl:inline">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="min-w-5 h-5 text-red-300">
                             <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
                         </svg>
-                        <span class="inline xl:hidden">-</span>
                         {{ $about->highlights[0] ?? 'International Strategic Forum' }}
                     </li>
                     <li class="flex items-center text-start gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-red-300 hidden xl:inline">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="min-w-5 h-5 text-red-300">
                             <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
                         </svg>
-                        <span class="inline xl:hidden">-</span>
                         {{ $about->highlights[1] ?? 'International Oral Presentation & Poster Competition' }}
                     </li>
                 </ul>
@@ -54,7 +52,7 @@
                 
                 <ul class="w-full bg-gradient-to-r from-gray-800 to-gray-700 shadow-xl p-6 rounded-xl text-white">
                     <li class="flex items-center text-base">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-red-300 me-2 hidden xl:inline">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="min-w-5 w-6 min-h-5 h-6 text-red-300 me-2">
                             <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
                         </svg> 
                         {!! $about->venue ?? 'Jakarta Global University Ballroom | October 20-22 2025' !!}

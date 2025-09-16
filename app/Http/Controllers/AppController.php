@@ -26,7 +26,7 @@ class AppController extends Controller
         $about = About::first();
         // Section Agenda
         $agendaTitle = Agenda::first();
-        $agendaTable = Agenda::orderBy('order')->get();
+        $agendaTable = Agenda::orderBy('order')->where('order', '>', 0)->get();
         // Section Topics
         $topic = Topic::orderBy('order')->get();
         // Section Category
