@@ -57,8 +57,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/e/points', [PointsController::class, 'edit']);
     Route::post('/u/points', [PointsController::class, 'update']);
         
-    // Route::get('/e/details', [TableController::class, 'edit']);
-    // Route::post('/u/details', [TableController::class, 'update']);
+    // Route::get('/e/details', [DetailController::class, 'edit']);
+    // Route::post('/u/details', [DetailController::class, 'update']);
         
     Route::get('/e/format', [FormatController::class, 'edit']);
     Route::post('/u/format', [FormatController::class, 'update']);

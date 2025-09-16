@@ -162,8 +162,8 @@
             </div>
 
             <div class="w-fit p-6 bg-amber-100 border border-amber-200 rounded-xl shadow-xl">
-                <h2 class="text-xl mb-2 font-semibold tracking-tight">Poster Format</h2>
-                <ul class="text-gray-600">
+                <h2 class="text-xl xl:text-2xl mb-2 font-semibold tracking-tight">Poster Format</h2>
+                <ul class="text-gray-600 space-y-1 text-sm xl:text-base">
                     @forelse ($format as $fm)
                         <li>
                             {!! $fm->content !!}

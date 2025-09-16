@@ -365,7 +365,7 @@ class DatabaseSeeder extends Seeder
                 'order' => 2
             ],
             [
-                'title' => 'College Student & Fresh Graduate <br><span class="text-sm text-red-600">(Max. Bachelor)</span>',
+                'title' => 'College Student & Fresh Graduate <br><span class="text-xs text-red-600">(Max. Bachelor)</span>',
                 'online_fee' => 300000,
                 'on_fee_type' => 'IDR',
                 'offline_fee' => 200000,

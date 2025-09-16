@@ -39,7 +39,7 @@ class PointsController extends Controller
                 ]);
             }
 
-            return redirect()->route('main');
+            return redirect()->route('oral');
         } catch (\Exception $e) {
             Log::warning('An error occured: ' . $e->getMessage());
             return redirect()->back()->withErrors(['error' => 'An error occured: ' . $e->getMessage()])->withInput();

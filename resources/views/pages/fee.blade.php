@@ -43,7 +43,10 @@
                                         <td class="py-4 px-6 text-md xl:text-lg">300,000 IDR</td>
                                     </tr>
                                     <tr class="bg-white hover:bg-red-100 transition">
-                                        <td class="py-4 px-6 text-md xl:text-lg font-semibold">College Student & Fresh Graduate</td>
+                                        <td class="py-4 px-6 text-md xl:text-lg font-semibold">
+                                            College Student & Fresh Graduate<br/>
+                                            <span class="text-xs text-red-600">(Max. Bachelor)</span>
+                                        </td>
                                         <td class="py-4 px-6 text-md xl:text-lg">300,000 IDR</td>
                                         <td class="py-4 px-6 text-md xl:text-lg">200,000 IDR</td>
                                     </tr>

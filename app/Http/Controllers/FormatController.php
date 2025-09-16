@@ -14,9 +14,13 @@ class FormatController extends Controller
             return redirect()->route('login');
         }
 
+        $docs = Format::first();
         $format = Format::orderBy('order')->where('order', '>', 0)->get();
 
-        return view('admin.edit_format', compact('format'));
+        return view('admin.edit_format', compact([
+            'format',
+            'docs'
+        ]));
     }
 
     public function update(Request $request) {
@@ -25,24 +29,39 @@ class FormatController extends Controller
         }
 
         $request->validate([
+            'docs' => 'nullable|file|mimes:doc,docx|max:2048',
             'formats' => 'required|array|min:1',
             'formats.*.content' => 'required|string',
         ]);
 
         try {
-            Format::truncate();
+            // Update dokumen jika ada file diupload
+            if ($request->hasFile('docs')) {
+                $file = $request->file('docs');
+                $filename = 'inspira_format_poster_' . time() . '.' . $file->getClientOriginalExtension();
+                $file->storeAs('docs', $filename, 'public');
+                // Update atau create dokumen (order=0)
+                Format::updateOrCreate(
+                    ['order' => 0],
+                    ['document' => 'storage/docs/' . $filename]
+                );
+            }
 
+            // Hapus data format dengan order > 0
+            Format::where('order', '>', 0)->delete();
+
+            // Simpan ulang formats (order > 0)
             foreach ($request->formats as $index => $format) {
                 Format::create([
                     'content' => $format['content'],
-                    'order' => $index
+                    'order' => $index + 1
                 ]);
             }
 
-            return redirect()->route('main');
+            return redirect()->route('oral');
         } catch (\Exception $e) {
             Log::warning('An error occured: ' . $e->getMessage());
-            return redirect()->back()->withErrors(['error' => 'An error occured: ' . $e->getMessage()])->withInput();
+            return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan: ' . $e->getMessage()])->withInput();
         }
     }
 }

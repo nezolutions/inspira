@@ -26,8 +26,19 @@
         }, 5000);
     </script>
     <main class="flex justify-center w-full my-5">
-        <form class="max-w-md w-3/4 mx-auto" method="POST" action="{{ url('u/points') }}" enctype="multipart/form-data">
+        <form class="max-w-md w-3/4 mx-auto" method="POST" action="{{ url('u/format') }}" enctype="multipart/form-data">
             @csrf
+            <div class="relative z-0 w-full mb-5 group">
+                <label for="docs" class="block text-sm font-medium text-white mb-2">Upload Format Document (.docx)</label>
+                <input name="docs" class="block w-full h-20 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="app_icon" type="file">
+            </div>
+            <h3 class="font-bold text-xl lg:text-2xl my-5 text-gray-300">Poster Format</h3>
+            <ul class="relative z-0 w-full mb-5 group text-sm text-gray-300">
+                <li class="list-inside list-disc">Tambahkan &lt;br/&gt; untuk membuat line baru</li>
+                <li class="list-inside list-disc"><b>Tambahkan &lt;b&gt; untuk teks bold</b></li>
+                <li class="list-inside list-disc"><em>Tambahkan &lt;em&gt; untuk teks italic</em></li>
+                <li class="list-inside list-disc"><u>Tambahkan &lt;u&gt;Text&lt;/u&gt; untuk teks underline</u></li>
+            </ul>
             <div id="format-items">
                 @if(isset($format) && count($format) > 0)
                     @foreach ($format as $index => $formats)   
