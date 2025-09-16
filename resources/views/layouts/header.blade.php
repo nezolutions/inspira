@@ -22,13 +22,13 @@
             <x-logo :isimage="$isImage" :isfname="$isName1" :islname="$isName2" :fname="$title1" :lname="$title2" :icon="$icon"></x-logo>
         </a>
         <ul class="flex flex-row gap-4 items-center">
-            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="#home">Home</a></li>
-            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="#about">About</a></li>
-            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="#agenda">Agenda</a></li>
-            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="#topics">Topics</a></li>
-            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="#category">Category</a></li>
-            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="#awards">Awards</a></li>
-            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="#fee">Fee</a></li>
+            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="@if (!Route::is('main')) {{ route('main') }}#home @else #home @endif">Home</a></li>
+            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="@if (!Route::is('main')) {{ route('main') }}#about @else #about @endif">About</a></li>
+            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="@if (!Route::is('main')) {{ route('main') }}#agenda @else #agenda @endif">Agenda</a></li>
+            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="@if (!Route::is('main')) {{ route('main') }}#topics @else #topics @endif">Topics</a></li>
+            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="@if (!Route::is('main')) {{ route('main') }}#category @else #category @endif">Category</a></li>
+            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="@if (!Route::is('main')) {{ route('main') }}#awards @else #awards @endif">Awards</a></li>
+            <li class="hidden xl:inline"><a class="text-base text-gray-600 hover:text-black font-medium transition" href="@if (!Route::is('main')) {{ route('main') }}#fee @else #fee @endif">Fee</a></li>
             <li class="hidden xl:inline"><a class="text-base text-white hover:text-gray-200 font-medium transition bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 px-4 py-2 rounded-md" href="{{ $app->register ?? '#' }}">Registration</a></li>
             @auth
                 <li class="inline">

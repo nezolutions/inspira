@@ -93,6 +93,7 @@ return new class extends Migration
                 'College Students 2',
                 'Highschool Students'
             ]);
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
 
