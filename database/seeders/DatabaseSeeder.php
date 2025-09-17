@@ -173,6 +173,28 @@ class DatabaseSeeder extends Seeder
                 ]),
             ],
             [
+                'title' => 'Management and Digital Business',
+                'list' => json_encode([
+                    'Digital Transformation & Business Strategy',
+                    'E-Commerce & Marketplaces',
+                    'Data, AI & Business Analytics',
+                    'Digital Finance & Emerging Technologies',
+                    'Human Resources & Digital Organizations',
+                    'Digital Marketing',
+                    'Sustainability & Social Responsibility',
+                ]),
+            ],
+            [
+                'title' => 'Pharmaceutical Science',
+                'list' => json_encode([
+                    'Development of Pharmaceutical Formulations, Biotechnology, and Nanotechnology',
+                    'Herbal Innovations and Natural Product Science',
+                    'Computer-Assisted Drug Design and Medicinal Chemistry',
+                    'Pharmacology, Clinical Pharmacy, Drug Safety Monitoring, and Pharmaceutical Practice',
+                    'Pharmaceutical Analysis, Regulatory Compliance, and Quality Assurance',
+                ]),
+            ],
+            /* [
                 'title' => 'Other (Business and Pharmaceutical Science)',
                 'list' => json_encode([
                     'Business and Entrepreneurship in the Tech Era',
@@ -185,7 +207,7 @@ class DatabaseSeeder extends Seeder
                     'Pharmaceutical formulation, biotechnology, and drug design',
                     'Herbal technology, pharmacology, and regulatory compliance',
                 ]),
-            ],
+            ], */
         ]);
 
         Participant::insert([
@@ -207,11 +229,11 @@ class DatabaseSeeder extends Seeder
         Competition::insert([
             [
                 'title' => 'Oral Presentation (Online via Zoom/Gmeet)',
-                'content' => 'Participants will deliver a 10-minute research presentation followed by a 3-minute Q&A session with the judges. This category emphasizes clarity, scientific rigor, and effective communication. Presentations will be conducted online via Zoom/Gmeet.'
+                'content' => 'Participants will deliver a 10-minute research presentation followed by a 5-minute Q&A session with the judges. This category emphasizes clarity, scientific rigor, and effective communication. Presentations will be conducted online via Zoom/Gmeet.'
             ],
             [
                 'title' => 'Poster Presentations (On-site)',
-                'content' => 'Participants will present their research through a scientific poster in a face-to-face session with the judges. Each participant will have the opportunity to explain their work and engage in a brief Q&A session (10-minute poster presentation; 3-minute Q&A session). This category emphasizes visual communication, content clarity, and the ability to discuss research findings concisely and confidently. Presentations will take place onsite at the event venue.'
+                'content' => 'Participants will present their research through a scientific poster in a face-to-face session with the judges. Each participant will have the opportunity to explain their work and engage in a brief Q&A session (10-minute poster presentation; 5-minute Q&A session). This category emphasizes visual communication, content clarity, and the ability to discuss research findings concisely and confidently. Presentations will take place onsite at the event venue.'
             ],
         ]);
 

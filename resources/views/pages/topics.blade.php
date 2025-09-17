@@ -1,8 +1,12 @@
-<div class="flex flex-col items-center justify-center w-full min-h-screen py-16 bg-gray-50">
+<div class="relative w-full min-h-screen bg-gray-50 bg-cover bg-no-repeat bg-center bg-fixed"
+    style="background-image: url('{{ asset('images/paper.png') }}');">
+    <div class="absolute inset-0 bg-white/60"></div>
+
+<div class="relative z-20 flex flex-col items-center justify-center w-full min-h-screen py-16">
     <div class="space-y-6 w-full max-w-7xl px-6">
         
         <!-- Title -->
-        <div class="flex flex-col items-center justify-center mb-10">
+        <div class="z-20 flex flex-col items-center justify-center mb-10">
             <h2 class="text-3xl xl:text-5xl font-extrabold text-gray-800 text-center tracking-tight mb-4">
                 Topics as Relevant
             </h2>
@@ -73,18 +77,18 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                @forelse ($topic->where('id', '>', 3)->where('id', '<', 6) as $t)
+                @forelse ($topic->where('id', '>', 3) as $t)
                     <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-200 transition transform hover:-translate-y-1">
                         <!-- Card Header -->
                         <h3 class="text-xl xl:text-2xl font-bold text-white p-4 
-                                   {{ $t->id % 2 === 0 ? 'bg-gradient-to-r from-red-600 to-red-500' : 'bg-gradient-to-r from-gray-800 to-gray-700' }}">
+                                   {{ $t->id % 2 == 0 ? 'bg-gradient-to-r from-red-600 to-red-500' : 'bg-gradient-to-r from-gray-800 to-gray-700' }}">
                             {{ $t->title }}
                         </h3>
                         <!-- Card Body -->
                         <div class="p-6 text-gray-700">
                             <ul class="space-y-2 text-gray-700 text-md xl:text-lg">
                                 @foreach ($t->list as $item)
-                                    <li class="flex items-start gap-2"><span class="text-red-400">✔</span> {!! $item !!}</li>
+                                    <li class="flex items-start gap-2"><span class="text-red-400    ">✔</span> {!! $item !!}</li>
                                 @endforeach
                             </ul>
                         </div>
@@ -119,7 +123,8 @@
                     </div>
                 @endforelse
             </div>
-            <div class="grid grid-cols-1 gap-8">
+
+            {{-- <div class="grid grid-cols-1 gap-8">
                 @forelse ($topic->where('id', '>', 5) as $t)
                     <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-200 transition transform hover:-translate-y-1">
                         <!-- Card Header -->
@@ -152,7 +157,7 @@
                         </ul>
                     </div>
                 @endforelse
-            </div>
+            </div> --}}
         @endif
     </div>
 
