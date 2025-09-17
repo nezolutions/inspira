@@ -205,7 +205,7 @@
                 <span class="hidden group-hover:inline">:</span>
                 <a href="{{ url('e/points') }}" class="hidden group-hover:inline hover:text-red-600 transition">&nbsp;Points&nbsp;</a>
                 <span class="hidden group-hover:inline">/</span>
-                <a href="{{ url('e/table') }}" class="hidden group-hover:inline hover:text-red-600 transition">&nbsp;Table</a>
+                <a href="{{ url('e/details') }}" class="hidden group-hover:inline hover:text-red-600 transition">&nbsp;Table</a>
                 <span class="hidden group-hover:inline">/</span>
                 <a href="{{ url('e/format') }}" class="hidden group-hover:inline hover:text-red-600 transition">&nbsp;Format</a>
             </div>

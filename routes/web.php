@@ -5,6 +5,7 @@ use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\AwardsController;
 use App\Http\Controllers\CompetitionController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FeeController;
 use App\Http\Controllers\FormatController;
 use App\Http\Controllers\HomeController;
@@ -57,8 +58,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/e/points', [PointsController::class, 'edit']);
     Route::post('/u/points', [PointsController::class, 'update']);
         
-    // Route::get('/e/details', [DetailController::class, 'edit']);
-    // Route::post('/u/details', [DetailController::class, 'update']);
+    Route::get('/e/details', [DetailController::class, 'edit']);
+    Route::post('/u/details', [DetailController::class, 'update']);
         
     Route::get('/e/format', [FormatController::class, 'edit']);
     Route::post('/u/format', [FormatController::class, 'update']);

@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    {{-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> --}}
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 </head>
+
 <style>
     a, button, input, textarea, img {
         outline: none;
@@ -98,80 +99,82 @@
         }
     }
 </style>
+
 <body class="font-['Poppins'] selection:bg-blue-600 selection:text-white overflow-y-auto bg-gray-800">
     @yield('content')
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Notification
+            setTimeout(function() {
+                const notifications = document.querySelectorAll('.errors');
+                notifications.forEach(function(notification) {
+                    notification.style.transition = 'opacity 0.5s';
+                    notification.style.opacity = '0';
+                    setTimeout(function() {
+                        notification.style.display = 'none';
+                    }, 500);
+                });
+            }, 5000);
+    
+            // Animation
+            setInterval(function() {
+                var el = document.querySelector('.jello-h');
+                if (el) {
+                    el.classList.remove('jello-h');
+                    // Paksa reflow agar animasi bisa diulang
+                    void el.offsetWidth;
+                    el.classList.add('jello-h');
+                }
+            }, 3000);
+    
+            // Back to Top Button
+            const scrollTopBtn = document.getElementById('scroll-top');
+            scrollTopBtn.classList.remove('show');
+    
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 70) {
+                    scrollTopBtn.classList.add('show');
+                } else if (window.scrollY < 70) {
+                    scrollTopBtn.classList.remove('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+            
+            // Navigation Modal
+            const modal = document.getElementById('default-modal');
+            const toggleBtn = document.querySelector('[data-modal-toggle="default-modal"]');
+            const closeBtns = document.querySelectorAll('[data-modal-hide="default-modal"]');
+    
+            function toggleModal() {
+                if (modal.classList.contains('hidden')) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                } else {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            }
+    
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', toggleModal);
+            }
+    
+            closeBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                });
+            });
+    
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            });
+        });
+    </script>
 </body>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Notification
-        setTimeout(function() {
-            const notifications = document.querySelectorAll('.errors');
-            notifications.forEach(function(notification) {
-                notification.style.transition = 'opacity 0.5s';
-                notification.style.opacity = '0';
-                setTimeout(function() {
-                    notification.style.display = 'none';
-                }, 500);
-            });
-        }, 5000);
-
-        // Animation
-        setInterval(function() {
-            var el = document.querySelector('.jello-h');
-            if (el) {
-                el.classList.remove('jello-h');
-                // Paksa reflow agar animasi bisa diulang
-                void el.offsetWidth;
-                el.classList.add('jello-h');
-            }
-        }, 3000);
-
-        // Back to Top Button
-        const scrollTopBtn = document.getElementById('scroll-top');
-        scrollTopBtn.classList.remove('show');
-
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 70) {
-                scrollTopBtn.classList.add('show');
-            } else if (window.scrollY < 70) {
-                scrollTopBtn.classList.remove('show');
-            } else {
-                scrollTopBtn.classList.remove('show');
-            }
-        });
-        
-        // Navigation Modal
-        const modal = document.getElementById('default-modal');
-        const toggleBtn = document.querySelector('[data-modal-toggle="default-modal"]');
-        const closeBtns = document.querySelectorAll('[data-modal-hide="default-modal"]');
-
-        function toggleModal() {
-            if (modal.classList.contains('hidden')) {
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-            } else {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            }
-        }
-
-        if (toggleBtn) {
-            toggleBtn.addEventListener('click', toggleModal);
-        }
-
-        closeBtns.forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            });
-        });
-
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            }
-        });
-    });
-</script>
 </html>
