@@ -63,42 +63,36 @@ class DatabaseSeeder extends Seeder
 
         Agenda::insert([
             [
-                'id' => 1,
                 'description' => 'The highlight agenda is the <b>Strategic Forum titled "Strengthening the Triple Helix for Sustainable Growth and Innovation"</b>, which brings together thought leaders from academia, industry, and government. This forum aims to reinforce collaboration among key stakeholders in building a sustainable innovation ecosystem. Through panel discussions, interactive sessions, and the exchange of best practices, the forum will explore strategic pathways to drive knowledge- and technology-based economic development.',
                 'agenda' => '-',
                 'timeline' => '-',
                 'order' => 0
             ],
             [
-                'id' => 2,
                 'description' => '-',
                 'agenda' => 'Submission & Payment',
                 'timeline' => 'Now - October 10<sup>th</sup> 2025',
                 'order' => 1
             ],
             [
-                'id' => 3,
                 'description' => '-',
                 'agenda' => 'PowerPoint File and Poster Upload Dateline',
                 'timeline' => 'October 10<sup>th</sup> 2025',
                 'order' => 2
             ],
             [
-                'id' => 4,
                 'description' => '-',
                 'agenda' => 'Oral Presentation Competition (Online)',
                 'timeline' => 'October 15-16<sup>th</sup> 2025',
                 'order' => 3
             ],
             [
-                'id' => 5,
                 'description' => '-',
                 'agenda' => 'Poster Competition (Offline)',
                 'timeline' => 'October 21<sup>st</sup> 2025',
                 'order' => 4
             ],
             [
-                'id' => 6,
                 'description' => '-',
                 'agenda' => 'Announcement & Awards',
                 'timeline' => 'October 22<sup>nd</sup> 2025',

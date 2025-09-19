@@ -16,11 +16,11 @@ class AgendaController extends Controller
             return redirect()->route('login');
         }
 
-        $description = Agenda::where('id', 1)->first();
-        $agenda = Agenda::where('id', '!=', 1)->orderBy('order')->get();
+        $description = Agenda::first();
+        $agenda = Agenda::orderBy('order')->where('order', '>', 0)->get();
 
         return view('admin.edit_agenda', with([
-            'description' => $description ? $description->description : '',
+            'description' => $description,
             'agenda' => $agenda
         ]));
     }
@@ -38,20 +38,22 @@ class AgendaController extends Controller
         ]);
         
         try {
+            Agenda::truncate();
+            
             // Update description for id=1
             Agenda::updateOrCreate(
-                ['id' => 1],
+                ['order' => 0],
                 ['description' => $request->description]
             );
 
             // Handle agenda items (excluding id=1)
-            Agenda::where('id', '!=', 1)->delete();
+            Agenda::where('order', '>', 0)->delete();
 
             foreach ($request->agenda as $index => $agendas) {
                 Agenda::create([
                     'agenda' => $agendas['agenda'],
                     'timeline' => $agendas['timeline'],
-                    'order' => $index
+                    'order' => $index + 2
                 ]);
             }
 
