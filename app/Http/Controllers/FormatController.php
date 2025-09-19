@@ -29,7 +29,7 @@ class FormatController extends Controller
         }
 
         $request->validate([
-            'docs' => 'nullable|file|mimes:doc,docx|max:2048',
+            'docs' => 'nullable|file|mimes:doc,docx,pdf|max:4096',
             'formats' => 'required|array|min:1',
             'formats.*.content' => 'required|string',
         ]);
@@ -38,7 +38,7 @@ class FormatController extends Controller
             // Update dokumen jika ada file diupload
             if ($request->hasFile('docs')) {
                 $file = $request->file('docs');
-                $filename = 'inspira_format_poster_' . time() . '.' . $file->getClientOriginalExtension();
+                $filename = 'inspira_guidebook_' . time() . '.' . $file->getClientOriginalExtension();
                 $file->storeAs('docs', $filename, 'public');
                 // Update atau create dokumen (order=0)
                 Format::updateOrCreate(

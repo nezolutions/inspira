@@ -17,9 +17,6 @@ use App\Models\Topic;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Carbon;
-
-use function Termwind\parse;
 
 class DatabaseSeeder extends Seeder
 {
@@ -90,7 +87,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 4,
                 'description' => '-',
                 'agenda' => 'Oral Presentation Competition (Online)',
-                'timeline' => 'October 10-15<sup>th</sup> 2025',
+                'timeline' => 'October 15-16<sup>th</sup> 2025',
                 'order' => 3
             ],
             [
@@ -488,7 +485,7 @@ class DatabaseSeeder extends Seeder
         Format::insert([
             [
                 'content' => '-',
-                'document' => 'docs/Format Poster 01.docx',
+                'document' => 'docs/Guidebook JGU-WXUT INSPIRA 2025-02.pdf',
                 'order' => 0,
             ],
             [

@@ -11,13 +11,13 @@
             </button>
 
             <ul class="flex-1 items-center">
-                <a href="#home"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Home</li></a>
-                <a href="#about"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">About</li></a>
-                <a href="#agenda"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Agenda</li></a>
-                <a href="#topics"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Topics</li></a>
-                <a href="#category"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Category</li></a>
-                <a href="#awards"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Awards</li></a>
-                <a href="#fee"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Fee</li></a>
+                <a href="@if (!Route::is('main')) {{ route('main') }}#home @else #home @endif"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Home</li></a>
+                <a href="@if (!Route::is('main')) {{ route('main') }}#about @else #about @endif"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">About</li></a>
+                <a href="@if (!Route::is('main')) {{ route('main') }}#agenda @else #agenda @endif"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Agenda</li></a>
+                <a href="@if (!Route::is('main')) {{ route('main') }}#topics @else #topics @endif"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Topics</li></a>
+                <a href="@if (!Route::is('main')) {{ route('main') }}#category @else #category @endif"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Category</li></a>
+                <a href="@if (!Route::is('main')) {{ route('main') }}#awards @else #awards @endif"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Awards</li></a>
+                <a href="@if (!Route::is('main')) {{ route('main') }}#fee @else #fee @endif"><li data-modal-hide="default-modal" class="py-2 text-lg text-gray-200 hover:text-red-500 font-semibold transition">Fee</li></a>
             </ul>
         </div>
     </div>

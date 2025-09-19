@@ -15,6 +15,10 @@
 </head>
 
 <style>
+    *, html {
+        zoom: 0.99;
+    }
+
     a, button, input, textarea, img {
         outline: none;
         user-select: none;
@@ -100,7 +104,7 @@
     }
 </style>
 
-<body class="font-['Poppins'] selection:bg-blue-600 selection:text-white overflow-y-auto bg-gray-800">
+<body class="font-['Poppins'] selection:bg-blue-600 selection:text-white overflow-y-auto bg-gray-900">
     @yield('content')
 
     <script>
