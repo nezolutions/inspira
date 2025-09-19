@@ -16,16 +16,18 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AppController::class, 'index'])->name('main');
+Route::get('/oral-presentation-format', [CompetitionController::class, 'oral'])->name('oral');
 
 Route::get('/admin', function() {
     return redirect()->route('login');
+})->name('admin');
+Route::get('/login', function() {
+    return redirect()->route('admin');
 });
 
-Route::get('/oral-presentation-format', [CompetitionController::class, 'oral'])->name('oral');
-
-Route::get('/login', [UserController::class, 'login'])->name('login');
-Route::post('/auth', [UserController::class, 'auth'])->name('auth');
-Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+Route::get('/admin/login', [UserController::class, 'login'])->name('login');
+Route::post('/admin/auth', [UserController::class, 'auth'])->name('auth');
+Route::post('/admin/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/e/app', [AppController::class, 'edit']);

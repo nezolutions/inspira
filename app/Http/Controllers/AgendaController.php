@@ -39,7 +39,7 @@ class AgendaController extends Controller
         
         try {
             Agenda::truncate();
-            
+
             // Update description for id=1
             Agenda::updateOrCreate(
                 ['order' => 0],
@@ -53,7 +53,7 @@ class AgendaController extends Controller
                 Agenda::create([
                     'agenda' => $agendas['agenda'],
                     'timeline' => $agendas['timeline'],
-                    'order' => $index + 2
+                    'order' => $index + 1
                 ]);
             }
 
