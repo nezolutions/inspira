@@ -6,6 +6,7 @@ use App\Models\Competition;
 use App\Models\App;
 use App\Models\Detail;
 use App\Models\Format;
+use App\Models\Home;
 use App\Models\Points;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -25,6 +26,8 @@ class CompetitionController extends Controller
 
     public function oral() {
         $app = App::first();
+        // Section Bg
+        $home = Home::first();
         // Section Point
         $point = Points::orderBy('order')->get();
         // Section Details
@@ -35,6 +38,7 @@ class CompetitionController extends Controller
 
         return view('pages.oral', compact([
             'app',
+            'home',
             'point',
             'detail',
             'format',

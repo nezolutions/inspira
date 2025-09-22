@@ -6,6 +6,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\AwardsController;
 use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\FAQsController;
 use App\Http\Controllers\FeeController;
 use App\Http\Controllers\FormatController;
 use App\Http\Controllers\HomeController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\PointsController;
 use App\Http\Controllers\TopicsController;
 use App\Http\Controllers\UserController;
+use App\Models\FAQ;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AppController::class, 'index'])->name('main');
@@ -53,6 +55,9 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('/e/awards', [AwardsController::class, 'edit']);
     Route::post('/u/awards', [AwardsController::class, 'update']);
+
+    Route::get('/e/faqs', [FAQsController::class, 'edit']);
+    Route::post('/u/faqs', [FAQsController::class, 'update']);
     
     Route::get('/e/fee', [FeeController::class, 'edit']);
     Route::post('/u/fee', [FeeController::class, 'update']);

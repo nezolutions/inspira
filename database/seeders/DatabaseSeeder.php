@@ -9,6 +9,7 @@ use App\Models\App;
 use App\Models\Awards;
 use App\Models\Competition;
 use App\Models\Detail;
+use App\Models\FAQ;
 use App\Models\Fee;
 use App\Models\Format;
 use App\Models\Participant;
@@ -358,6 +359,39 @@ class DatabaseSeeder extends Seeder
                 'off_bronze' => 0,
                 'order' => 2
             ],
+        ]);
+
+        FAQ::insert([
+            [
+                'q' => 'Are the Oral Presentation and Poster Competition separate activities?',
+                'a' => 'Yes, the Oral Presentation and Poster Competition are separate activities. They are considered two distinct competitions within the INSPIRA 2025 International Competition.',
+                'order' => 1
+            ],
+            [
+                'q' => 'What is one key difference between the two competitions?',
+                'a' => 'One of the main differences is the format: the Oral Presentation will be conducted online (October 15-16, 2025), while the Poster Competition will take place offline during the event (October 21, 2025).',
+                'order' => 2
+            ],
+            [
+                'q' => 'Can participants join both competitions?',
+                'a' => 'Yes. Participants may choose to take part in either one or both competitions, depending on their preference and eligibility.',
+                'order' => 3
+            ],
+            [
+                'q' => 'How is the Oral Presentation conducted?',
+                'a' => 'Participants deliver a live online presentation of their research or project using slides, followed by a brief Q&A session with the judges.',
+                'order' => 4
+            ],
+            [
+                'q' => 'How is the Poster Competition conducted?',
+                'a' => 'Participants display their posters at the event venue for evaluation, and they provide a brief explanation to the judges during the judging session.',
+                'order' => 5
+            ],
+            [
+                'q' => 'What skills are assessed in each competition?',
+                'a' => 'The Oral Presentation focuses on communication, presentation, and depth of understanding. The Poster Competition emphasizes visual design, clarity of information, and the ability to summarize research effectively.',
+                'order' => 0
+            ]
         ]);
 
         Fee::insert([

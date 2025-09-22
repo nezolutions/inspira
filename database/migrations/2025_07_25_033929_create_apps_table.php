@@ -97,6 +97,14 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('faqs', function (Blueprint $table) {
+            $table->id();
+            $table->string('q');
+            $table->text('a');
+            $table->integer('order')->default(0);
+            $table->timestamps();
+        });
+
         Schema::create('fees', function (Blueprint $table) {
             $table->id();
             $table->string('title');

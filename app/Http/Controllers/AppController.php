@@ -7,6 +7,7 @@ use App\Models\Agenda;
 use App\Models\App;
 use App\Models\Awards;
 use App\Models\Competition;
+use App\Models\FAQ;
 use App\Models\Fee;
 use App\Models\Home;
 use App\Models\Participant;
@@ -34,6 +35,8 @@ class AppController extends Controller
         $compe = Competition::orderBy('order')->get();
         // Section Awards
         $awards = Awards::all();
+        // Section FAQs
+        $faqs = FAQ::orderBy('order')->get();
         // Section Fee
         $fee = Fee::orderBy('order')->get();
 
@@ -46,8 +49,9 @@ class AppController extends Controller
             'topic',
             'parti',
             'compe',
+            'awards',
+            'faqs',
             'fee',
-            'awards'
         ]));
     }
 

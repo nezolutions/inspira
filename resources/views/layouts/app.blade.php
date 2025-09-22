@@ -16,7 +16,7 @@
 
 <style>
     *, html {
-        zoom: 0.99;
+        zoom: 0.99  ;
     }
 
     a, button, input, textarea, img {
@@ -102,6 +102,12 @@
             transform: scale(1);
         }
     }
+
+    @media (max-width: 1280px) {
+        *, html {
+            zoom: 0.98;
+        }
+    }
 </style>
 
 <body class="font-['Poppins'] selection:bg-blue-600 selection:text-white overflow-y-auto bg-gray-900">
@@ -144,6 +150,37 @@
                 } else {
                     scrollTopBtn.classList.remove('show');
                 }
+            });
+
+            // FAQ's Toggle Menu
+            const toggles = document.querySelectorAll(".faq-toggle");
+        
+            toggles.forEach(toggle => {
+                toggle.addEventListener("click", () => {
+                    const item = toggle.closest(".faq-item");
+                    const content = item.querySelector(".faq-content");
+                    const arrow = toggle.querySelector(".faq-arrow");
+
+                    // Tutup semua item kecuali yang sedang diklik
+                    document.querySelectorAll(".faq-item").forEach(el => {
+                        if (el !== item) {
+                            el.querySelector(".faq-content").style.maxHeight = null;
+                            el.querySelector(".faq-content").style.opacity = 0;
+                            el.querySelector(".faq-arrow").classList.remove("rotate-180");
+                        }
+                    });
+
+                    // Toggle current item
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        content.style.opacity = 0;
+                        arrow.classList.remove("rotate-180");
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.style.opacity = 1;
+                        arrow.classList.add("rotate-180");
+                    }
+                });
             });
             
             // Navigation Modal

@@ -39,6 +39,9 @@
     <section id="awards">
         @include('pages.awards')
     </section>
+    <section id="faqs">
+        @include('pages.faqs')
+    </section>
     <section id="fee">
         @include('pages.fee')
     </section>

@@ -1,9 +1,5 @@
-<div class="relative w-full min-h-screen bg-gray-50 bg-cover bg-no-repeat bg-center bg-fixed"
-    style="background-image: url('{{ asset('images/paper.png') }}');">
-    <div class="absolute inset-0 bg-white/60"></div>
-
-<div class="relative z-20 flex flex-col items-center justify-center w-full min-h-screen py-16">
-    <div class="space-y-6 w-full max-w-7xl px-6">
+<div class="flex flex-col items-center justify-center w-full py-20 min-h-screen bg-gray-50">
+    <div class="space-y-8 w-full max-w-7xl px-6">  
         
         <!-- Title -->
         <div class="z-20 flex flex-col items-center justify-center mb-10">

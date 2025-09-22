@@ -22,7 +22,7 @@
 <section class="w-full min-h-screen bg-gray-100">
     @include('layouts.top')
 
-    <div class="relative w-full min-h-32 xl:min-h-96 bg-gray-800 bg-cover bg-no-repeat bg-center bg-fixed" style="background-image: url('{{ asset('images/background.png') }}');"></div>
+    <div class="relative w-full min-h-32 xl:min-h-96 bg-gray-800 bg-cover bg-no-repeat bg-center bg-fixed" style="background-image: url('{{ $home->background ?? asset('images/home.png') }}');"></div>
 
     <div class="relative z-20 w-full min-h-screen flex items-center justify-center">
         <div class="w-full min-h-screen max-w-7xl gap-8 px-6 py-12 space-y-10">
@@ -107,7 +107,7 @@
                     </thead>
                     <tbody class="divide-y divide-gray-100">
                         @forelse($detail as $d)
-                            <tr class="{{ $d->id % 2 == 1 ? 'bg-red-50' : 'bg-white' }} hover:bg-red-100 transition">
+                            <tr class="{{ $d->id % 2 == 0    ? 'bg-red-50' : 'bg-white' }} hover:bg-red-100 transition">
                                 <td class="w-auto xl:w-sm py-4 px-6 text-sm xl:text-lg font-medium">{{ $d->section }}</td>
                                 <td class="w-md xl:w-5xl py-4 px-6 text-sm xl:text-lg">{{ $d->content }}</td>
                             </tr>
