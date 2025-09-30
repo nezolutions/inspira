@@ -19,4 +19,18 @@ class MaintenanceController extends Controller
         
         return view('pages.maintenance', compact('app'));
     }
+
+    public function set() {
+        $mtc = Maintenance::first();
+
+        if ($mtc->is_active == true) {
+            $mtc->is_active = false;
+        } else {
+            $mtc->is_active = true;
+        }
+
+        $mtc->save();
+
+        return redirect()->route('main');
+    }
 }

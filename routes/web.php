@@ -74,5 +74,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/u/format', [FormatController::class, 'update']);
         
     Route::get('/e/user', [UserController::class, 'edit'])->name('edit.user');
-    Route::post('/u/user', [UserController::class, 'updateUser'])->name('update.user');
+    Route::post('/u/user', [UserController::class, 'update'])->name('update.user');
+
+    Route::post('/maintenance-status', [MaintenanceController::class, 'set'])->name('set');
 });

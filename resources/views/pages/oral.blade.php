@@ -12,7 +12,7 @@
 @section('title', $title)
  
 @section('content')
-<x-panel></x-panel>
+<x-panel :mtc="$mtc"></x-panel>
 <x-modal></x-modal>
 
 <header>

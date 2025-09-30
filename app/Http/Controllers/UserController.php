@@ -74,7 +74,7 @@ class UserController extends Controller
         ]));
     }
 
-    public function updateUser(Request $request) {
+    public function update(Request $request) {
         $request->validate([
             'email' => 'required|string|email|max:255',
             'name' => 'required|string|max:255',

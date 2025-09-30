@@ -49,7 +49,8 @@ class CompetitionController extends Controller
             'point',
             'detail',
             'format',
-            'docs'
+            'docs',
+            'mtc'
         ]));
     }
 

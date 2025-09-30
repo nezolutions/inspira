@@ -59,6 +59,7 @@ class AppController extends Controller
             'awards',
             'faqs',
             'fee',
+            'mtc'
         ]));
     }
 
