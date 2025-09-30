@@ -19,7 +19,7 @@
             <img src="{{ $icon ?? asset('images/jgu-wxut.png') }}" draggable="false" class="w-60 xl:w-80">
             <div class="flex flex-col gap-2 ps-6 border-l-4 border-black">
                 {{-- <span class="text-red-700 font-semibold text-2xl">{{ $title }}</span> --}}
-                <h1 class="text-3xl xl:text-4xl font-extrabold text-red-600">This Website is Under Maintenance!</h1>
+                <h1 class="text-3xl xl:text-4xl font-extrabold text-red-600">This Website is Under Maintenance</h1>
                 <p class="text-gray-800 text-lg xl:text-xl">We will be back soon. Thank you for your patience.</p>
             </div>
             <p class="block text-xs xl:text-sm text-gray-400 select-none">
