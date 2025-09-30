@@ -10,6 +10,7 @@ use App\Http\Controllers\FAQsController;
 use App\Http\Controllers\FeeController;
 use App\Http\Controllers\FormatController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\PointsController;
 use App\Http\Controllers\TopicsController;
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AppController::class, 'index'])->name('main');
 Route::get('/oral-presentation-format', [CompetitionController::class, 'oral'])->name('oral');
+Route::get('/under-maintenance', [MaintenanceController::class, 'maintenance'])->name('maintenance');
 
 Route::get('/admin', function() {
     return redirect()->route('login');

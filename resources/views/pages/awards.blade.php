@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center justify-center w-full py-20 min-h-screen bg-gray-50">
+<div class="flex flex-col items-center justify-center w-full py-20 min-h-screen bg-gray-100">
     <div class="space-y-12 w-full max-w-7xl px-6">
       
     <!-- Section Title -->
@@ -18,7 +18,7 @@
 		</h3>
 		<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
 			@forelse ($awards->where('category', 'Researchers and Lecturers') as $a1)
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">{{ $a1->title }}</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						{{ $a1->description }}
@@ -32,7 +32,7 @@
 				</div>
 			@empty
 				<!-- Best Research Project -->
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">Best Research Project</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						Awarded to the most outstanding research project in terms of scientific contribution,
@@ -47,7 +47,7 @@
 				</div>
 				
 				<!-- Innovation for Society Award -->
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">Innovation for Society Award</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						Given to the project that demonstrates the greatest impact on society or effectively addresses
@@ -62,7 +62,7 @@
 				</div>
 				
 				<!-- Judges' Choice Award -->
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">Judges' Choice Award</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						A special recognition granted based on the collective evaluation and discretion of the panel
@@ -88,7 +88,7 @@
 		</h3>
 		<div class="grid md:grid-cols-3 gap-6">
 			@forelse ($awards->where('category', 'College Students 1') as $a2)
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">{{ $a2->title }}</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						{{ $a2->description }}
@@ -102,7 +102,7 @@
 				</div>
 			@empty
 				<!-- Best Student Project -->
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">Best Student Project</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						Presented to the student-led project that 
@@ -117,7 +117,7 @@
 				</div>
 				
 				<!-- Best Poster Design -->
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">Best Poster Design</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						Awarded for the most visually compelling and well-structured poster that effectively
@@ -132,7 +132,7 @@
 				</div>
 				
 				<!-- Best Presentation -->
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">Best Presentation</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						Recognizes the participant who delivers the most clear, engaging,
@@ -151,7 +151,7 @@
 		<div class="grid grid-cols-1 justify-center gap-6">
 			@forelse ($awards->where('category', 'College Students 2') as $a2)
 			<!-- Gold/Silver/Bronze Award -->
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">{{ $a2->title }}</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						{{ $a2->description }}
@@ -203,7 +203,7 @@
 				</div>
 			@empty
 				<!-- Gold/Silver/Bronze Award -->
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">Gold/Silver/Bronze Award</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						Given to the top three student projects
@@ -255,7 +255,7 @@
 		</h3>
 		<div class="grid md:grid-cols-2 gap-6">
 			@forelse ($awards->where('category', 'Highschool Students') as $a3)
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-1">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">{{ $a3->title }}</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						{{ $a3->description }}
@@ -269,7 +269,7 @@
 				</div>
 				@empty
 				<!-- Best Young Innovator Project -->
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">Best Young Innovator Project</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						Granted to the high school project that showcases outstanding creativity,
@@ -284,7 +284,7 @@
 				</div>
 				
 				<!-- Best Visual Poster -->
-				<div class="border rounded-2xl shadow-lg p-6 flex flex-col">
+				<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
 					<h3 class="text-lg font-bold text-gray-800 mb-2">Best Visual Poster</h3>
 					<p class="text-sm text-gray-600 flex-grow">
 						Awarded for the most visually attractive

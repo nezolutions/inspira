@@ -25,7 +25,7 @@
                     Oral Presentation & Poster Competition
                 </p>
                 <div class="overflow-x-auto rounded-xl shadow-lg">
-                    <table class="min-w-full bg-white/80 backdrop-blur-sm text-gray-700 border border-gray-100">
+                    <table class="min-w-full bg-white/80 backdrop-blur-sm text-gray-700">
                         <thead>
                             <tr class="bg-gradient-to-r from-red-600 to-red-500 text-white">
                                 <th class="py-4 px-6 text-left text-lg xl:text-xl font-semibold">Agenda</th>

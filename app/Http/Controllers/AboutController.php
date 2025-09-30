@@ -30,13 +30,15 @@ class AboutController extends Controller
             'content' => 'required|string',
             'cover' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
             'highlights' => 'nullable|array',
-            'highlights.*' => 'nullable|string'
+            'highlights.*' => 'nullable|string',
+            'venue' => 'required|string'
         ]);
     
         try {
             $about = About::firstOrFail();
     
             $about->content = $validated['content'];
+            $about->venue = $validated['venue'];
     
             $highlights = $validated['highlights'] ?? [];
             $about->highlights = array_replace($about->highlights ?? [], $highlights);

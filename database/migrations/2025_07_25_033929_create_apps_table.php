@@ -43,7 +43,7 @@ return new class extends Migration
 
         Schema::create('agendas', function (Blueprint $table) {
             $table->id();
-            $table->text('description')->default('-');
+            $table->text('description');
             $table->string('agenda')->default('-');
             $table->string('timeline')->default('-');
             $table->integer('order')->default(0);

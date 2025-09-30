@@ -12,6 +12,7 @@ use App\Models\Detail;
 use App\Models\FAQ;
 use App\Models\Fee;
 use App\Models\Format;
+use App\Models\Maintenance;
 use App\Models\Participant;
 use App\Models\Points;
 use App\Models\Topic;
@@ -26,6 +27,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        Maintenance::create([
+            'is_active' => true,
+            'created_at' => now()
+        ]);
+
         User::create([
             'name' => 'Admin Jakarta Global University',
             'email' => 'inspira@jgu.ac.id',

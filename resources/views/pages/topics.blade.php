@@ -13,7 +13,7 @@
         @if ($topic)
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
                 @forelse ($topic->where('id', '<', 4) as $t)
-                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-200 transition transform hover:-translate-y-1">
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm transition transform hover:-translate-y-1">
                         <!-- Card Header -->
                         <h3 class="text-xl xl:text-2xl font-bold text-white p-4 
                                    {{ $t->id % 2 === 0 ? 'bg-gradient-to-r from-red-600 to-red-500' : 'bg-gradient-to-r from-gray-800 to-gray-700' }}">
@@ -74,7 +74,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 @forelse ($topic->where('id', '>', 3) as $t)
-                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-200 transition transform hover:-translate-y-1">
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm transition transform hover:-translate-y-1">
                         <!-- Card Header -->
                         <h3 class="text-xl xl:text-2xl font-bold text-white p-4 
                                    {{ $t->id % 2 == 0 ? 'bg-gradient-to-r from-red-600 to-red-500' : 'bg-gradient-to-r from-gray-800 to-gray-700' }}">
@@ -122,7 +122,7 @@
 
             {{-- <div class="grid grid-cols-1 gap-8">
                 @forelse ($topic->where('id', '>', 5) as $t)
-                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm border border-gray-200 transition transform hover:-translate-y-1">
+                    <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl bg-white/90 hover:bg-white backdrop-blur-sm transition transform hover:-translate-y-1">
                         <!-- Card Header -->
                         <h3 class="text-xl xl:text-2xl font-bold text-white p-4 
                                    {{ $t->id % 2 === 1 ? 'bg-gradient-to-r from-red-600 to-red-500' : 'bg-gradient-to-r from-gray-800 to-gray-700' }}">

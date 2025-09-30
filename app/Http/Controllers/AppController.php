@@ -10,6 +10,7 @@ use App\Models\Competition;
 use App\Models\FAQ;
 use App\Models\Fee;
 use App\Models\Home;
+use App\Models\Maintenance;
 use App\Models\Participant;
 use App\Models\Topic;
 use Illuminate\Http\Request;
@@ -19,6 +20,12 @@ use Illuminate\Support\Facades\Log;
 class AppController extends Controller
 {
     public function index() {
+        $mtc = Maintenance::first();
+
+        if (!Auth::check() && $mtc->is_active) {
+            return redirect()->route('maintenance');
+        }
+        
         // Apps Info
         $app = App::first();
         // Section Home

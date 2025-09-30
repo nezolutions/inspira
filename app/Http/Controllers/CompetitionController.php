@@ -7,6 +7,7 @@ use App\Models\App;
 use App\Models\Detail;
 use App\Models\Format;
 use App\Models\Home;
+use App\Models\Maintenance;
 use App\Models\Points;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -25,6 +26,12 @@ class CompetitionController extends Controller
     }
 
     public function oral() {
+        $mtc = Maintenance::first();
+
+        if (!Auth::check() && $mtc->is_active) {
+            return redirect()->route('maintenance');
+        }
+
         $app = App::first();
         // Section Bg
         $home = Home::first();

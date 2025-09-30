@@ -15,8 +15,12 @@
 </head>
 
 <style>
-    *, html {
-        zoom: 0.99  ;
+    html {
+        zoom: 0.99;
+    }
+
+    html section#maintenancez {
+        zoom: 1.01;
     }
 
     a, button, input, textarea, img {
@@ -104,8 +108,12 @@
     }
 
     @media (max-width: 1280px) {
-        *, html {
+        html {
             zoom: 0.98;
+        }
+
+        html section#maintenancez {
+            zoom: 1.02;
         }
     }
 </style>
